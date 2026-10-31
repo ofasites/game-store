@@ -1,192 +1,170 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>One For All Game Service</title>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="strict-origin-when-cross-origin"><title>One For All • Game Store</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,700;1,800;1,900&amp;family=Rajdhani:wght@600;700&amp;family=Noto+Sans+Myanmar:wght@400;600;700&amp;display=swap">
 <style>
-  :root {
-    --bg: #0b0d14;
-    --panel: #141826;
-    --panel2: #1b2133;
-    --text: #e8ebf5;
-    --muted: #8b93ad;
-    --accent: #7c5cff;
-    --accent2: #00e0b8;
-    --border: #262d44;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    background: radial-gradient(circle at top, #151a2e 0%, var(--bg) 55%);
-    color: var(--text);
-    font-family: 'Segoe UI', system-ui, sans-serif;
-    min-height: 100vh;
-  }
-  header {
-    position: sticky; top: 0; z-index: 10;
-    background: rgba(11,13,20,0.9);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--border);
-    padding: 14px 24px;
-    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
-  }
-  .logo { font-weight: 800; font-size: 20px; letter-spacing: 1px; color: var(--accent2); }
-  .logo span { color: var(--accent); }
-  .search { flex: 1; min-width: 200px; }
-  .search input {
-    width: 100%; padding: 10px 14px; border-radius: 10px;
-    border: 1px solid var(--border); background: var(--panel);
-    color: var(--text); font-size: 15px; outline: none;
-  }
-  .search input:focus { border-color: var(--accent); }
-  .controls { display: flex; gap: 10px; align-items: center; }
-  select, .cur-btn {
-    padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border);
-    background: var(--panel); color: var(--text); font-size: 14px; cursor: pointer;
-  }
-  .cur-btn { font-weight: 700; color: var(--accent2); }
-  .cur-btn:hover { border-color: var(--accent2); }
-  .hero { text-align: center; padding: 48px 20px 20px; }
-  .hero h1 { font-size: clamp(28px, 5vw, 46px); margin-bottom: 8px; }
-  .hero p { color: var(--muted); }
-  .cats { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; padding: 20px; }
-  .cat {
-    padding: 8px 18px; border-radius: 999px; border: 1px solid var(--border);
-    background: var(--panel); color: var(--muted); cursor: pointer; font-size: 14px;
-  }
-  .cat:hover { color: var(--text); }
-  .cat.active { background: var(--accent); border-color: var(--accent); color: #fff; }
-  .count { text-align: center; color: var(--muted); font-size: 14px; margin-bottom: 10px; }
-  .grid {
-    max-width: 1200px; margin: 0 auto; padding: 10px 24px 60px;
-    display: grid; gap: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  }
-  .card {
-    background: var(--panel); border: 1px solid var(--border);
-    border-radius: 14px; overflow: hidden; transition: transform .15s, border-color .15s;
-  }
-  .card:hover { transform: translateY(-4px); border-color: var(--accent); }
-  .card .img {
-    height: 140px; display: flex; align-items: center; justify-content: center;
-    font-size: 44px; background: linear-gradient(135deg, var(--panel2), #0f1322);
-  }
-  .card .img img { width: 100%; height: 100%; object-fit: cover; }
-  .card .body { padding: 14px; }
-  .card h3 { font-size: 16px; margin-bottom: 6px; }
-  .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
-  .tag {
-    font-size: 11px; padding: 3px 8px; border-radius: 6px;
-    background: var(--panel2); color: var(--muted);
-  }
-  .price { font-size: 18px; font-weight: 800; color: var(--accent2); }
-  .empty { text-align: center; color: var(--muted); padding: 60px 20px; grid-column: 1 / -1; }
-  footer { text-align: center; color: var(--muted); padding: 30px; border-top: 1px solid var(--border); font-size: 13px; }
-</style>
-</head>
-<body>
+:root{color-scheme:dark;--bg:#0b0d14;--panel:#151a28;--line:#2b3248;--muted:#a3acc5;--text:#edf0fa;--accent:#9276ff;--mint:#65f1cc}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top left,#242044,transparent 65%),var(--bg);color:var(--text);font:15px/1.5 'Segoe UI',system-ui,sans-serif}button,input,select,textarea{font:inherit}button,a,input,select,textarea{outline-offset:4px}button{cursor:pointer}button,select,input,textarea{color:var(--text);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 13px}button:hover{border-color:var(--accent)}button:disabled{opacity:.45;cursor:default}button.primary{background:var(--accent);color:#100c22;border:0;font-weight:750}.mint{color:var(--mint)}.muted{color:var(--muted)}header{position:sticky;top:0;z-index:4;background:#0b0d14ed;border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}.nav{max-width:1260px;margin:auto;padding:17px 24px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}.brand{font-weight:900;letter-spacing:1px;margin-right:auto;font-size:20px}.brand span{color:var(--mint)}.wrap{max-width:1260px;margin:auto;padding:0 24px}.hero{padding:52px 0 28px;display:flex;align-items:center;justify-content:space-between;gap:24px}.eyebrow{font-size:12px;letter-spacing:2px;color:var(--mint);font-weight:700}h1{font-size:clamp(32px,5vw,56px);line-height:1.08;letter-spacing:-2px;margin:14px 0}p{margin:8px 0 18px}.hero-art{font-size:80px;background:linear-gradient(135deg,#554198,#174d52);padding:24px 40px;border:1px solid #7762b8;border-radius:30px;transform:rotate(-6deg)}.toolbar{background:var(--panel);border:1px solid var(--line);padding:18px;border-radius:16px;display:grid;grid-template-columns:2fr 1fr 1.3fr;gap:12px}.toolbar input{width:100%}.field{display:flex;flex-direction:column;gap:5px;font-size:12px;color:var(--muted)}.field input,.field select,.field textarea{width:100%}.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.chips{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}.chip{border-radius:30px;padding:7px 16px}.chip[aria-pressed=true]{background:var(--accent);color:#100c22;font-weight:700}.results{display:flex;justify-content:space-between;align-items:center;margin:20px 0}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:18px;margin-bottom:28px}.card{border:1px solid var(--line);background:var(--panel);border-radius:17px;overflow:hidden;transition:transform .15s}.card:hover{transform:translateY(-3px)}.art{aspect-ratio:1;height:auto;position:relative;display:grid;place-items:center;background:radial-gradient(ellipse at top left,#55438b,#151b30);font-size:61px}.art img{width:100%;height:100%;aspect-ratio:1;object-fit:contain}.detail-cover{display:block;width:min(100%,360px);height:auto;border-radius:12px;margin:0 auto 20px}.heart{position:absolute;top:12px;right:12px;padding:5px 11px;font-size:21px;background:#0b0d14df}.heart[aria-pressed=true]{color:#ff8da9}.body{padding:18px}.body h2{font-size:17px;margin:0 0 9px}.tag{display:inline-block;background:#242b40;border-radius:5px;color:#bdc5db;padding:3px 7px;font-size:11px;margin:0 4px 12px 0}.price{font-size:23px;font-weight:800;color:var(--mint)}.card-actions{display:flex;gap:8px;margin-top:15px}.card-actions button{flex:1;font-size:13px}.empty{grid-column:1/-1;padding:50px;text-align:center;border:1px dashed var(--line);border-radius:14px}.notice{padding:12px 16px;border:1px solid var(--line);border-radius:12px;font-size:13px;color:var(--muted)}footer{margin-top:35px;padding:26px 0;border-top:1px solid var(--line);color:var(--muted);font-size:12px}dialog{width:min(650px,calc(100% - 28px));max-height:90vh;overflow:auto;background:#111625;color:var(--text);border:1px solid #424a67;border-radius:20px;padding:24px}dialog::backdrop{background:#03050bd9;backdrop-filter:blur(5px)}.modal-head{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:18px}.modal-head h2{margin:0;font-size:22px}.cart-item{display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding:16px 0}.cart-item .info{flex:1;min-width:0}.qty{display:flex;gap:5px;align-items:center}.qty button{padding:4px 10px}.cart-item small{display:block;color:var(--muted)}.total{display:flex;justify-content:space-between;font-size:23px;font-weight:800;margin:24px 0}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.full{grid-column:1/-1}textarea{min-height:110px;resize:vertical}details{border:1px solid var(--line);border-radius:12px;padding:14px;margin-top:18px}summary{cursor:pointer;font-weight:700}.manage-item{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding:10px 0;align-items:center}.manage-item button{font-size:12px;padding:5px 8px}#toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--mint);color:#09251d;padding:12px 22px;border-radius:12px;z-index:20;font-weight:650;box-shadow:0 5px 35px #0008}#toast:empty{display:none}.error{color:#ffaaa7}input[type=checkbox]{accent-color:var(--accent)}@media(max-width:680px){.wrap{padding:0 16px}.nav{padding:12px 16px;gap:7px}.nav button{font-size:12px;padding:8px}.brand{width:100%;font-size:18px}.hero{padding:32px 0 20px}.hero-art{display:none}.toolbar{grid-template-columns:1fr 1fr}.toolbar .field:first-child{grid-column:1/-1}.form-grid{grid-template-columns:1fr}.cart-item{flex-wrap:wrap}.grid{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}}
 
-<header>
-  <div class="logo">ONE<span>FORALL</span></div>
-  <div class="search"><input id="search" type="text" placeholder="Search games..."></div>
-  <div class="controls">
-    <select id="sort">
-      <option value="default">Sort: Featured</option>
-      <option value="low">Price: Low to High</option>
-      <option value="high">Price: High to Low</option>
-      <option value="az">Name: A to Z</option>
-    </select>
-    <button class="cur-btn" id="currency" title="Switch currency">THB</button>
-  </div>
-</header>
+.pack-showcase{position:relative;isolation:isolate;overflow:hidden;border:1px solid #9172ff80;border-radius:26px;margin:8px 0 32px;background:linear-gradient(120deg,#251843,#111d2d 65%,#123c3b);box-shadow:0 20px 80px #0005}.pack-showcase:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 15% 20%,#a859ff30,transparent 60%);pointer-events:none}.pack-layout{display:grid;grid-template-columns:1.1fr 1fr;position:relative}.pack-copy{padding:38px}.pack-label{display:inline-block;border:1px solid #b9a1ff66;border-radius:50px;padding:6px 12px;font-size:11px;letter-spacing:2px;color:#d6c6ff;background:#9276ff16}.pack-copy h2{font-size:clamp(58px,8vw,96px);line-height:.95;letter-spacing:-5px;margin:24px 0 16px;font-weight:900}.pack-copy h2 span{color:var(--mint)}.pack-lead{font-size:21px;max-width:390px}.pack-price{font-size:42px;font-weight:850;letter-spacing:-1px;margin-top:20px}.pack-price small{font-size:14px;letter-spacing:1px;color:var(--muted)}.pack-actions{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0 12px}.pack-actions button{padding:14px 20px}.pack-actions .primary{background:var(--mint);color:#09251d;box-shadow:0 6px 28px #65f1cc25}.pack-wall{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:22px;align-content:center;transform:rotate(-4deg) scale(1.04);opacity:.85}.pack-wall img{width:100%;aspect-ratio:.74;object-fit:cover;border-radius:10px;border:1px solid #ffffff25;box-shadow:0 8px 20px #0006}.pack-foot{padding:14px 30px;border-top:1px solid #ffffff15;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12px;color:#c2c8df;position:relative;background:#080c1466}.pack-fine{font-size:12px;color:#b3bdd4}.pack-device{background:#071e24;color:#9bf5df;border:1px solid #65f1cc40;padding:6px 12px;border-radius:7px;font-size:12px}.pack-gallery-dialog{width:min(1100px,calc(100% - 24px))}.pack-gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.pack-gallery-grid button{padding:0;overflow:hidden;border-radius:12px;text-align:left}.pack-gallery-grid img{display:block;width:100%;height:auto}.pack-gallery-grid span{display:block;padding:8px;font-size:12px;color:var(--muted)}#packZoom{width:min(1000px,calc(100% - 20px))}#packZoom img{width:100%;height:auto;display:block}.pack-card-label{display:block;padding:9px 0;color:var(--mint);font-size:12px}@media(max-width:760px){.pack-layout{grid-template-columns:1fr}.pack-copy{padding:26px}.pack-wall{padding:10px 26px 26px;transform:none;grid-template-columns:repeat(3,1fr)}.pack-wall img{aspect-ratio:1;object-fit:cover}.pack-wall img:nth-child(n+4){display:none}.pack-gallery-grid{grid-template-columns:repeat(2,1fr)}.pack-price{font-size:36px}.pack-foot{padding:16px 24px}}
+.pack-video-feature{margin:28px;padding:32px;border:1px solid #65f1cc44;border-radius:22px;background:radial-gradient(ellipse at top right,#42648d55,transparent 70%),#0b1429;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:16px}.pack-video-icon{display:grid;place-items:center;width:76px;height:76px;border-radius:50%;background:#65f1cc;color:#09251d;font-size:30px;box-shadow:0 0 60px #65f1cc44}.pack-video-feature h3{font-size:clamp(24px,3vw,38px);line-height:1.15;margin:6px 0;letter-spacing:-1px}.pack-video-feature p{color:var(--muted);margin:0}.pack-video-feature button{padding:14px 20px}.pack-video-footer{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:20px}.pack-video-footer strong{font-size:26px}#packVideo{display:block;width:100%;max-height:65vh;background:#000;border-radius:14px;aspect-ratio:16/9}#packGallery{width:min(1000px,calc(100% - 24px))}@media(max-width:760px){.pack-video-feature{margin:0 24px 24px;padding:24px}}
 
-<section class="hero">
-  <h1>Game Keys &amp; Accounts</h1>
-  <p>Browse by category, search, and compare prices.</p>
-</section>
+/* ===== ONE FOR ALL — poster theme (indigo / electric blue / glow) ===== */
 
-<div class="cats" id="cats"></div>
-<div class="count" id="count"></div>
-<main class="grid" id="grid"></main>
+:root{color-scheme:dark;--bg:#0a0c3f;--panel:#12155e;--line:#3340b8;--muted:#b4bdf5;--text:#fff;--accent:#4d63ff;--mint:#a9c4ff;--glow:#3d5bff;--red:#e5252a;--font:'Montserrat','Noto Sans Myanmar','Segoe UI',system-ui,sans-serif;--tech:'Rajdhani','Montserrat',sans-serif}
+html{background:#07093a}
+body{font-family:var(--font);font-weight:500;background:radial-gradient(ellipse 80% 50% at 85% 0%,#2a2fb0aa,transparent 70%),radial-gradient(ellipse 70% 50% at 0% 40%,#3a1a8c88,transparent 70%),linear-gradient(180deg,#14186f 0%,#0c0f4d 45%,#070a35 100%);background-attachment:fixed}
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.7;background-image:radial-gradient(2px 2px at 12% 18%,#fff,transparent),radial-gradient(1.5px 1.5px at 28% 62%,#cfe0ff,transparent),radial-gradient(2px 2px at 44% 33%,#fff,transparent),radial-gradient(1.5px 1.5px at 63% 80%,#fff,transparent),radial-gradient(2px 2px at 78% 24%,#cfe0ff,transparent),radial-gradient(1.5px 1.5px at 90% 58%,#fff,transparent),radial-gradient(1px 1px at 55% 10%,#fff,transparent),radial-gradient(1px 1px at 8% 85%,#fff,transparent);background-size:420px 420px;animation:snow 38s linear infinite}
+@keyframes snow{to{background-position:-120px 420px}}
+@media(prefers-reduced-motion:reduce){body:before{animation:none}}
+button,select,input,textarea{font-family:var(--font);background:#0e1160cc;border:1px solid #3a49c8;border-radius:14px}
+button:hover{border-color:#9db4ff;box-shadow:0 0 18px #4d63ff66}
+button.primary{background:linear-gradient(135deg,#5a6bff,#3a3fe0);color:#fff;border:0;font-style:italic;font-weight:800;letter-spacing:.3px;box-shadow:0 6px 24px #3d5bff66}
+button.primary:hover{box-shadow:0 8px 34px #6f86ffaa}
+.mint{color:#cfe0ff;text-shadow:0 0 18px #4d63ffcc}
+header{background:#080a3acc;border-bottom:1px solid #3340b8aa}
+.brand{font-family:var(--font);font-style:italic;font-weight:900;font-size:22px;letter-spacing:.5px;text-shadow:0 0 22px #4d63ff}
+.brand span{color:#8fb0ff}
+.brand small{font-family:var(--tech);font-style:normal;font-weight:700;letter-spacing:3px!important}
+.eyebrow{font-family:var(--tech);font-size:14px;letter-spacing:4px;color:#9db4ff}
+h1{font-style:italic;font-weight:900;letter-spacing:-1px;text-transform:uppercase;text-shadow:0 0 30px #3d5bff,0 0 60px #3d5bff88}
+h1 .mint{background:linear-gradient(90deg,#8fb0ff,#c78bff,#ff8fd0);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 0 16px #6f5bff)}
+.hero-art{background:linear-gradient(135deg,#2b33c9,#6a2fc4);border:1px solid #9db4ff88;box-shadow:0 0 50px #4d63ff88}
+.toolbar{background:#0c0f58b8;border:1px solid #3a49c8;border-radius:22px;backdrop-filter:blur(10px);box-shadow:0 10px 50px #0006}
+.field{font-family:var(--tech);font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:#9db4ff}
+.chip{font-weight:700;font-size:13px;border-radius:999px}
+.chip[aria-pressed=true]{background:linear-gradient(135deg,#5a6bff,#3a3fe0);color:#fff;border-color:transparent;font-style:italic;box-shadow:0 0 22px #4d63ff99}
+.card{background:linear-gradient(180deg,#14196fcc,#0c0f4ecc);border:1px solid #3a49c8;border-radius:22px;box-shadow:0 8px 30px #0005}
+.card:hover{transform:translateY(-6px);border-color:#9db4ff;box-shadow:0 14px 46px #4d63ff66}
+.art{background:radial-gradient(ellipse at top left,#3b3fd0,#0c0f4e);border-radius:0}
+.art img{object-fit:cover}
+.body h2{font-weight:800;font-style:italic;font-size:17px}
+.tag{background:#2a32a8;color:#dbe4ff;border-radius:999px;font-family:var(--tech);font-weight:700;font-size:12px;letter-spacing:1px;padding:3px 10px}
+.price{font-style:italic;font-weight:900;font-size:25px;color:#fff;text-shadow:0 0 18px #4d63ff,0 0 36px #4d63ff88}
+.heart{background:#080a3acc;border-radius:50%}
+.notice{border-color:#3a49c8;background:#0c0f58a0;border-radius:16px}
+footer{border-top:1px solid #3340b8aa}
+dialog{background:linear-gradient(180deg,#14196f,#0a0d48);border:1px solid #5a6bff;border-radius:26px;box-shadow:0 0 80px #4d63ff55}
+dialog::backdrop{background:#03041fe6}
+.modal-head h2{font-style:italic;font-weight:900;text-shadow:0 0 20px #4d63ff}
+.total{font-style:italic;font-weight:900}
+#toast{background:linear-gradient(135deg,#5a6bff,#3a3fe0);color:#fff;font-weight:700}
+/* 600pack: poster style */
+.pack-showcase{border:1px solid #7f93ff;border-radius:30px;background:radial-gradient(ellipse at 90% 0%,#4b3fe0aa,transparent 60%),linear-gradient(135deg,#1b1f8f,#0b0e4a 70%);box-shadow:0 0 80px #4d63ff66,0 20px 80px #0007}
+.pack-showcase:before{background:radial-gradient(ellipse at 15% 20%,#6f5bff44,transparent 60%)}
+.pack-label{font-family:var(--tech);font-weight:700;font-size:13px;letter-spacing:3px;color:#cfe0ff;border-color:#9db4ff88;background:#4d63ff22}
+.pack-copy h2{font-style:italic;font-weight:900;letter-spacing:-4px;text-shadow:0 0 30px #3d5bff}
+.pack-copy h2{background:linear-gradient(180deg,#8fb0ff,#b07cff 55%,#ff7ac6);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 22px #6f5bffcc)}
+.pack-copy h2 span{color:#fff;-webkit-text-fill-color:#fff;text-shadow:0 0 28px #3d5bff}
+.pack-lead{font-style:italic;font-weight:700}
+.pack-price{font-style:italic;font-weight:900;color:#fff;text-shadow:0 0 26px #4d63ff,0 0 50px #4d63ff99}
+.pack-price small{font-family:var(--tech);font-size:20px;letter-spacing:2px;color:#cfe0ff}
+.pack-actions .primary{background:linear-gradient(135deg,#e5252a,#b3121b);color:#fff;border:2px solid #7a0b12;box-shadow:0 6px 0 #5a0610,0 10px 34px #e5252a66;border-radius:14px;text-transform:uppercase}
+.pack-actions .primary:hover{transform:translateY(-2px)}
+.pack-device{font-family:var(--tech);font-weight:700;letter-spacing:2px;text-transform:uppercase;background:#0a0d48;color:#fff;border:1px solid #6b7dff;border-radius:8px;font-size:14px}
+.pack-video-feature{border:1px solid #6b7dff88;background:radial-gradient(ellipse at top right,#5a6bff66,transparent 70%),#080b45}
+.pack-video-icon{background:linear-gradient(135deg,#5a6bff,#c78bff);color:#fff;box-shadow:0 0 60px #6f86ffaa}
+.pack-video-feature h3{font-style:italic;font-weight:900;text-shadow:0 0 22px #4d63ff}
+.pack-foot{background:#05072e99;border-top:1px solid #3a49c8;font-family:var(--tech);font-weight:700;letter-spacing:2px;text-transform:uppercase}
+@media(max-width:680px){h1{font-size:34px}.brand{font-size:19px}}
 
-<footer>&copy; One For All Game Service</footer>
-
+.steam-spotlight{margin:42px 0;padding:26px;border:1px solid #586ce6;border-radius:26px;background:linear-gradient(145deg,#20277f99,#090c42);scroll-margin-top:100px}.spot-head{display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:20px}.spot-head h2{font-size:clamp(25px,4vw,38px);font-weight:900;font-style:italic;margin:8px 0;line-height:1.15}.spot-head p{font-size:12px;color:var(--muted);margin:0}.spot-tabs{display:flex;gap:8px}.spot-tabs button[aria-pressed=true]{background:#5368ff;color:white}.spot-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}.spot-card{min-width:0;border:1px solid #414fab;border-radius:16px;overflow:hidden;background:#0d104c}.spot-art{aspect-ratio:1;position:relative;background:radial-gradient(at top right,#8056c9,#202c75 60%,#0b1240);display:grid;place-items:center;overflow:hidden}.spot-art img{width:100%;height:100%;object-fit:cover}.spot-art strong{font-size:22px;line-height:1.2;padding:22px;font-style:italic;text-transform:uppercase;overflow-wrap:anywhere}.spot-badge{position:absolute;left:9px;top:9px;padding:4px 8px;border-radius:6px;background:#090c3be8;font:700 12px var(--tech);color:#d3e1ff}.spot-body{padding:13px}.spot-body h3{font-size:14px;min-height:42px;margin:0 0 12px}.spot-body select{width:100%;padding:8px 5px;font-size:11px}.spot-body .price{font-size:20px;margin-top:9px}.spot-body .card-actions{flex-wrap:wrap}.spot-body .card-actions button{padding:9px 7px;font-size:11px}.spot-note{font-size:11px;color:var(--muted);margin:18px 0 0}@media(max-width:1000px){.spot-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:600px){.steam-spotlight{padding:16px}.spot-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.spot-body{padding:10px}.spot-art strong{font-size:18px;padding:16px}.spot-head{align-items:start}}
+.gameplay-section{margin:24px 0;padding-top:22px;border-top:1px solid var(--line)}.gameplay-section h3{margin:8px 0 14px;font-size:17px}.gameplay-frame{position:relative;aspect-ratio:16/9;background:#000;border:1px solid #5368ff;border-radius:14px;overflow:hidden}.gameplay-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.gameplay-credit{font-size:11px;color:var(--muted);margin:12px 0}.gameplay-credit a{color:#cfe0ff;text-decoration:underline}
+.gameplay-preview{padding:26px;background:radial-gradient(at top right,#42246b,#080b2b);border:1px solid #5368ff;border-radius:14px}.gameplay-preview p{color:var(--muted);font-size:13px}.youtube-watch{display:inline-block;background:#e5252a;color:#fff;text-decoration:none;padding:12px 18px;border-radius:10px;font-weight:700}
+</style></head><body>
+<header><nav class="nav" aria-label="Store navigation"><div class="brand">ONE<span>FORALL</span><small class="muted" style="font-size:10px;letter-spacing:2px;margin-left:12px">GAME SERVICE</small></div><button id="currency" title="Switch currency">THB</button><button id="favorites" aria-pressed="false">♡ Saved <span id="savedCount">0</span></button><button id="cartBtn" class="primary">Cart · <span id="cartCount">0</span></button></nav></header>
+<main class="wrap"><section class="hero"><div><div class="eyebrow">ONE FOR ALL GAME SERVICE</div><h1>Great games.<br><span class="mint">All in one place.</span></h1><p class="muted">Discover keys & accounts. Save your favorites. Build your lineup.</p><div class="row muted"><span>✦ Steam Access Key · Offline Acc</span><span>·</span><span>THB / MMK pricing</span></div></div><div class="hero-art" aria-hidden="true">🎮</div></section>
+<section id="packShowcase" class="pack-showcase" aria-label="600pack special package"><div class="pack-layout"><div class="pack-copy"><span class="pack-label">SPECIAL PACKAGE / ONE FOR ALL</span><h2>600<span>pack</span></h2><p class="pack-lead">Your next gaming obsession.<br>A whole collection to explore.</p><div class="row"><span class="pack-device">◈ Steam Deck</span><span class="pack-device">▣ PC</span></div><div class="pack-price">375,000 <small>MMK</small></div><p class="pack-fine">One package price · Watch the collection video</p><div class="pack-actions"><button class="primary" data-action="add" data-id="special-600pack">Get 600pack →</button><button data-pack-gallery="true">Watch the collection ▶</button></div><p class="pack-fine">Confirm included titles, access terms and device requirements with us before ordering.</p></div><div class="pack-video-feature"><span class="pack-video-icon" aria-hidden="true">▶</span><span class="pack-label">THE COLLECTION / IN MOTION</span><h3>Press play.<br>Find your next adventure.</h3><p>Explore 600pack in our collection video.</p><button class="primary" data-pack-gallery="true">▶ Watch collection video</button><span class="pack-fine">Steam Deck + PC · 375,000 MMK</span></div></div><div class="pack-foot"><span>01 / SPECIAL COLLECTION</span><span>Steam Deck + PC</span><span>Collection video · Tap to watch</span></div></section>
+<section class="steam-spotlight" aria-labelledby="spotTitle"><div class="spot-head"><div><span class="eyebrow">THE NEXT GAME STARTS HERE</span><h2 id="spotTitle">New Releases &amp; Featured</h2><p>Fresh discoveries. Standout adventures. Your next obsession.</p></div><div class="spot-tabs" role="group" aria-label="Spotlight selection"><button data-spot-tab="all" aria-pressed="true">Featured · 10</button><button data-spot-tab="new" aria-pressed="false">New releases</button></div></div><div class="spot-grid" id="spotGrid"></div><p class="spot-note">Curated from Steam’s US Top Sellers and New On Steam · Checked 31 Oct 2026 · Seller prices and access terms apply. Selection is not a live chart; confirm availability before ordering.</p></section>
+<section class="toolbar" aria-label="Catalog filters"><label class="field">Search catalog<input id="search" type="search" placeholder="Game, genre, or platform…"></label><label class="field">Platform<select id="platform"><option value="">All platforms</option></select></label><label class="field">Sort by<select id="sort"><option value="default">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="az">Name: A to Z</option></select></label><label class="field">Min price <span class="unit"></span><input id="min" type="number" min="0" placeholder="No minimum"></label><label class="field">Max price <span class="unit"></span><input id="max" type="number" min="0" placeholder="No maximum"></label><div class="row"><button id="reset">Reset filters</button></div></section>
+<div class="chips" id="cats" aria-label="Categories"></div><div class="results"><span id="count" class="muted" aria-live="polite"></span><span class="muted" style="font-size:12px">Prices shown in <strong id="currencyLabel">THB</strong></span></div><div id="filterError" class="error" role="status"></div><section id="grid" class="grid" aria-label="Products"></section><div class="row" style="justify-content:center"><button id="more" hidden>Load more</button></div>
+<p class="notice">600pack (Steam Deck / PC): 375,000 MMK; package orders use MMK. Offline Account: ฿140 / 20,000 MMK. Steam Access Key: ฿180 / 25,000 MMK. Confirm game availability with the seller. Listings with “Price pending” cannot be added to the cart. Other categories currently contain sample products. Cart and favorites stay in this browser. Orders are summaries only; no payments are collected or orders sent.</p><footer>© One For All Game Service <span id="rateNote" style="float:right"></span></footer></main>
+<dialog id="detail"><div class="modal-head"><h2>Game details</h2><button data-close="detail" aria-label="Close details">✕</button></div><div id="detailBody"></div></dialog>
+<dialog id="cart"><div class="modal-head"><h2>Your lineup</h2><button data-close="cart" aria-label="Close cart">✕</button></div><div id="cartBody"></div><div id="cartBottom"></div></dialog>
+<dialog id="order"><div class="modal-head"><h2>Order summary</h2><button data-close="order" aria-label="Close order summary">✕</button></div><p class="muted">Review and share this summary with your seller to confirm availability and payment details. Nothing has been submitted.</p><label class="field">Summary<textarea id="orderText" readonly style="min-height:260px"></textarea></label><div class="row" style="margin-top:16px"><button id="copyOrder" class="primary">Copy summary</button><button id="downloadOrder">Download .txt</button></div></dialog>
+<dialog id="packGallery" class="pack-gallery-dialog"><div class="modal-head"><h2>600pack · Collection video</h2><button data-close="packGallery" aria-label="Close collection video">✕</button></div><p class="muted">Discover the collection · Steam Deck + PC</p><video id="packVideo" controls playsinline preload="none" aria-label="600pack collection video"><source src="assets/600pack/collection-video.mp4" type="video/mp4">Your browser cannot play this video. <a href="assets/600pack/collection-video.mp4">Download collection video</a>.</video><div class="pack-video-footer"><div><strong class="mint">375,000 MMK</strong><div class="muted">600pack · Steam Deck + PC</div></div><button class="primary" data-action="add" data-id="special-600pack">Get 600pack →</button></div></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
 <script>
-  // ====== SETTINGS YOU CAN EDIT ======
-  // How many Myanmar kyat equal 1 Thai baht. Change this when the rate changes.
-  const MMK_PER_THB = 60;
+'use strict';
+const $=id=>document.getElementById(id), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const DEFAULTS=[['Cyber Strike 2077','Action','PC Key',890,'🔫'],['Dragon Realm Online','RPG','Account',450,'🐉'],['Football Legends 26','Sports','PlayStation Key',1290,'⚽'],['Shadow Ops Arena','Action','Steam Key',590,'🎯'],['Kingdom Builder','Strategy','PC Key',320,'🏰'],['Speed Rush GT','Racing','Xbox Key',990,'🏎️'],['Mystic Quest Saga','RPG','Steam Key',750,'🧙'],['Battle Royale Max','Action','Account',250,'💥'],['Farm Valley Life','Casual','PC Key',180,'🌾'],['Galaxy Commander','Strategy','Steam Key',640,'🚀']].map((g,i)=>({id:'game-'+i,title:g[0],category:g[1],platform:g[2],price:g[3],emoji:g[4],description:'Sample listing. Contact the seller to confirm region compatibility, availability, account terms, and delivery details before purchasing.'}));
+const ACTION_OPEN_WORLD=[{"id": "aow-spiderman-miles", "title": "Marvel’s Spider-Man: Miles Morales", "category": "Action Open World", "platform": "Platform pending", "price": null, "image": "assets/action-open-world/spiderman-miles.webp", "description": "Price, edition, platform, availability and delivery details will be added when confirmed by the seller."}, {"id": "aow-spiderman-1", "title": "Marvel’s Spider-Man", "category": "Action Open World", "platform": "Platform pending", "price": null, "image": "assets/action-open-world/Spiderman-1.webp", "description": "Price, edition, platform, availability and delivery details will be added when confirmed by the seller."}, {"id": "aow-spiderman-2", "title": "Marvel’s Spider-Man 2", "category": "Action Open World", "platform": "Platform pending", "price": null, "image": "assets/action-open-world/spiderman-2.webp", "description": "Price, edition, platform, availability and delivery details will be added when confirmed by the seller."}, {"id": "aow-fable", "title": "Fable", "category": "Action Open World", "platform": "Platform pending", "price": null, "image": "assets/action-open-world/fable.webp", "description": "Price, edition, platform, availability and delivery details will be added when confirmed by the seller."}, {"id": "aow-crimson-desert", "title": "Crimson Desert", "category": "Action Open World", "platform": "Platform pending", "price": null, "image": "assets/action-open-world/crimson-desert.webp", "description": "Price, edition, platform, availability and delivery details will be added when confirmed by the seller."}, {"id": "aow-dragon-dogma-2", "title": "Dragon’s Dogma 2", "category": "Action Open World", "platform": "Platform pending", "price": null, "image": "assets/action-open-world/dragon-dogma-2.webp", "description": "Price, edition, platform, availability and delivery details will be added when confirmed by the seller."}, {"id": "aow-dawnwalker", "title": "The Blood of Dawnwalker", "category": "Action Open World", "platform": "Platform pending", "price": null, "image": "assets/action-open-world/dawnwalker.webp", "description": "Price, edition, platform, availability and delivery details will be added when confirmed by the seller."}, {"id": "aow-cyberpunk-2077", "title": "Cyberpunk 2077", "category": "Action Open World", "platform": "Platform pending", "price": null, "image": "assets/action-open-world/cyberpunk-2077.webp", "description": "Price, edition, platform, availability and delivery details will be added when confirmed by the seller."}, {"id": "aow-tr-rise", "title": "Rise of the Tomb Raider", "category": "Action Open World", "platform": "Platform pending", "price": null, "image": "assets/action-open-world/tr-rise.webp", "description": "Price, edition, platform, availability and delivery details will be added when confirmed by the seller."}, {"id": "aow-tr-shadow", "title": "Shadow of the Tomb Raider", "category": "Action Open World", "platform": "Platform pending", "price": null, "image": "assets/action-open-world/tr-shadow.webp", "description": "Price, edition, platform, availability and delivery details will be added when confirmed by the seller."}];
+const ACTION_STORYDRIVEN=[{"id": "asd-last-of-us-2", "title": "The Last of Us Part II", "category": "Action Storydriven", "platform": "Platform pending", "price": null, "image": "assets/action-storydriven/lou-part-2.jpg", "description": "Contact the seller to confirm edition, availability, region compatibility and delivery details."}, {"id": "asd-resonance-plague-tale", "title": "Resonance: A Plague Tale Legacy", "category": "Action Storydriven", "platform": "Platform pending", "price": null, "image": "assets/action-storydriven/Resonance-plaguetale.webp", "description": "Contact the seller to confirm edition, availability, region compatibility and delivery details."}, {"id": "asd-onimusha", "title": "Onimusha", "category": "Action Storydriven", "platform": "Platform pending", "price": null, "image": "assets/action-storydriven/onimusha.webp", "description": "Contact the seller to confirm edition, availability, region compatibility and delivery details."}, {"id": "asd-ace-combat-8", "title": "ACE COMBAT 8", "category": "Action Storydriven", "platform": "Platform pending", "price": null, "image": "assets/action-storydriven/ace-combat-8.webp", "description": "Contact the seller to confirm edition, availability, region compatibility and delivery details."}, {"id": "asd-gears-of-war-eday", "title": "Gears of War: E-Day", "category": "Action Storydriven", "platform": "Platform pending", "price": null, "image": "assets/action-storydriven/gow-eday.webp", "description": "Contact the seller to confirm edition, availability, region compatibility and delivery details."}, {"id": "asd-phantom-blade-zero", "title": "Phantom Blade Zero", "category": "Action Storydriven", "platform": "Platform pending", "price": null, "image": "assets/action-storydriven/Phantom Plade.webp", "description": "Contact the seller to confirm edition, availability, region compatibility and delivery details."}];
+const ADDITIONAL_GAMES=[{"id": "extra-subnautica-2", "title": "Subnautica 2", "category": "Survival", "platform": "Platform pending", "price": null, "image": "assets/additional-games/sunautica-2.webp", "description": "Contact the seller to confirm edition, availability, region compatibility, device requirements and delivery details."}, {"id": "extra-granblue-relink", "title": "Granblue Fantasy: Relink", "category": "JRPG", "platform": "Platform pending", "price": null, "image": "assets/additional-games/granblue-relink.webp", "description": "Contact the seller to confirm edition, availability, region compatibility, device requirements and delivery details."}, {"id": "extra-forza-horizon-6", "title": "Forza Horizon 6", "category": "Racing", "platform": "Platform pending", "price": null, "image": "assets/additional-games/forza-6.webp", "description": "Contact the seller to confirm edition, availability, region compatibility, device requirements and delivery details."}, {"id": "extra-007-first-light", "title": "007 First Light", "category": "Action Storydriven", "platform": "Platform pending", "price": null, "image": "assets/additional-games/007-firstlight.webp", "description": "Contact the seller to confirm edition, availability, region compatibility, device requirements and delivery details."}, {"id": "extra-resident-evil-requiem", "title": "Resident Evil Requiem", "category": "Survival Horror", "platform": "Platform pending", "price": null, "image": "assets/additional-games/resident-9.webp", "description": "Contact the seller to confirm edition, availability, region compatibility, device requirements and delivery details."}, {"id": "extra-death-stranding-2", "title": "Death Stranding 2", "category": "Action Open World", "platform": "Platform pending", "price": null, "image": "assets/additional-games/death-stranding-2.webp", "description": "Contact the seller to confirm edition, availability, region compatibility, device requirements and delivery details."}, {"id": "extra-horizon-zero-dawn", "title": "Horizon Zero Dawn", "category": "Action Open World", "platform": "Platform pending", "price": null, "image": "assets/additional-games/horizon-zero-dawn.webp", "description": "Contact the seller to confirm edition, availability, region compatibility, device requirements and delivery details."}, {"id": "extra-steins-gate-reboot", "title": "STEINS;GATE RE:BOOT", "category": "Visual Novel", "platform": "Platform pending", "price": null, "image": "assets/additional-games/Stein-gate-remake.webp", "description": "Contact the seller to confirm edition, availability, region compatibility, device requirements and delivery details."}, {"id": "extra-baldurs-gate-3", "title": "Baldur’s Gate 3", "category": "RPG", "platform": "Platform pending", "price": null, "image": "assets/additional-games/baldur-gate-3.webp", "description": "Contact the seller to confirm edition, availability, region compatibility, device requirements and delivery details."}, {"id": "extra-death-stranding", "title": "Death Stranding", "category": "Action Open World", "platform": "Platform pending", "price": null, "image": "assets/additional-games/death-stranding.webp", "description": "Contact the seller to confirm edition, availability, region compatibility, device requirements and delivery details."}, {"id": "extra-metal-gear-solid-v", "title": "Metal Gear Solid V", "category": "Action Open World", "platform": "Platform pending", "price": null, "image": "assets/additional-games/metalgear-5.webp", "description": "Contact the seller to confirm edition, availability, region compatibility, device requirements and delivery details."}, {"id": "extra-kingdom-come-2", "title": "Kingdom Come: Deliverance II", "category": "RPG", "platform": "Platform pending", "price": null, "image": "assets/additional-games/kingdomcome-2.webp", "description": "Contact the seller to confirm edition, availability, region compatibility, device requirements and delivery details."}, {"id": "extra-banishers", "title": "Banishers: Ghosts of New Eden", "category": "Action Storydriven", "platform": "Platform pending", "price": null, "image": "assets/additional-games/banisher.webp", "description": "Contact the seller to confirm edition, availability, region compatibility, device requirements and delivery details."}];
+const STEAM_SPOTLIGHT_GAMES=[{"id": "spot-moon-sweepers", "title": "Moon Sweepers", "category": "Action", "image": "", "emoji": "✦", "price": null, "platform": "Platform pending", "description": "Seller listing. Confirm edition, availability, access terms and offline compatibility before ordering."}, {"id": "spot-shopkeeper", "title": "Probably Stolen - Cyberpunk Shopkeeper Sim", "category": "Simulation", "image": "", "emoji": "✦", "price": null, "platform": "Platform pending", "description": "Seller listing. Confirm edition, availability, access terms and offline compatibility before ordering."}, {"id": "spot-queens-domain", "title": "Queen’s Domain", "category": "Action RPG", "image": "", "emoji": "✦", "price": null, "platform": "Platform pending", "description": "Seller listing. Confirm edition, availability, access terms and offline compatibility before ordering."}, {"id": "spot-can-em-all", "title": "Can ’Em All", "category": "Simulation", "image": "", "emoji": "✦", "price": null, "platform": "Platform pending", "description": "Seller listing. Confirm edition, availability, access terms and offline compatibility before ordering."}];
+DEFAULTS.unshift(...ACTION_OPEN_WORLD,...ACTION_STORYDRIVEN,...ADDITIONAL_GAMES,...STEAM_SPOTLIGHT_GAMES);
+const TYPES=[{id:'steam',label:'Steam Access Key',name:'Steam Access Key',thb:180,mmk:25000},{id:'offline',label:'Offline Acc',name:'Offline Account',thb:140,mmk:20000}];
+const BASES=DEFAULTS.splice(0);
+for(const base of BASES)for(const type of TYPES)DEFAULTS.push({...base,id:base.id+'-'+type.id,baseId:base.id,typeId:type.id,platform:type.label,productType:type.name,price:type.thb,priceMMK:type.mmk,description:base.category==='Action Open World'?'Contact the seller to confirm edition, availability, region compatibility and delivery details.':base.description});
+DEFAULTS.unshift({id:'special-600pack',baseId:'special-600pack',typeId:'package',isPackage:true,title:'600pack — Steam Deck & PC',category:'Special Packages',platform:'Steam Deck / PC',productType:'600pack Special Package',price:null,priceMMK:375000,image:'',emoji:'🎮',description:'Special collection package for Steam Deck and PC. Package price: 375,000 MMK. Watch the collection video to explore the package. Confirm included titles, account/access terms, installation requirements and individual game compatibility with the seller.'});
+function purchasable(g){return !!g&&(Number.isFinite(g.price)||g.isPackage&&Number.isFinite(g.priceMMK))}
+const selectedTypes={};
+const KEY='ofa-store-types-v3'; let storageOK=true;
+function validProduct(g){return g&&typeof g.id==='string'&&/^[a-zA-Z0-9_-]{1,80}$/.test(g.id)&&['title','category','platform'].every(k=>typeof g[k]==='string'&&g[k].trim().length>0&&g[k].length<=100)&&(g.price===null||Number.isFinite(g.price)&&g.price>=0&&g.price<=100000000)&&(g.emoji===undefined||typeof g.emoji==='string'&&g.emoji.length<=16)&&(g.description===undefined||typeof g.description==='string'&&g.description.length<=1500)}
+function validCatalog(g){return Array.isArray(g)&&g.length<=500&&g.every(validProduct)&&new Set(g.map(x=>x.id)).size===g.length}
+let state={games:structuredClone(DEFAULTS),rate:60,currency:'THB',saved:[],cart:{}};
+try{const s=JSON.parse(localStorage.getItem(KEY));if(s&&validCatalog(s.games)&&Number.isFinite(s.rate)&&s.rate>0){state={games:structuredClone(DEFAULTS),rate:60,currency:s.currency==='MMK'?'MMK':'THB',saved:Array.isArray(s.saved)?s.saved.filter(x=>typeof x==='string'):[],cart:{}};if(s.cart&&typeof s.cart==='object')for(const g of state.games){if(!purchasable(g))continue;const n=s.cart[g.id];if(Number.isInteger(n)&&n>0&&n<=99)state.cart[g.id]=n}}}catch(e){storageOK=false}
+if(state.cart['special-600pack'])state.currency='MMK';
+let category='All',savedOnly=false,limit=8,toastTimer;
+function priceOf(g){return state.currency==='MMK'?g.priceMMK:g.price}
+function money(n){return Number.isFinite(n)?(state.currency==='THB'?'฿'+n.toLocaleString('en-US'):n.toLocaleString('en-US')+' Ks'):'Price pending'}
+function typeSelector(g){if(g.isPackage)return '<span class="pack-card-label">Special package · Steam Deck + PC</span>';return `<label class="field">Account / key type<select data-type-base="${g.baseId}" aria-label="Type for ${esc(g.title)}">${TYPES.map(t=>`<option value="${t.id}" ${t.id===g.typeId?'selected':''}>${t.label} — ${money(state.currency==='MMK'?t.mmk:t.thb)}</option>`).join('')}</select></label>`}
+const game=id=>state.games.find(g=>g.id===id);function persist(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){storageOK=false;toast('Browser storage unavailable. Your cart and favorites may not be saved.')}}
+function toast(text){$('toast').textContent=text;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').textContent='',3800)}
+function fmt(price){return money(price)}
+function options(){if(category!=='All'&&!state.games.some(g=>g.category===category))category='All';$('cats').innerHTML=['All',...new Set(state.games.map(g=>g.category))].map(c=>`<button class="chip" data-category="${esc(c)}" aria-pressed="${c===category}">${esc(c)}</button>`).join('');const prev=$('platform').value;const platforms=[...new Set(state.games.map(g=>g.platform))];$('platform').innerHTML='<option value="">All platforms</option>'+platforms.map(p=>`<option value="${esc(p)}">${esc(p)}</option>`).join('');$('platform').value=platforms.includes(prev)?prev:''}
+function render(){const q=$('search').value.trim().toLowerCase(),p=$('platform').value;const min=$('min').value===''?0:Number($('min').value),max=$('max').value===''?Infinity:Number($('max').value);$('filterError').textContent=min>max?'Minimum price must be less than or equal to maximum price.':'';let list=state.games.filter(g=>(p?g.platform===p:g.isPackage||g.typeId===(selectedTypes[g.baseId]||'offline'))&&(category==='All'||g.category===category)&&(!p||g.platform===p)&&(!savedOnly||state.saved.includes(g.id))&&(g.title+' '+g.category+' '+g.platform).toLowerCase().includes(q)&&(Number.isFinite(priceOf(g))?priceOf(g)>=min&&priceOf(g)<=max:$('min').value===''&&$('max').value===''));const sort=$('sort').value;if(sort==='low')list.sort((a,b)=>(priceOf(a)??Infinity)-(priceOf(b)??Infinity));if(sort==='high')list.sort((a,b)=>(priceOf(b)??-Infinity)-(priceOf(a)??-Infinity));if(sort==='az')list.sort((a,b)=>a.title.localeCompare(b.title));$('count').textContent=`${list.length} game${list.length===1?'':'s'}${savedOnly?' saved':''} · Showing ${Math.min(limit,list.length)}`;$('grid').innerHTML=list.length?list.slice(0,limit).map(g=>`<article class="card"><div class="art">${g.image?`<img src="${esc(g.image)}" alt="${esc(g.title)} cover" loading="lazy">`:`<span aria-hidden="true">${esc(g.emoji||'🎮')}</span>`}<button class="heart" data-action="save" data-id="${g.id}" aria-label="${state.saved.includes(g.id)?'Unsave':'Save'} ${esc(g.title)}" aria-pressed="${state.saved.includes(g.id)}">${state.saved.includes(g.id)?'♥':'♡'}</button></div><div class="body"><h2>${esc(g.title)}</h2><span class="tag">${esc(g.category)}</span><span class="tag">${esc(g.platform)}</span>${typeSelector(g)}<div class="price">${g.isPackage?'375,000 Ks':fmt(priceOf(g))}</div><div class="card-actions"><button data-action="details" data-id="${g.id}">Details</button><button class="primary" data-action="add" data-id="${g.id}" ${purchasable(g)?'':'disabled'}>${purchasable(g)?'+ Add to cart':'Price pending'}</button></div></div></article>`).join(''):'<div class="empty"><h2>No games found</h2><p class="muted">Try a different search or reset your filters.</p></div>';$('more').hidden=list.length<=limit;sync()}
+function sync(){renderSpotlight();state.saved=state.saved.filter(id=>game(id));for(const id of Object.keys(state.cart))if(!game(id))delete state.cart[id];$('savedCount').textContent=state.saved.length;$('cartCount').textContent=Object.values(state.cart).reduce((a,b)=>a+b,0);$('currency').textContent=state.currency;$('currencyLabel').textContent=state.currency;document.querySelectorAll('.unit').forEach(e=>e.textContent='('+state.currency+')');$('favorites').setAttribute('aria-pressed',savedOnly);$('rateNote').textContent='Fixed product prices · 600pack: MMK only'}
+function add(id){if(!purchasable(game(id)))return;if(game(id).isPackage&&state.currency!=='MMK'){state.currency='MMK';['min','max'].forEach(k=>$(k).value='');render()}state.cart[id]=Math.min(99,(state.cart[id]||0)+1);persist();sync();toast('Added to your cart')}
 
-  // Add games here. Prices are in baht (THB).
-  // image: leave "" to show the emoji instead, or put a picture link/file name.
-  const GAMES = [
-    { title: "Cyber Strike 2077", category: "Action",   platform: "PC Key",       price: 890,  emoji: "🔫", image: "" },
-    { title: "Dragon Realm Online", category: "RPG",     platform: "Account",      price: 450,  emoji: "🐉", image: "" },
-    { title: "Football Legends 26", category: "Sports",  platform: "PlayStation Key", price: 1290, emoji: "⚽", image: "" },
-    { title: "Shadow Ops Arena",   category: "Action",   platform: "Steam Key",    price: 590,  emoji: "🎯", image: "" },
-    { title: "Kingdom Builder",    category: "Strategy", platform: "PC Key",       price: 320,  emoji: "🏰", image: "" },
-    { title: "Speed Rush GT",      category: "Racing",   platform: "Xbox Key",     price: 990,  emoji: "🏎️", image: "" },
-    { title: "Mystic Quest Saga",  category: "RPG",      platform: "Steam Key",    price: 750,  emoji: "🧙", image: "" },
-    { title: "Battle Royale Max",  category: "Action",   platform: "Account",      price: 250,  emoji: "💥", image: "" },
-    { title: "Farm Valley Life",   category: "Casual",   platform: "PC Key",       price: 180,  emoji: "🌾", image: "" },
-    { title: "Galaxy Commander",   category: "Strategy", platform: "Steam Key",    price: 640,  emoji: "🚀", image: "" }
-  ];
-  // ====== END OF SETTINGS ======
+// Official gameplay mapping: add a verified publisher/developer upload for each new game.
+const OFFICIAL_GAMEPLAY = {"aow-spiderman-miles": {"id": "T03PxxuCfDA", "channel": "PlayStation", "title": "Gameplay Demo (PS5, 2020)"}, "aow-cyberpunk-2077": {"id": "vjF9GgrY9c0", "channel": "Cyberpunk 2077", "title": "48-minute Gameplay Reveal (2018 work-in-progress)"}, "aow-dawnwalker": {"id": "U3xt0dCfr1k", "channel": "BANDAI NAMCO Europe", "title": "Gameplay Overview — Part III"}, "aow-tr-rise": {"id": "6VLZbzqnVWc", "channel": "Xbox España", "title": "E3 Gameplay Trailer (2015)"}, "asd-last-of-us-2": {"id": "btmN-bWwv0A", "channel": "PlayStation", "title": "E3 2018 Gameplay Reveal Trailer"}, "aow-spiderman-2": {"id": "ZRhJT2nmvA4", "channel": "PlayStation", "title": "Gameplay Reveal", "kind": "gameplay"}, "aow-fable": {"id": "4zItAC-0m_E", "channel": "Xbox", "title": "Gameplay Demo — Build an Extraordinary Life", "kind": "gameplay"}, "aow-dragon-dogma-2": {"id": "CJDywjn2Mts", "channel": "Capcom France", "title": "Tokyo Game Show Gameplay Presentation (French)", "kind": "gameplay"}, "asd-resonance-plague-tale": {"id": "ZPQFsx9XXoM", "channel": "Focus Entertainment", "title": "Long Gameplay Trailer", "kind": "gameplay"}, "asd-gears-of-war-eday": {"id": "9csWVZCa7sY", "channel": "Xbox", "title": "Official Story Trailer", "kind": "trailer"}, "extra-granblue-relink": {"id": "JWmQZEBC9oU", "channel": "Cygames EN", "title": "Second Trailer", "kind": "trailer"}, "extra-forza-horizon-6": {"id": "pWw-UENvdTw", "channel": "Forza", "title": "Official Gameplay Teaser Trailer", "kind": "gameplay"}, "extra-007-first-light": {"id": "pwRpK8eoLLE", "channel": "PlayStation", "title": "State of Play Gameplay Deep Dive", "kind": "gameplay"}};
+Object.assign(OFFICIAL_GAMEPLAY, {
+ 'aow-spiderman-1': {id:'K4zm30yeHHE',channel:'Marvel Entertainment',title:'E3 2017 Gameplay Demo',kind:'gameplay'},
+ 'aow-crimson-desert': {id:'ZdmoGYg8tB0',channel:'Crimson Desert',title:'Official Gameplay Trailer — gamescom 2023',kind:'gameplay'},
+ 'aow-tr-shadow': {id:'CoLBrnC2F9g',channel:'PlayStation Europe',title:'E3 2018 Gameplay Trailer',kind:'gameplay'},
+ 'asd-onimusha': {id:'mjDbYpNrFjI',channel:'Capcom USA',title:'Way of the Sword — Event Demo Playthrough',kind:'gameplay'},
+ 'asd-phantom-blade-zero': {id:'UxEzkodSmVE',channel:'PlayStation France',title:'State of Play Gameplay Deep Dive (French subtitles)',kind:'gameplay'},
+ 'extra-resident-evil-requiem': {id:'fXVy4mALHLY',channel:'Resident Evil',title:'Resident Evil Requiem — 4th Trailer',kind:'trailer'},
+ 'extra-kingdom-come-2': {id:'5VP6bjlger8',channel:'Warhorse Studios',title:'Official Gameplay Showcase',kind:'gameplay'},
+ 'extra-steins-gate-reboot': {id:'8WS6b_vgX5g',channel:'Spike Chunsoft, Inc.',title:'Story Introduction Trailer',kind:'trailer'},
+ 'spot-shopkeeper': {id:'_T87bZW8zsc',channel:'tinyBuildGAMES',title:'Probably Stolen — Launch Trailer',kind:'trailer'},
+ 'extra-metal-gear-solid-v': {id:'fDQUmncjkdM',channel:'metalgearsolid / KONAMI',title:'The Phantom Pain — E3 2015 Gameplay Demo',kind:'gameplay'},
+ 'extra-death-stranding-2': {id:'ylW1swDm65E',channel:'PlayStation Access',title:'PS5 Gameplay — Exploring the Map (Official Channel Stream)',kind:'gameplay'}
+});
+function gameplaySection(g){
+ const v=OFFICIAL_GAMEPLAY[g.baseId || g.id];
+ if(!v)return `<section class="gameplay-section"><h3>Gameplay video</h3><p class="muted">An official video has not yet been verified for this title.</p></section>`;
+ const watch=`https://www.youtube.com/watch?v=${encodeURIComponent(v.id)}`;
+ const hosted=/^https?:$/.test(location.protocol) && location.origin!=='null';
+ const embed=new URL(`https://www.youtube-nocookie.com/embed/${encodeURIComponent(v.id)}`);
+ embed.searchParams.set('rel','0');
+ embed.searchParams.set('playsinline','1');
+ if(hosted)embed.searchParams.set('origin',location.origin);
+ const player=hosted
+ ? `<div class="gameplay-frame"><iframe src="${esc(embed.href)}" title="${esc(g.title)} — ${esc(v.title)}" loading="eager" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>`
+ : `<div class="gameplay-preview"><span class="eyebrow">YOUTUBE GAMEPLAY</span><h3>${esc(g.title)}</h3><p>YouTube requires a published website to play this embedded video. Watch it on YouTube while previewing this file.</p><a class="youtube-watch" href="${esc(watch)}" target="_blank" rel="noopener">▶ Watch on YouTube ↗</a></div>`;
+ return `<section class="gameplay-section"><div class="eyebrow">${v.kind==='trailer'?'OFFICIAL TRAILER':'OFFICIAL GAMEPLAY'}</div><h3>${esc(v.title)}</h3>${player}<p class="gameplay-credit">${esc(v.channel)} · Footage may show a different platform or an earlier development build.</p><p class="gameplay-credit">If the player is unavailable, <a href="${esc(watch)}" target="_blank" rel="noopener">watch on YouTube ↗</a>.</p></section>`;
+}
 
-  let currency = localStorage.getItem("currency") || "THB";
-  let activeCat = "All";
+function showDetails(id){const g=game(id);if(!g)return;if(g.isPackage){$('packGallery').showModal();return;}$('detailBody').innerHTML=`${g.image?`<img class="detail-cover" src="${esc(g.image)}" alt="${esc(g.title)} cover">`:`<div style="font-size:65px;text-align:center">${esc(g.emoji||'🎮')}</div>`}<h2>${esc(g.title)}</h2><p class="muted">${esc(g.category)} · ${esc(g.platform)}</p><p style="white-space:pre-wrap">${esc(g.description||'Contact the seller for product and delivery details.')}</p>${gameplaySection(g)}<p>${esc(g.productType)}</p><p class="price">${fmt(priceOf(g))}</p><button class="primary" data-action="add" data-id="${g.id}" ${purchasable(g)?'':'disabled'}>${purchasable(g)?'Add to cart':'Price pending'}</button>`;$('detail').showModal()}
+$('detail').addEventListener('close',()=>{$('detailBody').replaceChildren()});
+function cartRender(){const entries=Object.entries(state.cart).filter(([id])=>game(id));$('cartBody').innerHTML=entries.length?entries.map(([id,n])=>{const g=game(id);return `<div class="cart-item"><div class="info"><strong>${esc(g.title)}</strong><small>${esc(g.productType)} · ${fmt(priceOf(g))} each</small></div><div class="qty"><button data-qty="-1" data-id="${id}" aria-label="Decrease ${esc(g.title)} quantity">−</button><span>${n}</span><button data-qty="1" data-id="${id}" ${n>=99?'disabled':''} aria-label="Increase ${esc(g.title)} quantity">+</button></div><strong>${fmt(priceOf(g)*n)}</strong><button data-remove="${id}" aria-label="Remove ${esc(g.title)}">✕</button></div>`}).join(''):'<div class="empty">Your cart is empty. Find your next adventure.</div>';const total=entries.reduce((s,[id,n])=>s+priceOf(game(id))*n,0);$('cartBottom').innerHTML=entries.length?`<div class="total"><span>Total</span><span class="mint">${fmt(total)}</span></div><p class="muted">Final availability, fees, and delivery must be confirmed with the seller.</p><button id="checkout" class="primary">Create order summary</button>`:'';sync()}
+function download(name,text,type){const u=URL.createObjectURL(new Blob([text],{type}));const a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)}
+function orderSummary(){let total=0;const lines=['ONE FOR ALL GAME SERVICE','Order inquiry — not a confirmed purchase',''];for(const [id,n]of Object.entries(state.cart)){const g=game(id);if(g){total+=priceOf(g)*n;lines.push(`${g.title} | ${g.productType} | ${n} × ${fmt(priceOf(g))} = ${fmt(priceOf(g)*n)}`)}}lines.push('',`Total: ${fmt(total)}`,`Currency: ${state.currency}`,'Individual games: fixed THB / MMK prices. 600pack: MMK only.','','Please confirm availability, region restrictions, delivery, final fees, and payment instructions.');$('orderText').value=lines.join('\n');$('cart').close();$('order').showModal()}
+document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.close)$(b.dataset.close).close();const id=b.dataset.id;if(b.dataset.action==='add')add(id);if(b.dataset.action==='details')showDetails(id);if(b.dataset.action==='save'){state.saved=state.saved.includes(id)?state.saved.filter(x=>x!==id):[...state.saved,id];persist();render()}if(b.dataset.category!==undefined){category=b.dataset.category;limit=8;options();render()}if(b.dataset.qty){const n=(state.cart[id]||0)+Number(b.dataset.qty);if(n<=0)delete state.cart[id];else state.cart[id]=Math.min(99,n);persist();cartRender()}if(b.dataset.remove){delete state.cart[b.dataset.remove];persist();cartRender()}if(b.id==='checkout')orderSummary();});
+['search','min','max'].forEach(id=>$(id).oninput=()=>{limit=8;render()});['platform','sort'].forEach(id=>$(id).onchange=()=>{limit=8;render()});$('more').onclick=()=>{limit+=8;render()};$('reset').onclick=()=>{['search','min','max','platform'].forEach(id=>$(id).value='');$('sort').value='default';category='All';savedOnly=false;limit=8;options();render()};$('favorites').onclick=()=>{savedOnly=!savedOnly;limit=8;render()};$('currency').onclick=()=>{if(state.currency==='MMK'&&state.cart['special-600pack']){toast('600pack is priced in MMK. Remove it from the cart to switch to THB.');return;}state.currency=state.currency==='THB'?'MMK':'THB';['min','max'].forEach(id=>$(id).value='');if($('detail').open)$('detail').close();persist();render()};$('cartBtn').onclick=()=>{cartRender();$('cart').showModal()};
+$('copyOrder').onclick=async()=>{try{await navigator.clipboard.writeText($('orderText').value);toast('Summary copied')}catch(e){$('orderText').focus();$('orderText').select();toast('Copy unavailable here. The summary is selected; use Copy or download it.')}};$('downloadOrder').onclick=()=>download('one-for-all-order.txt',$('orderText').value,'text/plain');
+document.addEventListener('change',e=>{const base=e.target.dataset.typeBase;if(!base)return;selectedTypes[base]=e.target.value;if($('platform').value)$('platform').value=TYPES.find(t=>t.id===e.target.value).label;render()});
+function openCollectionVideo(){ $('packGallery').showModal(); }
+document.addEventListener('click',e=>{const b=e.target.closest('button');if(b&&b.dataset.packGallery)openCollectionVideo()});
+$('packGallery').addEventListener('close',()=> $('packVideo').pause());
 
-  const $ = id => document.getElementById(id);
+const SPOTLIGHT=[["asd-phantom-blade-zero", "Featured"], ["aow-cyberpunk-2077", "Featured"], ["extra-resident-evil-requiem", "Featured"], ["asd-gears-of-war-eday", "Featured"], ["asd-ace-combat-8", "Featured"], ["extra-baldurs-gate-3", "Featured"], ["spot-moon-sweepers", "Featured"], ["spot-shopkeeper", "Featured"], ["spot-queens-domain", "New release"], ["spot-can-em-all", "New release"]];
+let spotTab='all';
+function renderSpotlight(){
+ $('spotGrid').innerHTML=SPOTLIGHT.filter(([id,badge])=>spotTab==='all'||badge==='New release').map(([base,badge])=>{const g=game(base+'-'+(selectedTypes[base]||'offline'));if(!g)return '';return `<article class="spot-card"><div class="spot-art">${g.image?`<img src="${esc(g.image)}" alt="${esc(g.title)} cover" loading="lazy">`:`<strong>${esc(g.title)}</strong>`}<span class="spot-badge">${esc(badge)}</span></div><div class="spot-body"><h3>${esc(g.title)}</h3>${typeSelector(g)}<div class="price">${money(priceOf(g))}</div><div class="card-actions"><button data-action="details" data-id="${g.id}">Details</button><button class="primary" data-action="add" data-id="${g.id}">+ Add to cart</button></div></div></article>`}).join('');
+ document.querySelectorAll('[data-spot-tab]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.spotTab===spotTab));
+}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-spot-tab]');if(!b)return;spotTab=b.dataset.spotTab;renderSpotlight()});
 
-  function fmt(thb) {
-    if (currency === "THB") return "฿" + thb.toLocaleString();
-    return Math.round(thb * MMK_PER_THB).toLocaleString() + " Ks";
-  }
-
-  function buildCats() {
-    const cats = ["All", ...new Set(GAMES.map(g => g.category))];
-    $("cats").innerHTML = cats.map(c =>
-      `<button class="cat ${c === activeCat ? "active" : ""}" data-c="${c}">${c}</button>`
-    ).join("");
-    document.querySelectorAll(".cat").forEach(b => {
-      b.onclick = () => { activeCat = b.dataset.c; buildCats(); render(); };
-    });
-  }
-
-  function render() {
-    const q = $("search").value.trim().toLowerCase();
-    const sort = $("sort").value;
-    let list = GAMES.filter(g =>
-      (activeCat === "All" || g.category === activeCat) &&
-      (g.title + " " + g.category + " " + g.platform).toLowerCase().includes(q)
-    );
-    if (sort === "low") list.sort((a, b) => a.price - b.price);
-    if (sort === "high") list.sort((a, b) => b.price - a.price);
-    if (sort === "az") list.sort((a, b) => a.title.localeCompare(b.title));
-
-    $("count").textContent = list.length + " game" + (list.length === 1 ? "" : "s") + " found";
-    $("grid").innerHTML = list.length ? list.map(g => `
-      <div class="card">
-        <div class="img">${g.image ? `<img src="${g.image}" alt="${g.title}">` : g.emoji}</div>
-        <div class="body">
-          <h3>${g.title}</h3>
-          <div class="tags"><span class="tag">${g.category}</span><span class="tag">${g.platform}</span></div>
-          <div class="price">${fmt(g.price)}</div>
-        </div>
-      </div>`).join("") : `<div class="empty">No games match your search.</div>`;
-  }
-
-  $("search").oninput = render;
-  $("sort").onchange = render;
-  $("currency").onclick = () => {
-    currency = currency === "THB" ? "MMK" : "THB";
-    localStorage.setItem("currency", currency);
-    $("currency").textContent = currency;
-    render();
-  };
-
-  $("currency").textContent = currency;
-  buildCats();
-  render();
-</script>
-</body>
-</html>
+options();render();if(!storageOK)toast('Saved data could not be loaded. Your cart and favorites may not be saved.');
+</script></body></html>
