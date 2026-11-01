@@ -111,7 +111,7 @@ if ($action === 'claim') {
             'alreadyClaimed' => true,
             'code' => $existing['code'],
             'percent' => (int)$existing['percent'],
-            'message' => 'You have already claimed your 50% discount code with this IP.'
+            'message' => 'You have already claimed your 50% discount code (1 Per Customer).'
         ]);
     }
 
