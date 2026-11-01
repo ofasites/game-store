@@ -374,7 +374,7 @@ function receiptPdf(){
  add('xref\n0 '+n+'\n0000000000 65535 f \n');
  for(let i=1;i<n;i++)add(String(offs[i]).padStart(10,'0')+' 00000 n \n');
  add('trailer\n<< /Size '+n+' /Root 1 0 R >>\nstartxref\n'+xr+'\n%%EOF');
- const all=new Uint8Array(len);let o=0;parts.forEach(p=>{all.set(p,o);o+=p.length});
+ const all=new Uint8Array(len);let byteOffset=0;parts.forEach(p=>{all.set(p,byteOffset);byteOffset+=p.length});
  download(checkoutOrder.id+'-receipt.pdf',all,'application/pdf');
  toast('PDF receipt downloaded.');
 }
