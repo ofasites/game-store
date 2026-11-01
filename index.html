@@ -93,7 +93,7 @@ dialog::backdrop{background:#03041fe6}
 <p class="notice">600pack (Steam Deck / PC): 375,000 MMK / ฿2,700. Phantom Blade Zero, Fable and Crimson Desert: 35,000 MMK / ฿260 for both types. Offline Account: ฿140 / 20,000 MMK. Steam Access Key: ฿180 / 25,000 MMK. Confirm game availability with the seller. Listings with “Price pending” cannot be added to the cart. Cart and favorites stay in this browser. QR transfers are verified manually. Send your receipt and payment slip by email or Telegram; games are delivered through Telegram.</p><footer>© One For All Game Service <span id="rateNote" style="float:right"></span></footer></main>
 <dialog id="detail"><div class="modal-head"><h2>Game details</h2><button data-close="detail" aria-label="Close details">✕</button></div><div id="detailBody"></div></dialog>
 <dialog id="cart"><div class="modal-head"><h2>Your lineup</h2><button data-close="cart" aria-label="Close cart">✕</button></div><div id="cartBody"></div><div id="cartBottom"></div></dialog>
-<dialog id="order" class="checkout-dialog"><div class="modal-head"><div><span class="eyebrow">SECURE YOUR NEXT ADVENTURE</span><h2>Checkout</h2></div><button data-close="order" aria-label="Close checkout">✕</button></div><div class="checkout-steps">01 Review order <span>→</span> 02 Transfer <span>→</span> 03 Telegram delivery</div><div class="checkout-layout"><section><h3>Your order</h3><div id="checkoutItems"></div><div class="payment-panel" style="margin-top:18px"><label class="field" for="promoCode">Discount code<input id="promoCode" maxlength="40" placeholder="Enter your promo code" autocomplete="off" spellcheck="false"></label><div class="row"><button id="applyPromo" type="button">Apply code</button><button id="removePromo" type="button" hidden>Remove</button></div><p id="promoMessage" role="status" aria-live="polite" class="muted">One code per order. Steam & PC items only; Xbox and Software & Services are excluded. Subject to seller verification.</p></div><div class="checkout-line"><span>Subtotal</span><strong id="checkoutSubtotal"></strong></div><div class="checkout-line" id="discountRow" hidden><span id="discountLabel">Discount</span><strong id="checkoutDiscount"></strong></div><div class="total"><span>Total</span><span id="checkoutTotal" class="mint"></span></div><div class="notice">Your games will be delivered through <a href="https://t.me/oneforallgamekeys" target="_blank" rel="noopener">@oneforallgamekeys on Telegram ↗</a>. Send your order receipt and payment slip there.</div><label class="field">Your name<input id="buyerName" maxlength="80" autocomplete="name" placeholder="Name for your order"></label><label class="field">Telegram username<input id="buyerTelegram" maxlength="80" placeholder="@yourusername"></label><label class="field"><span id="payerAccountLabel">KPay account name</span><input id="transferReference" maxlength="120" autocomplete="name" placeholder="Enter the sender’s KPay account name"><small class="muted">Enter the name on the account you pay from.</small></label></section><section class="payment-panel"><h3 id="paymentTitle"></h3><p id="paymentRecipient" class="muted"></p><div id="paymentQr"></div><p id="paymentHelp" class="muted"></p><label class="row"><input id="transferDeclared" type="checkbox"> I have made the transfer</label><p class="muted">We check incoming funds before delivery. A slip or this checkbox does not verify payment.</p></section></div><div class="receipt-panel"><h3>Order receipt</h3><p id="receiptStatus" role="status" class="notice"></p><label class="field">Itemized total receipt<textarea id="orderText" readonly style="min-height:230px"></textarea></label><div class="row checkout-actions"><button id="emailConfirmation" class="primary">Confirm order</button><span id="orderSubmissionStatus" role="status" aria-live="polite"></span><button id="telegramConfirmation">Copy receipt & open Telegram ↗</button><button id="copyOrder">Copy receipt</button><button id="downloadOrder" class="primary">Download PDF receipt</button><button id="printReceipt">Print receipt</button></div><p class="muted">Confirm order sends your order details to our support inbox. Payment remains subject to verification. Send your payment slip in Telegram and receive delivery instructions there.</p></div></dialog>
+<dialog id="order" class="checkout-dialog"><div class="modal-head"><div><span class="eyebrow">SECURE YOUR NEXT ADVENTURE</span><h2>Checkout</h2></div><button data-close="order" aria-label="Close checkout">✕</button></div><div class="checkout-steps">01 Review order <span>→</span> 02 Transfer <span>→</span> 03 Telegram delivery</div><div class="checkout-layout"><section><h3>Your order</h3><div id="checkoutItems"></div><div class="payment-panel" style="margin-top:18px"><label class="field" for="promoCode">Discount code<input id="promoCode" maxlength="40" placeholder="Enter your promo code" autocomplete="off" spellcheck="false"></label><div class="row"><button id="applyPromo" type="button">Apply code</button><button id="removePromo" type="button" hidden>Remove</button></div><p id="promoMessage" role="status" aria-live="polite" class="muted">One code per order. Steam & PC items only; Xbox and Software & Services are excluded. Subject to seller verification.</p></div><div class="checkout-line"><span>Subtotal</span><strong id="checkoutSubtotal"></strong></div><div class="checkout-line" id="discountRow" hidden><span id="discountLabel">Discount</span><strong id="checkoutDiscount"></strong></div><div class="total"><span>Total</span><span id="checkoutTotal" class="mint"></span></div><div class="notice">Your games will be delivered through <a href="https://t.me/oneforallgamekeys" target="_blank" rel="noopener">@oneforallgamekeys on Telegram ↗</a>. Send your order receipt and payment slip there.</div><label class="field">Your name<input id="buyerName" maxlength="80" autocomplete="name" placeholder="Name for your order"></label><label class="field">Telegram username<input id="buyerTelegram" maxlength="80" placeholder="@yourusername"></label><label class="field"><span id="payerAccountLabel">KPay account name</span><input id="transferReference" maxlength="120" autocomplete="name" placeholder="Enter the sender’s KPay account name"><small class="muted">Enter the name on the account you pay from.</small></label></section><section class="payment-panel"><h3 id="paymentTitle"></h3><p id="paymentRecipient" class="muted"></p><div id="paymentQr"></div><p id="paymentHelp" class="muted"></p><label class="field" for="slipFile">Transfer completed screenshot<input id="slipFile" type="file" accept="image/jpeg,image/png,image/webp"><small class="muted">Upload a screenshot of your completed transfer (JPG, PNG or WebP). It is emailed to our team with your order.</small></label><div id="slipPreview" class="muted" role="status" aria-live="polite"></div><label class="row"><input id="transferDeclared" type="checkbox"> I have made the transfer</label><p class="muted">We check incoming funds before delivery. A slip or this checkbox does not verify payment.</p></section></div><div class="receipt-panel"><h3>Order receipt</h3><p id="receiptStatus" role="status" class="notice"></p><label class="field">Itemized total receipt<textarea id="orderText" readonly style="min-height:230px"></textarea></label><div class="row checkout-actions"><button id="emailConfirmation" class="primary">Confirm order</button><button id="telegramConfirmation">Get order ↗</button><button id="downloadOrder" class="primary">Download PDF receipt</button><span id="orderSubmissionStatus" role="status" aria-live="polite" style="flex-basis:100%"></span></div><p class="muted">Confirm order sends your order to our team. Then tap Get order to open Telegram (your receipt is copied for you), send your payment slip, and receive your games there. Payment remains subject to verification.</p></div></dialog>
 <dialog id="packGallery" class="pack-gallery-dialog"><div class="modal-head"><h2>600pack · Collection video</h2><button data-close="packGallery" aria-label="Close collection video">✕</button></div><p class="muted">Discover the collection · Steam Deck + PC</p><video id="packVideo" controls playsinline preload="none" aria-label="600pack collection video"><source src="assets/600pack/collection-video.mp4" type="video/mp4">Your browser cannot play this video. <a href="assets/600pack/collection-video.mp4">Download collection video</a>.</video><div class="pack-video-footer"><div><strong class="mint">375,000 MMK / ฿2,700</strong><div class="muted">600pack · Steam Deck + PC</div></div><button class="primary" data-action="add" data-id="special-600pack">Get 600pack →</button></div></dialog>
 <div id="toast" role="status" aria-live="polite"></div>
 <script>
@@ -206,7 +206,7 @@ function orderSummary(){
  const items=Object.entries(state.cart).filter(([id])=>game(id)).map(([id,quantity])=>{const g=game(id);return {title:g.title,type:g.productType||g.platform,quantity,unit:priceOf(g),promoEligible:promoEligible(g)}});
  if(!items.length||items.some(i=>!Number.isFinite(i.unit)||i.unit<=0)){toast('Please review your cart prices before checkout');return;}
  checkoutOrder={id:'OFA-'+new Date().toISOString().slice(0,10).replaceAll('-','')+'-'+(crypto.randomUUID?crypto.randomUUID().slice(0,8):Math.random().toString(36).slice(2,10)).toUpperCase(),date:new Date().toLocaleString(),currency:state.currency,items,total:items.reduce((a,i)=>a+i.unit*i.quantity,0)};
- $('emailConfirmation').disabled=false;$('emailConfirmation').textContent='Confirm order';$('orderSubmissionStatus').textContent='';['buyerName','buyerTelegram','transferReference'].forEach(id=>$(id).value='');$('transferDeclared').checked=false;
+ $('emailConfirmation').disabled=false;$('emailConfirmation').textContent='Confirm order';$('orderSubmissionStatus').textContent='';['buyerName','buyerTelegram','transferReference'].forEach(id=>$(id).value='');$('transferDeclared').checked=false;slipData=null;slipName='';$('slipFile').value='';$('slipPreview').textContent='';
  $('promoCode').value='';$('promoMessage').textContent='One code per order. Steam & PC items only; Xbox and Software & Services are excluded. Subject to seller verification.';
  checkoutOrder.subtotal=checkoutOrder.total;checkoutOrder.discount=0;checkoutOrder.promo=null;
  const o=checkoutOrder;
@@ -254,49 +254,110 @@ function updateReceipt(){if(!checkoutOrder)return;const o=checkoutOrder,declared
  $('orderText').value=['ONE FOR ALL GAME SERVICE','ORDER RECEIPT · '+o.id,'Created: '+o.date,'Status: '+status,'Customer: '+($('buyerName').value.trim()||'Not supplied'),'Telegram: '+($('buyerTelegram').value.trim()||'Not supplied'),'Payment method: '+(o.currency==='MMK'?'KBZPay':'PromptPay'),(o.currency==='MMK'?'KPay account name: ':'Thai banking account name: ')+($('transferReference').value.trim()||'Not supplied'),'','ITEMS',...o.items.map(i=>`${i.title} | ${i.type} | ${i.quantity} × ${receiptMoney(i.unit,o.currency)} = ${receiptMoney(i.unit*i.quantity,o.currency)}`),'','SUBTOTAL: '+receiptMoney(o.subtotal,o.currency),...(o.promo?['PROMO CODE: '+o.promo.code+' ('+o.promo.percent+'% off Steam & PC items only)','DISCOUNT: -'+receiptMoney(o.discount,o.currency)]:[]),'TOTAL: '+receiptMoney(o.total,o.currency),'Currency: '+o.currency,'','Delivery: Telegram @oneforallgamekeys','https://t.me/oneforallgamekeys','Email: oneforallgameservice@gmail.com','','Send this receipt and your payment slip to our Telegram chat or email. We verify funds and availability before delivering your games through Telegram. This receipt records the order total; it is not proof of a verified payment.'].join('\n');
 }
 ['buyerName','buyerTelegram','transferReference','transferDeclared'].forEach(id=>$(id).addEventListener('input',updateReceipt));
+
+let slipData=null,slipName='';
+function loadImg(file){return new Promise((res,rej)=>{const u=URL.createObjectURL(file),i=new Image();i.onload=()=>{URL.revokeObjectURL(u);res(i);};i.onerror=()=>{URL.revokeObjectURL(u);rej(new Error('bad'));};i.src=u;});}
+async function compressSlip(file){
+ const img=await loadImg(file),max=1600,k=Math.min(1,max/Math.max(img.naturalWidth,img.naturalHeight));
+ const c=document.createElement('canvas');c.width=Math.max(1,Math.round(img.naturalWidth*k));c.height=Math.max(1,Math.round(img.naturalHeight*k));
+ const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(img,0,0,c.width,c.height);
+ for(const q of [0.82,0.7,0.55,0.42]){const d=c.toDataURL('image/jpeg',q);if(d.length*0.75<1400000)return d.split(',')[1];}
+ throw new Error('large');
+}
+$('slipFile').addEventListener('change',async()=>{
+ const f=$('slipFile').files[0];slipData=null;slipName='';$('slipPreview').textContent='';
+ if(!f)return;
+ if(!/^image\/(jpeg|png|webp)$/.test(f.type)){$('slipFile').value='';$('slipPreview').textContent='Please choose a JPG, PNG or WebP image.';return;}
+ if(f.size>15000000){$('slipFile').value='';$('slipPreview').textContent='Image is too large (max 15 MB).';return;}
+ $('slipPreview').textContent='Preparing screenshot…';
+ try{slipData=await compressSlip(f);slipName=f.name.replace(/[^A-Za-z0-9._-]/g,'_').slice(0,60)||'slip';$('slipPreview').textContent='Screenshot ready: '+f.name+' ('+Math.round(slipData.length*0.75/1024)+' KB)';}
+ catch(e){$('slipFile').value='';$('slipPreview').textContent='Could not read that image. Try another screenshot.';}
+});
 $('emailConfirmation').onclick=async()=>{
  if(!checkoutOrder)return;
  const button=$('emailConfirmation');if(button.disabled)return;
  for(const id of ['buyerName','buyerTelegram','transferReference']){if(!$(id).value.trim()){toast('Please enter your name, Telegram username and payer account name.');$(id).focus();return;}}
  if(!$('transferDeclared').checked){toast('Complete your transfer and tick the transfer checkbox before confirming.');return;}
+ if(!slipData){toast('Please upload your transfer completed screenshot first.');$('slipFile').focus();return;}
  updateReceipt();const snapshot=$('orderText').value,orderId=checkoutOrder.id;
  button.disabled=true;button.textContent='Submitting order…';$('orderSubmissionStatus').textContent='Sending your order notification…';
- const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),60000);
+ const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),90000);
  try{
- const response=await fetch('submit-order.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({orderId,receipt:snapshot}),signal:controller.signal});
+ const response=await fetch('submit-order.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({orderId,receipt:snapshot,slip:slipData,slipName}),signal:controller.signal});
  const data=await response.json();if(!response.ok||!data.ok)throw new Error(data.error||'Order submission failed.');
  $('orderSubmissionStatus').textContent='Order '+orderId+' submitted. Payment awaiting verification. Contact @oneforallgamekeys on Telegram for delivery.';
  button.textContent='Order submitted ✓';toast('Order submitted. Payment awaiting verification.');
  }catch(error){$('orderSubmissionStatus').textContent=error.name==='AbortError'?'Submission timed out. Contact us on Telegram with your order ID before retrying.':(error.message||'Unable to submit. Please contact us on Telegram.');button.disabled=false;button.textContent='Confirm order';}
  finally{clearTimeout(timeout);}
 };
-$('telegramConfirmation').onclick=async()=>{updateReceipt();const a=document.createElement('a');a.href='https://t.me/oneforallgamekeys';a.target='_blank';a.rel='noopener';a.click();try{await navigator.clipboard.writeText($('orderText').value);toast('Receipt copied. Paste it in Telegram and attach your slip.');}catch(e){$('orderText').focus();$('orderText').select();toast('Select Copy receipt or download it, then send it in Telegram.');}};
-$('printReceipt').onclick=()=>{updateReceipt();window.print()};
+$('telegramConfirmation').onclick=async()=>{updateReceipt();const a=document.createElement('a');a.href='https://t.me/oneforallgamekeys';a.target='_blank';a.rel='noopener';a.click();try{await navigator.clipboard.writeText($('orderText').value);toast('Telegram opened. Receipt copied: paste it and attach your payment slip.');}catch(e){$('orderText').focus();$('orderText').select();toast('Telegram opened. Download the PDF receipt and send it with your payment slip.');}};
 document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.close)$(b.dataset.close).close();const id=b.dataset.id;if(b.dataset.action==='add')add(id);if(b.dataset.action==='details')showDetails(id);if(b.dataset.action==='save'){state.saved=state.saved.includes(id)?state.saved.filter(x=>x!==id):[...state.saved,id];persist();render()}if(b.dataset.category!==undefined){category=b.dataset.category;limit=8;options();render()}if(b.dataset.qty){const n=(state.cart[id]||0)+Number(b.dataset.qty);if(n<=0)delete state.cart[id];else state.cart[id]=Math.min(99,n);persist();cartRender()}if(b.dataset.remove){delete state.cart[b.dataset.remove];persist();cartRender()}if(b.id==='checkout')orderSummary();});
 ['search','min','max'].forEach(id=>$(id).oninput=()=>{limit=8;render()});['platform','sort'].forEach(id=>$(id).onchange=()=>{limit=8;render()});$('more').onclick=()=>{limit+=8;render()};$('reset').onclick=()=>{['search','min','max','platform'].forEach(id=>$(id).value='');$('sort').value='default';category='All';savedOnly=false;limit=8;options();render()};$('favorites').onclick=()=>{savedOnly=!savedOnly;limit=8;render()};$('currency').onclick=()=>{if(state.currency==='MMK'&&state.cart['special-600pack']){toast('600pack is priced in MMK. Remove it from the cart to switch to THB.');return;}state.currency=state.currency==='THB'?'MMK':'THB';['min','max'].forEach(id=>$(id).value='');if($('detail').open)$('detail').close();persist();render()};$('cartBtn').onclick=()=>{cartRender();$('cart').showModal()};
-$('copyOrder').onclick=async()=>{try{await navigator.clipboard.writeText($('orderText').value);toast('Summary copied')}catch(e){$('orderText').focus();$('orderText').select();toast('Copy unavailable here. The summary is selected; use Copy or download it.')}};
 function receiptPdf(){
  if(!checkoutOrder){toast('Open checkout first.');return}
  updateReceipt();
- const W=1240,H=1754,M=90,LH=36,FONT='24px "Montserrat","Noto Sans Myanmar","Noto Sans Thai","Segoe UI",Arial,sans-serif';
- const mc=document.createElement('canvas').getContext('2d');mc.font=FONT;
- const wrap=t=>{if(!t)return[''];const out=[];let cur='';const maxW=W-2*M;
-  const push=w=>{if(mc.measureText(cur+w).width<=maxW){cur+=w;return}
-   if(cur.trim())out.push(cur.trimEnd());cur='';
-   if(mc.measureText(w).width<=maxW){cur=w.trimStart();return}
-   for(const ch of w){if(mc.measureText(cur+ch).width>maxW){out.push(cur);cur=''}cur+=ch}};
-  t.split(/(\s+)/).forEach(push);out.push(cur);return out};
- const lines=[];$('orderText').value.split('\n').forEach(l=>wrap(l).forEach(x=>lines.push(x)));
- const top=190,perPage=Math.floor((H-top-M)/LH),pages=[];
- for(let i=0;i<lines.length;i+=perPage)pages.push(lines.slice(i,i+perPage));
- const jpgs=pages.map((pl,pi)=>{const c=document.createElement('canvas');c.width=W;c.height=H;const g=c.getContext('2d');
-  g.fillStyle='#fff';g.fillRect(0,0,W,H);g.fillStyle='#17185f';g.fillRect(0,0,W,140);
-  g.fillStyle='#fff';g.font='bold 40px "Montserrat",Arial,sans-serif';g.textBaseline='middle';g.fillText('ONE FOR ALL GAME SERVICE',M,60);
-  g.font='22px "Montserrat",Arial,sans-serif';g.fillStyle='#c9c6ff';g.fillText('Order receipt · '+checkoutOrder.id,M,104);
-  g.textBaseline='alphabetic';g.font=FONT;g.fillStyle='#111';
-  pl.forEach((l,i)=>{const hd=/^(ITEMS|TOTAL:|ORDER RECEIPT|Status:)/.test(l);g.font=hd?'bold '+FONT:FONT;g.fillText(l,M,top+i*LH)});
-  g.font='18px Arial,sans-serif';g.fillStyle='#777';g.fillText('Page '+(pi+1)+' of '+pages.length+' · Not proof of payment until verified by the seller.',M,H-50);
-  const b=atob(c.toDataURL('image/jpeg',0.92).split(',')[1]);const u=new Uint8Array(b.length);for(let k=0;k<b.length;k++)u[k]=b.charCodeAt(k);return u});
+ const o=checkoutOrder,declared=$('transferDeclared').checked;
+ const statusText=declared?'TRANSFER REPORTED · AWAITING VERIFICATION':'AWAITING PAYMENT · NOT PAID';
+ const F='"Montserrat","Noto Sans Myanmar","Noto Sans Thai","Segoe UI",Arial,sans-serif';
+ const W=1240,H=1754,M=80,CW=W-2*M,pages=[];let g,y;
+ const rr=(x,yy,w,h,r)=>{g.beginPath();g.moveTo(x+r,yy);g.arcTo(x+w,yy,x+w,yy+h,r);g.arcTo(x+w,yy+h,x,yy+h,r);g.arcTo(x,yy+h,x,yy,r);g.arcTo(x,yy,x+w,yy,r);g.closePath()};
+ const grad=(x0,x1,a,b)=>{const q=g.createLinearGradient(x0,0,x1,0);q.addColorStop(0,a);q.addColorStop(1,b);return q};
+ const fit=(t,w)=>{t=String(t);if(g.measureText(t).width<=w)return t;while(t.length>1&&g.measureText(t+'…').width>w)t=t.slice(0,-1);return t+'…'};
+ const wrapText=(t,w,max)=>{const out=[];let cur='';for(const word of String(t).split(/(\s+)/)){if(g.measureText(cur+word).width<=w){cur+=word;continue}if(cur.trim())out.push(cur.trim());cur='';if(g.measureText(word).width<=w){cur=word.trimStart();continue}for(const ch of word){if(g.measureText(cur+ch).width>w){out.push(cur);cur=''}cur+=ch}}if(cur.trim())out.push(cur.trim());if(out.length>max){out.length=max;out[max-1]=fit(out[max-1]+'…',w)}return out.length?out:['']};
+ const INK='#17151f',MUTED='#8a8697',SOFT='#55516a',LINE='#e6e3ee',CARD='#f6f5f9',ACC='#6a46c9';
+ const newPage=()=>{const c=document.createElement('canvas');c.width=W;c.height=H;g=c.getContext('2d');pages.push(c);
+  g.fillStyle='#ffffff';g.fillRect(0,0,W,H);
+  g.textBaseline='alphabetic';g.textAlign='left';
+  g.fillStyle=INK;g.font='italic 800 52px '+F;g.fillText('ONE',M,M+50);const ow=g.measureText('ONE').width;g.fillStyle=ACC;g.fillText('FORALL',M+ow,M+50);
+  g.fillStyle=MUTED;g.font='600 18px '+F;if(g.letterSpacing!==undefined)g.letterSpacing='6px';g.fillText('GAME SERVICE',M+2,M+84);
+  g.textAlign='right';g.fillStyle=INK;g.font='italic 800 34px '+F;g.fillText('ORDER RECEIPT',W-M,M+46);g.fillStyle=MUTED;g.font='600 20px '+F;g.fillText(o.id,W-M,M+84);
+  if(g.letterSpacing!==undefined)g.letterSpacing='0px';g.textAlign='left';
+  g.fillStyle=LINE;g.fillRect(M,M+110,CW,2);g.fillStyle=ACC;g.fillRect(M,M+109,140,4);
+  y=M+160};
+ const label=(t,x,yy)=>{g.fillStyle=MUTED;g.font='700 15px '+F;if(g.letterSpacing!==undefined)g.letterSpacing='3px';g.fillText(t.toUpperCase(),x,yy);if(g.letterSpacing!==undefined)g.letterSpacing='0px'};
+ newPage();
+ // status pill
+ g.font='800 20px '+F;const sw=g.measureText(statusText).width+64;rr(M,y,sw,52,26);g.fillStyle=declared?'#e6f6ef':'#fff4e0';g.fill();g.lineWidth=2;g.strokeStyle=declared?'#2fa36b':'#e0a43a';g.stroke();
+ g.fillStyle=declared?'#1d7a4f':'#9a6200';g.beginPath();g.arc(M+28,y+26,7,0,7);g.fill();g.fillText(statusText,M+46,y+33);y+=92;
+ // details card
+ const cardH=250;rr(M,y,CW,cardH,24);g.fillStyle=CARD;g.fill();g.lineWidth=2;g.strokeStyle=LINE;g.stroke();
+ const colW=(CW-90)/2,cx=[M+36,M+54+colW];
+ const payLabel=o.currency==='MMK'?'KPay account name':'Thai bank account name';
+ const info=[['Customer',$('buyerName').value.trim()||'Not supplied'],['Telegram',$('buyerTelegram').value.trim()||'Not supplied'],['Created',o.date],['Payment method',o.currency==='MMK'?'KBZPay (MMK)':'PromptPay (THB)'],[payLabel,$('transferReference').value.trim()||'Not supplied'],['Currency',o.currency]];
+ info.forEach((r,i)=>{const col=i%2,row=Math.floor(i/2),x=cx[col],yy=y+52+row*76;label(r[0],x,yy);g.fillStyle=INK;g.font='600 25px '+F;g.fillText(fit(r[1],colW),x,yy+34)});
+ y+=cardH+50;
+ // items
+ const colX={item:M+30,type:M+560,qty:M+800,price:M+CW-30};
+ const head=()=>{label('Item',colX.item,y);label('Type',colX.type,y);label('Qty',colX.qty,y);g.textAlign='right';label('Total',colX.price,y);g.textAlign='left';g.fillStyle=INK;g.fillRect(M,y+18,CW,2);y+=24};
+ g.font='700 26px '+F;g.fillStyle=INK;g.fillText('Your order',M,y);y+=46;head();
+ o.items.forEach(it=>{
+  g.font='700 24px '+F;const tl=wrapText(it.title,500,2);g.font='500 22px '+F;const yl=wrapText(it.type,220,2);
+  const rowH=Math.max(tl.length,yl.length)*32+32;
+  if(y+rowH>H-M-120){newPage();head()}
+  g.fillStyle=INK;g.font='700 24px '+F;tl.forEach((l,i)=>g.fillText(l,colX.item,y+36+i*32));
+  g.fillStyle=SOFT;g.font='500 22px '+F;yl.forEach((l,i)=>g.fillText(l,colX.type,y+36+i*32));
+  g.fillText('× '+it.quantity,colX.qty,y+36);
+  g.textAlign='right';g.fillStyle=INK;g.font='700 24px '+F;g.fillText(receiptMoney(it.unit*it.quantity,o.currency),colX.price,y+36);g.textAlign='left';
+  g.fillStyle=LINE;g.fillRect(M,y+rowH-2,CW,2);y+=rowH});
+ y+=30;
+ // totals
+ const lines=[['Subtotal',receiptMoney(o.subtotal,o.currency)]];if(o.promo)lines.push(['Promo '+o.promo.code+' ('+o.promo.percent+'% · Steam & PC only)','-'+receiptMoney(o.discount,o.currency)]);
+ const totH=lines.length*48+120;if(y+totH+330>H-M){newPage()}
+ const tx=W-M-560;rr(tx,y,560,totH,22);g.fillStyle=CARD;g.fill();g.lineWidth=2;g.strokeStyle=LINE;g.stroke();
+ let ty=y+52;lines.forEach(l=>{g.font='500 21px '+F;g.fillStyle=SOFT;g.fillText(fit(l[0],330),tx+30,ty);g.textAlign='right';g.fillStyle=INK;g.font='700 22px '+F;g.fillText(l[1],tx+530,ty);g.textAlign='left';ty+=48});
+ g.fillStyle='#d9d6e2';g.fillRect(tx+30,ty-24,500,2);
+ g.fillStyle=INK;g.font='italic 800 24px '+F;g.fillText('TOTAL',tx+30,ty+30);g.textAlign='right';g.fillStyle=ACC;g.font='italic 800 44px '+F;g.fillText(receiptMoney(o.total,o.currency),tx+530,ty+34);g.textAlign='left';
+ y+=totH+50;
+ // delivery
+ const dH=230;rr(M,y,CW,dH,24);g.fillStyle='#1b1a24';g.fill();
+ g.fillStyle='#a9a4c4';g.font='700 15px '+F;if(g.letterSpacing!==undefined)g.letterSpacing='3px';g.fillText('DELIVERY',M+36,y+56);if(g.letterSpacing!==undefined)g.letterSpacing='0px';
+ g.fillStyle='#fff';g.font='italic 800 34px '+F;g.fillText('Get your games on Telegram',M+36,y+104);
+ g.fillStyle='#e4e1f2';g.font='600 24px '+F;g.fillText('@oneforallgamekeys  ·  t.me/oneforallgamekeys',M+36,y+148);
+ g.font='500 20px '+F;g.fillStyle='#a9a4c4';g.fillText('Send this receipt and your payment slip. Email: oneforallgameservice@gmail.com',M+36,y+186);
+ y+=dH+36;
+ g.font='500 18px '+F;g.fillStyle='#7a7688';wrapText('This receipt records the order total only. It is not proof of payment. We verify incoming funds and availability before delivering your games through Telegram.',CW,3).forEach((l,i)=>g.fillText(l,M,y+i*28));
+ pages.forEach((c,i)=>{const q=c.getContext('2d');q.textAlign='center';q.fillStyle='#9a96aa';q.font='500 17px '+F;q.fillText('One For All Game Service · Page '+(i+1)+' of '+pages.length,W/2,H-44)});
+ const jpgs=pages.map(c=>{const b=atob(c.toDataURL('image/jpeg',0.93).split(',')[1]);const u=new Uint8Array(b.length);for(let k=0;k<b.length;k++)u[k]=b.charCodeAt(k);return u});
  const enc=new TextEncoder(),parts=[],offs=[];let len=0;
  const add=d=>{const u=typeof d==='string'?enc.encode(d):d;parts.push(u);len+=u.length};
  const obj=(n,fn)=>{offs[n]=len;add(n+' 0 obj\n');fn();add('\nendobj\n')};

@@ -8,12 +8,22 @@ function respond(int $status, array $data): void { http_response_code($status); 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') respond(405, ['ok'=>false,'error'=>'Use checkout to submit an order.']);
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
 if ($origin !== '' && !in_array($origin, ['https://oneforallgameservice.com','https://www.oneforallgameservice.com'], true)) respond(403,['ok'=>false,'error'=>'Invalid origin.']);
-if ((int)($_SERVER['CONTENT_LENGTH'] ?? 0) > 30000) respond(413,['ok'=>false,'error'=>'Order too large.']);
-$input = json_decode(file_get_contents('php://input', false, null, 0, 30001), true);
+if ((int)($_SERVER['CONTENT_LENGTH'] ?? 0) > 2500000) respond(413,['ok'=>false,'error'=>'Order too large.']);
+$input = json_decode(file_get_contents('php://input', false, null, 0, 2500001), true);
 if (!is_array($input)) respond(400,['ok'=>false,'error'=>'Invalid order.']);
 $id = $input['orderId'] ?? '';
 $receipt = $input['receipt'] ?? '';
 if (!is_string($id) || !preg_match('/^[A-Za-z0-9_-]{5,80}$/D', $id) || !is_string($receipt) || strlen($receipt)<80 || strlen($receipt)>25000) respond(400,['ok'=>false,'error'=>'Missing order details.']);
+$slipBytes = null; $slipExt = null;
+if (isset($input['slip']) && $input['slip'] !== '') {
+    if (!is_string($input['slip']) || strlen($input['slip']) > 2000000) respond(413,['ok'=>false,'error'=>'Screenshot too large.']);
+    $raw = base64_decode($input['slip'], true);
+    if ($raw === false || strlen($raw) < 500 || strlen($raw) > 1500000) respond(400,['ok'=>false,'error'=>'Invalid screenshot.']);
+    $info = @getimagesizefromstring($raw);
+    $types = [IMAGETYPE_JPEG=>'jpg', IMAGETYPE_PNG=>'png', IMAGETYPE_WEBP=>'webp'];
+    if (!$info || !isset($types[$info[2]])) respond(400,['ok'=>false,'error'=>'Screenshot must be a JPG, PNG or WebP image.']);
+    $slipBytes = $raw; $slipExt = $types[$info[2]];
+}
 $private = dirname(__DIR__) . '/ofa-private';
 $configFile = $private . '/mail-config.php';
 if (!is_file($configFile)) respond(503,['ok'=>false,'error'=>'Order email is not configured. Please contact us on Telegram.']);
@@ -58,13 +68,25 @@ try {
     smtpWrite($stream,'RCPT TO:<oneforallgameservice@gmail.com>',[250,251]);
     smtpWrite($stream,'DATA',[354]);
     $body="NEW CUSTOMER ORDER — PAYMENT NOT VERIFIED\n\n".$receipt."\n\nCustomer-submitted details. Verify catalog prices, discount eligibility and incoming payment before delivery.\nDelivery: Telegram @oneforallgamekeys\n";
-    $message='Date: '.gmdate('D, d M Y H:i:s').' +0000'."\r\n".
+    $slipNote = $slipBytes !== null ? "\n\nPayment screenshot attached: slip-".$id.".".$slipExt."\n" : "\n\nNo payment screenshot attached.\n";
+    $body="NEW CUSTOMER ORDER — PAYMENT NOT VERIFIED\n\n".$receipt.$slipNote."\nCustomer-submitted details. Verify catalog prices, discount eligibility and incoming payment before delivery.\nDelivery: Telegram @oneforallgamekeys\n";
+    $headers='Date: '.gmdate('D, d M Y H:i:s').' +0000'."\r\n".
         'From: One For All Game Service <ofasupport@oneforallgameservice.com>'."\r\n".
         'To: oneforallgameservice@gmail.com'."\r\n".
         'Subject: New order '.$id.' - payment awaiting verification'."\r\n".
         'Message-ID: <'.bin2hex(random_bytes(16)).'@oneforallgameservice.com>'."\r\n".
-        "MIME-Version: 1.0\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: base64\r\n\r\n".
-        rtrim(chunk_split(base64_encode($body),76,"\r\n"));
+        "MIME-Version: 1.0\r\n";
+    $textPart = chunk_split(base64_encode($body),76,"\r\n");
+    if ($slipBytes !== null) {
+        $boundary = 'ofa_'.bin2hex(random_bytes(12));
+        $mime = ['jpg'=>'image/jpeg','png'=>'image/png','webp'=>'image/webp'][$slipExt];
+        $message = $headers."Content-Type: multipart/mixed; boundary=\"".$boundary."\"\r\n\r\n".
+            "--".$boundary."\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: base64\r\n\r\n".$textPart.
+            "--".$boundary."\r\nContent-Type: ".$mime."; name=\"slip-".$id.".".$slipExt."\"\r\nContent-Transfer-Encoding: base64\r\nContent-Disposition: attachment; filename=\"slip-".$id.".".$slipExt."\"\r\n\r\n".chunk_split(base64_encode($slipBytes),76,"\r\n").
+            "--".$boundary."--";
+    } else {
+        $message = $headers."Content-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: base64\r\n\r\n".rtrim($textPart);
+    }
     smtpWrite($stream,$message."\r\n.",[250]);
     fclose($stream);
     $ledger[$orderKey]=$now;
