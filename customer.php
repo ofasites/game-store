@@ -31,7 +31,8 @@ try {
 require_once __DIR__.'/rewards.php';
 rwDb();
 function customer(): ?array { global $db; if(empty($_SESSION['uid'])) return null; $q=$db->prepare('SELECT id,email,name,telegram,verified FROM customers WHERE id=?'); $q->execute([$_SESSION['uid']]); $u=$q->fetch(PDO::FETCH_ASSOC); if(!$u)return null; $u['verified']=(bool)$u['verified']; unset($u['id']); return $u; }
-if ($_SERVER['REQUEST_METHOD']==='GET') reply(200,['ok'=>true,'csrf'=>$_SESSION['csrf'],'customer'=>customer()]);
+if(empty($_SESSION['google_nonce']))$_SESSION['google_nonce']=bin2hex(random_bytes(32));
+if ($_SERVER['REQUEST_METHOD']==='GET') reply(200,['ok'=>true,'csrf'=>$_SESSION['csrf'],'googleNonce'=>$_SESSION['google_nonce'],'customer'=>customer()]);
 if ($_SERVER['REQUEST_METHOD']!=='POST') reply(405,['error'=>'Method not allowed.']);
 if ((int)($_SERVER['CONTENT_LENGTH']??0)>12000) reply(413,['error'=>'Request too large.']);
 $in=json_decode(file_get_contents('php://input',false,null,0,12001),true);
@@ -71,6 +72,40 @@ function emailLink(string $email,string $kind,string $token): void {
 function issue(int $uid,string $kind,string $email): void { global $db; $token=bin2hex(random_bytes(32));$q=$db->prepare('INSERT INTO customer_tokens(token,customer,kind,expires) VALUES(?,?,?,?)');$q->execute([hash('sha256',$token),$uid,$kind,time()+($kind==='reset'?1800:86400)]);try{emailLink($email,$kind,$token);}catch(Throwable $e){$db->prepare('DELETE FROM customer_tokens WHERE token=?')->execute([hash('sha256',$token)]);throw $e;} }
 try {
  $action=text($in,'action',30);
+ if($action==='google'){
+ limit('google',20,900);
+ $credential=text($in,'credential',10000);
+ if(!preg_match('/^[A-Za-z0-9_.-]+$/D',$credential))reply(400,['error'=>'Invalid Google sign-in response.']);
+ if(!function_exists('curl_init'))reply(503,['error'=>'Google sign-in requires PHP cURL. Use email login for now.']);
+ $ch=curl_init('https://oauth2.googleapis.com/tokeninfo?id_token='.rawurlencode($credential));
+ curl_setopt_array($ch,[CURLOPT_RETURNTRANSFER=>true,CURLOPT_CONNECTTIMEOUT=>5,CURLOPT_TIMEOUT=>15,CURLOPT_SSL_VERIFYPEER=>true,CURLOPT_SSL_VERIFYHOST=>2,CURLOPT_FOLLOWLOCATION=>false]);
+ $raw=curl_exec($ch);$status=curl_getinfo($ch,CURLINFO_HTTP_CODE);curl_close($ch);
+ if($raw===false||$status!==200)reply(401,['error'=>'Google could not verify this sign-in. Please try again.']);
+ $g=json_decode($raw,true);
+ if(!is_array($g)||($g['aud']??'')!=='915039082117-4eu73pdmohp7tqk7bbpvevdjel23j07s.apps.googleusercontent.com'||!in_array($g['iss']??'',['accounts.google.com','https://accounts.google.com'],true)||(int)($g['exp']??0)<=time()||(isset($g['iat'])&&(int)$g['iat']>time()+120)||!in_array($g['email_verified']??false,[true,'true'],true)||empty($g['sub'])||strlen((string)$g['sub'])>255||!hash_equals((string)$_SESSION['google_nonce'],(string)($g['nonce']??'')))reply(401,['error'=>'Google sign-in validation failed. Refresh and try again.']);
+ $email=strtolower((string)($g['email']??''));if(!filter_var($email,FILTER_VALIDATE_EMAIL))reply(400,['error'=>'Google did not provide a valid email.']);
+ $db->exec('CREATE TABLE IF NOT EXISTS customer_google (subject TEXT PRIMARY KEY, customer INTEGER NOT NULL UNIQUE)');
+ $db->beginTransaction();
+ $q=$db->prepare('SELECT customer FROM customer_google WHERE subject=?');$q->execute([$g['sub']]);$linked=$q->fetchColumn();
+ if(!empty($_SESSION['uid'])){
+ $current=customer();if(!$current||$current['email']!==$email){$db->rollBack();reply(409,['error'=>'Choose the Google account matching your current account email.']);}
+ if($linked&&(int)$linked!==(int)$_SESSION['uid']){$db->rollBack();reply(409,['error'=>'Google account is already linked to another customer.']);}
+ $uid=(int)$_SESSION['uid'];
+ $q=$db->prepare('SELECT subject FROM customer_google WHERE customer=?');$q->execute([$uid]);$subject=$q->fetchColumn();
+ if($subject&&$subject!==$g['sub']){$db->rollBack();reply(409,['error'=>'A different Google account is already linked.']);}
+ }elseif($linked){$uid=(int)$linked;}
+ else{
+ $q=$db->prepare('SELECT id FROM customers WHERE email=?');$q->execute([$email]);
+ if($q->fetchColumn()){$db->rollBack();reply(409,['error'=>'An account already uses this email. Log in with your password first, then select Link Google in your profile. Use Forgot password if needed.']);}
+ $name=substr(trim((string)($g['name']??'Customer')),0,80);if($name==='')$name='Customer';
+ $db->prepare('INSERT INTO customers(email,password,name,verified,created) VALUES(?,?,?,?,?)')->execute([$email,password_hash(bin2hex(random_bytes(32)),PASSWORD_DEFAULT),$name,1,time()]);$uid=(int)$db->lastInsertId();
+ }
+ $db->prepare('INSERT OR IGNORE INTO customer_google(subject,customer) VALUES(?,?)')->execute([$g['sub'],$uid]);
+ $db->prepare('UPDATE customers SET verified=1 WHERE id=? AND email=?')->execute([$uid,$email]);
+ $db->commit();session_regenerate_id(true);$_SESSION['uid']=$uid;
+ reply(200,['ok'=>true,'customer'=>customer(),'message'=>'Google connected. You are logged in.']);
+ }
+
  if(in_array($action,['rewards','redeem','coupon'],true)){
  if(empty($_SESSION['uid'])||!customer())reply(401,['error'=>'Please log in to view your rewards.']);
  $uid=(int)$_SESSION['uid'];
