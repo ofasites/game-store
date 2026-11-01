@@ -82,7 +82,21 @@ try {
  $raw=curl_exec($ch);$status=curl_getinfo($ch,CURLINFO_HTTP_CODE);curl_close($ch);
  if($raw===false||$status!==200)reply(401,['error'=>'Google could not verify this sign-in. Please try again.']);
  $g=json_decode($raw,true);
- if(!is_array($g)||($g['aud']??'')!=='915039082117-4eu73pdmohp7tqk7bbpvevdjel23j07s.apps.googleusercontent.com'||!in_array($g['iss']??'',['accounts.google.com','https://accounts.google.com'],true)||(int)($g['exp']??0)<=time()||(isset($g['iat'])&&(int)$g['iat']>time()+120)||!in_array($g['email_verified']??false,[true,'true'],true)||empty($g['sub'])||strlen((string)$g['sub'])>255||!hash_equals((string)$_SESSION['google_nonce'],(string)($g['nonce']??'')))reply(401,['error'=>'Google sign-in validation failed. Refresh and try again.']);
+ // tokeninfo validates this exact token; optional claims such as nonce may
+ // only be present in its signed payload. Never trust this payload before
+ // Google has accepted the token above.
+ $parts=explode('.',$credential);
+ $payload=count($parts)===3?$parts[1]:'';
+ $payload.=str_repeat('=',(4-strlen($payload)%4)%4);
+ $decoded=base64_decode(strtr($payload,'-_','+/'),true);
+ $claims=$decoded===false?null:json_decode($decoded,true);
+ if(!is_array($claims))reply(401,['error'=>'Invalid Google sign-in token. Please try again.']);
+ $expectedNonce=(string)($_SESSION['google_nonce']??'');
+ if($expectedNonce===''||!is_string($claims['nonce']??null)||!hash_equals($expectedNonce,$claims['nonce'])){
+  error_log('OFA Google validation: session nonce mismatch');
+  reply(401,['error'=>'Your Google sign-in session expired. Refresh this page, then try Google login again.']);
+ }
+ if(!is_array($g)||($g['aud']??'')!=='915039082117-4eu73pdmohp7tqk7bbpvevdjel23j07s.apps.googleusercontent.com'||!in_array($g['iss']??'',['accounts.google.com','https://accounts.google.com'],true)||(int)($g['exp']??0)<=time()||(isset($g['iat'])&&(int)$g['iat']>time()+120)||!in_array($g['email_verified']??false,[true,'true'],true)||empty($g['sub'])||strlen((string)$g['sub'])>255)reply(401,['error'=>'Google sign-in validation failed. Refresh and try again.']);
  $email=strtolower((string)($g['email']??''));if(!filter_var($email,FILTER_VALIDATE_EMAIL))reply(400,['error'=>'Google did not provide a valid email.']);
  $db->exec('CREATE TABLE IF NOT EXISTS customer_google (subject TEXT PRIMARY KEY, customer INTEGER NOT NULL UNIQUE)');
  $db->beginTransaction();
