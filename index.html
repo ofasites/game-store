@@ -232,7 +232,44 @@ dialog::backdrop{background:#03041fe6}
   }
 }
 
-</style><style>#accountRewards{margin-top:22px;border-top:1px solid #454263;padding-top:18px} .reward-balance,.reward-order{background:rgba(0,0,0,.18);border:1px solid #454263;border-radius:12px;padding:16px;margin:12px 0}.reward-balance strong{font-size:28px}.reward-order small{display:block;margin-top:7px}#rewardContent code{overflow-wrap:anywhere}#rewardContent .account-actions{flex-wrap:wrap}#accountDialog{max-height:90vh;overflow:auto}</style></head><body>
+</style><style>#accountRewards{margin-top:22px;border-top:1px solid #454263;padding-top:18px} .reward-balance,.reward-order{background:rgba(0,0,0,.18);border:1px solid #454263;border-radius:12px;padding:16px;margin:12px 0}.reward-balance strong{font-size:28px}.reward-order small{display:block;margin-top:7px}#rewardContent code{overflow-wrap:anywhere}#rewardContent .account-actions{flex-wrap:wrap}#accountDialog{max-height:90vh;overflow:auto}</style><style id="mobileLayoutFix">
+@media(max-width:760px){
+ header{position:static}
+ .nav{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;padding:12px 14px;align-items:stretch}
+ .nav .brand{grid-column:1/-1;display:flex;align-items:baseline;justify-content:center;gap:8px;margin:0;width:auto;font-size:22px;text-align:center}
+ .nav .brand small{margin-left:0!important}
+ .nav .store-sections{grid-column:1/-1;order:0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;margin:0;width:100%}
+ .nav .store-sections button{padding:10px 4px;font-size:12px;line-height:1.2;display:flex;align-items:center;justify-content:center;text-align:center;min-height:44px}
+ #guideBtn{grid-column:1/4}
+ #accountBtn{grid-column:4/7}
+ #currency{grid-column:1/3}
+ #favorites{grid-column:3/5}
+ #cartBtn{grid-column:5/7}
+ .nav>button{font-size:12px;padding:10px 4px;min-height:42px;white-space:nowrap;text-align:center}
+ .opening-banner{padding:14px 14px}
+ .opening-banner-wrap{flex-direction:column;align-items:center;text-align:center;gap:12px}
+ .opening-banner-left{flex-direction:column;justify-content:center;gap:8px}
+ .opening-title{display:block;font-size:14px;line-height:1.4}
+ .opening-desc{display:block;font-size:12px;line-height:1.5;margin-top:3px}
+ .opening-timer{justify-content:center;gap:5px}
+ .opening-timer-block{min-width:52px;padding:6px 6px}
+ .opening-timer-val{font-size:18px}
+ .opening-banner-right{width:100%;justify-content:center;flex-wrap:wrap}
+ .opening-claim-btn{width:100%;justify-content:center;padding:12px 16px;font-size:14px}
+ .opening-code-pill{max-width:100%;justify-content:center;font-size:12px;word-break:break-all}
+ .hero{text-align:center;justify-content:center}
+ .hero h1{font-size:clamp(30px,10vw,40px);letter-spacing:-1px}
+ .wrap{padding:0 14px}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .grid .body{padding:12px}
+ .grid .body h2{font-size:14px;min-height:2.6em}
+ .grid .price{font-size:18px}
+ .grid .card-actions{flex-direction:column;gap:6px}
+ .grid .card-actions button{font-size:12px;padding:9px 4px}
+ .toolbar{grid-template-columns:1fr 1fr}
+}
+@media(max-width:380px){.grid{grid-template-columns:1fr}.nav>button{font-size:11px}}
+</style></head><body>
 <header><nav class="nav" aria-label="Store navigation"><div class="brand">ONE<span>FORALL</span><small class="muted" style="font-size:10px;letter-spacing:2px;margin-left:12px">GAME SERVICE</small></div><div id="storeSections" class="store-sections" role="group" aria-label="Shop sections"><button data-store-section="steam" aria-pressed="true">Steam &amp; PC</button><button data-store-section="xbox" aria-pressed="false">Xbox</button><button data-store-section="software" aria-pressed="false">Software &amp; Services</button></div><button id="guideBtn" type="button" title="How to use Offline Accounts">Offline Guide 📖</button><button id="accountBtn" type="button">Log in / Sign up</button><button id="currency" title="Switch currency">THB</button><button id="favorites" aria-pressed="false">♡ Saved <span id="savedCount">0</span></button><button id="cartBtn" class="primary">Cart · <span id="cartCount">0</span></button></nav></header>
 <aside class="opening-banner" id="openingBanner" aria-label="Grand Opening Special Promotion">
   <div class="opening-banner-wrap">
@@ -240,7 +277,7 @@ dialog::backdrop{background:#03041fe6}
       <span class="opening-badge">🎉 Grand Opening</span>
       <div>
         <span class="opening-title">Exclusive Opening Celebration · <strong>Claim 50% OFF</strong></span>
-        <span class="opening-desc muted"> — 1 promo code per visitor IP (Steam &amp; PC games)</span>
+        <span class="opening-desc muted"> — 1 promo code per customer (Steam &amp; PC games)</span>
       </div>
     </div>
     <div class="opening-timer" id="openingTimer" title="Promotion ending soon" aria-label="Countdown timer">
