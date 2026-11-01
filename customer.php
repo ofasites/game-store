@@ -28,6 +28,8 @@ try {
  $db->exec('DELETE FROM customer_tokens WHERE expires < '.time());
  $db->exec('DELETE FROM customer_limits WHERE expires < '.time());
 } catch(Throwable $e) { error_log('OFA customer storage: '.$e->getMessage()); reply(503,['error'=>'Customer accounts need server setup. Guest checkout is still available.']); }
+require_once __DIR__.'/rewards.php';
+rwDb();
 function customer(): ?array { global $db; if(empty($_SESSION['uid'])) return null; $q=$db->prepare('SELECT id,email,name,telegram,verified FROM customers WHERE id=?'); $q->execute([$_SESSION['uid']]); $u=$q->fetch(PDO::FETCH_ASSOC); if(!$u)return null; $u['verified']=(bool)$u['verified']; unset($u['id']); return $u; }
 if ($_SERVER['REQUEST_METHOD']==='GET') reply(200,['ok'=>true,'csrf'=>$_SESSION['csrf'],'customer'=>customer()]);
 if ($_SERVER['REQUEST_METHOD']!=='POST') reply(405,['error'=>'Method not allowed.']);
@@ -69,6 +71,16 @@ function emailLink(string $email,string $kind,string $token): void {
 function issue(int $uid,string $kind,string $email): void { global $db; $token=bin2hex(random_bytes(32));$q=$db->prepare('INSERT INTO customer_tokens(token,customer,kind,expires) VALUES(?,?,?,?)');$q->execute([hash('sha256',$token),$uid,$kind,time()+($kind==='reset'?1800:86400)]);try{emailLink($email,$kind,$token);}catch(Throwable $e){$db->prepare('DELETE FROM customer_tokens WHERE token=?')->execute([hash('sha256',$token)]);throw $e;} }
 try {
  $action=text($in,'action',30);
+ if(in_array($action,['rewards','redeem','coupon'],true)){
+ if(empty($_SESSION['uid'])||!customer())reply(401,['error'=>'Please log in to view your rewards.']);
+ $uid=(int)$_SESSION['uid'];
+ try{
+ if($action==='redeem'){limit('redeem',10,3600);$reward=rwRedeem($db,$uid,(int)($in['cost']??0));reply(200,['ok'=>true,'reward'=>$reward,'rewards'=>rwSummary($db,$uid)]);}
+ if($action==='coupon'){$coupon=rwCoupon($db,$uid,strtoupper(text($in,'code',80)));reply(200,['ok'=>true,'coupon'=>$coupon]);}
+ reply(200,['ok'=>true,'rewards'=>rwSummary($db,$uid)]);
+ }catch(InvalidArgumentException $e){reply(400,['error'=>$e->getMessage()]);}
+ }
+
  if($action==='logout'){ $_SESSION=[];session_regenerate_id(true);$_SESSION['csrf']=bin2hex(random_bytes(32));reply(200,['ok'=>true,'csrf'=>$_SESSION['csrf'],'customer'=>null]); }
  if($action==='profile'){
  if(!customer())reply(401,['error'=>'Please log in.']);
