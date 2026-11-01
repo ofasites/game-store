@@ -52,6 +52,11 @@ function rwOrder(PDO $db,array $in,?int $uid): array {
  if($code!==''){
  if($eligible<=0)throw new InvalidArgumentException('Coupons apply to Steam & PC items only.');
  if(strpos($code,'OFA-RWD-')===0){if(!$uid)throw new InvalidArgumentException('Log in to use your reward coupon.');$c=rwCoupon($db,$uid,$code);$percent=(int)$c['percent'];$reward=true;}
+ elseif(strpos($code,'OFA-OPEN50-')===0){
+   $chk=$db->prepare('SELECT code,percent,used FROM ip_promo_claims WHERE code=?');$chk->execute([$code]);$ipC=$chk->fetch(PDO::FETCH_ASSOC);
+   if(!$ipC||(int)$ipC['used']===1)throw new InvalidArgumentException('This 50% Grand Opening code is invalid or has already been used.');
+   $percent=(int)$ipC['percent'];$reward=true;
+ }
  else {if(!isset($catalog['promos'][$code]))throw new InvalidArgumentException('Invalid discount code.');$percent=(int)$catalog['promos'][$code];}
  }
  $discount=(int)floor($eligible*$percent/100+0.5);$total=$subtotal-$discount;
@@ -70,7 +75,10 @@ function rwApprove(PDO $db,string $id,string $token): array {
  if($o['status']!=='awaiting_verification')throw new InvalidArgumentException('This order cannot be approved.');
  $db->prepare('UPDATE reward_orders SET status="payment_verified",approved=? WHERE id=?')->execute([time(),$id]);
  if($o['customer'] && (int)$o['points']>0)$db->prepare('INSERT INTO reward_ledger(customer,amount,reason,reference,created) VALUES(?,?,?,?,?)')->execute([$o['customer'],(int)$o['points'],'Verified purchase',$id,time()]);
- if($o['coupon'])$db->prepare('UPDATE reward_coupons SET state="used" WHERE code=? AND order_id=?')->execute([$o['coupon'],$id]);
+ if($o['coupon']){
+   $db->prepare('UPDATE reward_coupons SET state="used" WHERE code=? AND order_id=?')->execute([$o['coupon'],$id]);
+   $db->prepare('UPDATE ip_promo_claims SET used=1 WHERE code=?')->execute([$o['coupon']]);
+ }
  $db->exec('COMMIT');$o['status']='payment_verified';return $o;
  }catch(Throwable $e){$db->exec('ROLLBACK');throw $e;}
 }

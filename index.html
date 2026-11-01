@@ -2,7 +2,20 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="strict-origin-when-cross-origin"><title>One For All • Game Store</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,700;1,800;1,900&amp;family=Rajdhani:wght@600;700&amp;family=Noto+Sans+Myanmar:wght@400;600;700&amp;display=swap">
 <style>
-:root{color-scheme:dark;--bg:#0b0d14;--panel:#151a28;--line:#2b3248;--muted:#a3acc5;--text:#edf0fa;--accent:#9276ff;--mint:#65f1cc}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top left,#242044,transparent 65%),var(--bg);color:var(--text);font:15px/1.5 'Segoe UI',system-ui,sans-serif}button,input,select,textarea{font:inherit}button,a,input,select,textarea{outline-offset:4px}button{cursor:pointer}button,select,input,textarea{color:var(--text);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 13px}button:hover{border-color:var(--accent)}button:disabled{opacity:.45;cursor:default}button.primary{background:var(--accent);color:#100c22;border:0;font-weight:750}.mint{color:var(--mint)}.muted{color:var(--muted)}header{position:sticky;top:0;z-index:4;background:#0b0d14ed;border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}.nav{max-width:1260px;margin:auto;padding:17px 24px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}.brand{font-weight:900;letter-spacing:1px;margin-right:auto;font-size:20px}.brand span{color:var(--mint)}.wrap{max-width:1260px;margin:auto;padding:0 24px}.hero{padding:52px 0 28px;display:flex;align-items:center;justify-content:space-between;gap:24px}.eyebrow{font-size:12px;letter-spacing:2px;color:var(--mint);font-weight:700}h1{font-size:clamp(32px,5vw,56px);line-height:1.08;letter-spacing:-2px;margin:14px 0}p{margin:8px 0 18px}.hero-art{font-size:80px;background:linear-gradient(135deg,#554198,#174d52);padding:24px 40px;border:1px solid #7762b8;border-radius:30px;transform:rotate(-6deg)}.toolbar{background:var(--panel);border:1px solid var(--line);padding:18px;border-radius:16px;display:grid;grid-template-columns:2fr 1fr 1.3fr;gap:12px}.toolbar input{width:100%}.field{display:flex;flex-direction:column;gap:5px;font-size:12px;color:var(--muted)}.field input,.field select,.field textarea{width:100%}.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.chips{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}.chip{border-radius:30px;padding:7px 16px}.chip[aria-pressed=true]{background:var(--accent);color:#100c22;font-weight:700}.results{display:flex;justify-content:space-between;align-items:center;margin:20px 0}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:18px;margin-bottom:28px}.card{border:1px solid var(--line);background:var(--panel);border-radius:17px;overflow:hidden;transition:transform .15s}.card:hover{transform:translateY(-3px)}.art{aspect-ratio:1;height:auto;position:relative;display:grid;place-items:center;background:radial-gradient(ellipse at top left,#55438b,#151b30);font-size:61px}.art img{width:100%;height:100%;aspect-ratio:1;object-fit:contain}.detail-cover{display:block;width:min(100%,360px);height:auto;border-radius:12px;margin:0 auto 20px}.heart{position:absolute;top:12px;right:12px;padding:5px 11px;font-size:21px;background:#0b0d14df}.heart[aria-pressed=true]{color:#ff8da9}.body{padding:18px}.body h2{font-size:17px;margin:0 0 9px}.tag{display:inline-block;background:#242b40;border-radius:5px;color:#bdc5db;padding:3px 7px;font-size:11px;margin:0 4px 12px 0}.price{font-size:23px;font-weight:800;color:var(--mint)}.card-actions{display:flex;gap:8px;margin-top:15px}.card-actions button{flex:1;font-size:13px}.empty{grid-column:1/-1;padding:50px;text-align:center;border:1px dashed var(--line);border-radius:14px}.notice{padding:12px 16px;border:1px solid var(--line);border-radius:12px;font-size:13px;color:var(--muted)}footer{margin-top:35px;padding:26px 0;border-top:1px solid var(--line);color:var(--muted);font-size:12px}dialog{width:min(650px,calc(100% - 28px));max-height:90vh;overflow:auto;background:#111625;color:var(--text);border:1px solid #424a67;border-radius:20px;padding:24px}dialog::backdrop{background:#03050bd9;backdrop-filter:blur(5px)}.modal-head{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:18px}.modal-head h2{margin:0;font-size:22px}.cart-item{display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding:16px 0}.cart-item .info{flex:1;min-width:0}.qty{display:flex;gap:5px;align-items:center}.qty button{padding:4px 10px}.cart-item small{display:block;color:var(--muted)}.total{display:flex;justify-content:space-between;font-size:23px;font-weight:800;margin:24px 0}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.full{grid-column:1/-1}textarea{min-height:110px;resize:vertical}details{border:1px solid var(--line);border-radius:12px;padding:14px;margin-top:18px}summary{cursor:pointer;font-weight:700}.manage-item{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding:10px 0;align-items:center}.manage-item button{font-size:12px;padding:5px 8px}#toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--mint);color:#09251d;padding:12px 22px;border-radius:12px;z-index:20;font-weight:650;box-shadow:0 5px 35px #0008}#toast:empty{display:none}.error{color:#ffaaa7}input[type=checkbox]{accent-color:var(--accent)}@media(max-width:680px){.wrap{padding:0 16px}.nav{padding:12px 16px;gap:7px}.nav button{font-size:12px;padding:8px}.brand{width:100%;font-size:18px}.hero{padding:32px 0 20px}.hero-art{display:none}.toolbar{grid-template-columns:1fr 1fr}.toolbar .field:first-child{grid-column:1/-1}.form-grid{grid-template-columns:1fr}.cart-item{flex-wrap:wrap}.grid{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}}
+:root{color-scheme:dark;--bg:#0b0d14;--panel:#151a28;--line:#2b3248;--muted:#a3acc5;--text:#edf0fa;--accent:#9276ff;--mint:#65f1cc}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top left,#242044,transparent 65%),var(--bg);color:var(--text);font:15px/1.5 'Segoe UI',system-ui,sans-serif}button,input,select,textarea{font:inherit}button,a,input,select,textarea{outline-offset:4px}button{cursor:pointer}button,select,input,textarea{color:var(--text);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 13px}button:hover{border-color:var(--accent)}button:disabled{opacity:.45;cursor:default}button.primary{background:var(--accent);color:#100c22;border:0;font-weight:750}.mint{color:var(--mint)}.muted{color:var(--muted)}header{position:sticky;top:0;z-index:4;background:#0b0d14ed;border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}.nav{max-width:1260px;margin:auto;padding:17px 24px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}.brand{font-weight:900;letter-spacing:1px;margin-right:auto;font-size:20px}.brand span{color:var(--mint)}.wrap{max-width:1260px;margin:auto;padding:0 24px}.hero{padding:52px 0 28px;display:flex;align-items:center;justify-content:space-between;gap:24px}.eyebrow{font-size:12px;letter-spacing:2px;color:var(--mint);font-weight:700}h1{font-size:clamp(32px,5vw,56px);line-height:1.08;letter-spacing:-2px;margin:14px 0}p{margin:8px 0 18px}.hero-art{font-size:80px;background:linear-gradient(135deg,#554198,#174d52);padding:24px 40px;border:1px solid #7762b8;border-radius:30px;transform:rotate(-6deg)}.toolbar{background:var(--panel);border:1px solid var(--line);padding:18px;border-radius:16px;display:grid;grid-template-columns:2fr 1fr 1.3fr;gap:12px}.toolbar input{width:100%}.field{display:flex;flex-direction:column;gap:5px;font-size:12px;color:var(--muted)}.field input,.field select,.field textarea{width:100%}.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.chips{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}.chip{border-radius:30px;padding:7px 16px}.chip[aria-pressed=true]{background:var(--accent);color:#100c22;font-weight:700}.results{display:flex;justify-content:space-between;align-items:center;margin:20px 0}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:18px;margin-bottom:28px}.card{border:1px solid var(--line);background:var(--panel);border-radius:17px;overflow:hidden;transition:transform .15s}.card:hover{transform:translateY(-3px)}.art{aspect-ratio:1;height:auto;position:relative;display:grid;place-items:center;background:radial-gradient(ellipse at top left,#55438b,#151b30);font-size:61px}.art img{width:100%;height:100%;aspect-ratio:1;object-fit:contain}.detail-cover{display:block;width:min(100%,360px);height:auto;border-radius:12px;margin:0 auto 20px}.heart{position:absolute;top:12px;right:12px;padding:5px 11px;font-size:21px;background:#0b0d14df}.heart[aria-pressed=true]{color:#ff8da9}.body{padding:18px}.body h2{font-size:17px;margin:0 0 9px}.tag{display:inline-block;background:#242b40;border-radius:5px;color:#bdc5db;padding:3px 7px;font-size:11px;margin:0 4px 12px 0}.price{font-size:23px;font-weight:800;color:var(--mint)}.card-actions{display:flex;gap:8px;margin-top:15px}.card-actions button{flex:1;font-size:13px}.empty{grid-column:1/-1;padding:50px;text-align:center;border:1px dashed var(--line);border-radius:14px}.notice{padding:12px 16px;border:1px solid var(--line);border-radius:12px;font-size:13px;color:var(--muted)}footer{margin-top:35px;padding:26px 0;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+.guide-dialog{width:min(680px,calc(100% - 24px));max-height:88vh;padding:26px;border-radius:22px;border:1px solid #4a4474;background:#101322}
+.guide-intro{color:var(--muted);font-size:14px;margin-bottom:20px;line-height:1.6}
+.guide-steps{display:flex;flex-direction:column;gap:14px;margin:18px 0}
+.guide-step{display:flex;align-items:flex-start;gap:14px;background:#181d30;border:1px solid #2d3652;border-radius:14px;padding:14px 16px}
+.step-num{display:grid;place-items:center;min-width:32px;height:32px;border-radius:50%;background:var(--accent);color:#100c22;font-weight:900;font-size:15px}
+.step-body h4{margin:0 0 4px;font-size:15px;color:#fff}
+.step-body p{margin:0;font-size:13px;color:var(--muted);line-height:1.5}
+.guide-rules{margin:24px 0 16px;background:#20172c;border:1px solid #58336a;border-radius:14px;padding:16px 18px}
+.guide-rules h3{margin:0 0 10px;font-size:14px;color:#f39c12;display:flex;align-items:center;gap:6px}
+.guide-rules ul{margin:0;padding-left:18px;font-size:13px;color:#ddd6fe;line-height:1.7}
+.guide-footer-action{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-top:20px;padding-top:16px;border-top:1px solid #2a3148}
+
+dialog{width:min(650px,calc(100% - 28px));max-height:90vh;overflow:auto;background:#111625;color:var(--text);border:1px solid #424a67;border-radius:20px;padding:24px}dialog::backdrop{background:#03050bd9;backdrop-filter:blur(5px)}.modal-head{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:18px}.modal-head h2{margin:0;font-size:22px}.cart-item{display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding:16px 0}.cart-item .info{flex:1;min-width:0}.qty{display:flex;gap:5px;align-items:center}.qty button{padding:4px 10px}.cart-item small{display:block;color:var(--muted)}.total{display:flex;justify-content:space-between;font-size:23px;font-weight:800;margin:24px 0}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.full{grid-column:1/-1}textarea{min-height:110px;resize:vertical}details{border:1px solid var(--line);border-radius:12px;padding:14px;margin-top:18px}summary{cursor:pointer;font-weight:700}.manage-item{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding:10px 0;align-items:center}.manage-item button{font-size:12px;padding:5px 8px}#toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--mint);color:#09251d;padding:12px 22px;border-radius:12px;z-index:20;font-weight:650;box-shadow:0 5px 35px #0008}#toast:empty{display:none}.error{color:#ffaaa7}input[type=checkbox]{accent-color:var(--accent)}@media(max-width:680px){.wrap{padding:0 16px}.nav{padding:12px 16px;gap:7px}.nav button{font-size:12px;padding:8px}.brand{width:100%;font-size:18px}.hero{padding:32px 0 20px}.hero-art{display:none}.toolbar{grid-template-columns:1fr 1fr}.toolbar .field:first-child{grid-column:1/-1}.form-grid{grid-template-columns:1fr}.cart-item{flex-wrap:wrap}.grid{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}}
 
 .pack-showcase{position:relative;isolation:isolate;overflow:hidden;border:1px solid #9172ff80;border-radius:26px;margin:8px 0 32px;background:linear-gradient(120deg,#251843,#111d2d 65%,#123c3b);box-shadow:0 20px 80px #0005}.pack-showcase:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 15% 20%,#a859ff30,transparent 60%);pointer-events:none}.pack-layout{display:grid;grid-template-columns:1.1fr 1fr;position:relative}.pack-copy{padding:38px}.pack-label{display:inline-block;border:1px solid #b9a1ff66;border-radius:50px;padding:6px 12px;font-size:11px;letter-spacing:2px;color:#d6c6ff;background:#9276ff16}.pack-copy h2{font-size:clamp(58px,8vw,96px);line-height:.95;letter-spacing:-5px;margin:24px 0 16px;font-weight:900}.pack-copy h2 span{color:var(--mint)}.pack-lead{font-size:21px;max-width:390px}.pack-price{font-size:42px;font-weight:850;letter-spacing:-1px;margin-top:20px}.pack-price small{font-size:14px;letter-spacing:1px;color:var(--muted)}.pack-actions{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0 12px}.pack-actions button{padding:14px 20px}.pack-actions .primary{background:var(--mint);color:#09251d;box-shadow:0 6px 28px #65f1cc25}.pack-wall{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:22px;align-content:center;transform:rotate(-4deg) scale(1.04);opacity:.85}.pack-wall img{width:100%;aspect-ratio:.74;object-fit:cover;border-radius:10px;border:1px solid #ffffff25;box-shadow:0 8px 20px #0006}.pack-foot{padding:14px 30px;border-top:1px solid #ffffff15;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12px;color:#c2c8df;position:relative;background:#080c1466}.pack-fine{font-size:12px;color:#b3bdd4}.pack-device{background:#071e24;color:#9bf5df;border:1px solid #65f1cc40;padding:6px 12px;border-radius:7px;font-size:12px}.pack-gallery-dialog{width:min(1100px,calc(100% - 24px))}.pack-gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.pack-gallery-grid button{padding:0;overflow:hidden;border-radius:12px;text-align:left}.pack-gallery-grid img{display:block;width:100%;height:auto}.pack-gallery-grid span{display:block;padding:8px;font-size:12px;color:var(--muted)}#packZoom{width:min(1000px,calc(100% - 20px))}#packZoom img{width:100%;height:auto;display:block}.pack-card-label{display:block;padding:9px 0;color:var(--mint);font-size:12px}@media(max-width:760px){.pack-layout{grid-template-columns:1fr}.pack-copy{padding:26px}.pack-wall{padding:10px 26px 26px;transform:none;grid-template-columns:repeat(3,1fr)}.pack-wall img{aspect-ratio:1;object-fit:cover}.pack-wall img:nth-child(n+4){display:none}.pack-gallery-grid{grid-template-columns:repeat(2,1fr)}.pack-price{font-size:36px}.pack-foot{padding:16px 24px}}
 .pack-video-feature{margin:28px;padding:32px;border:1px solid #65f1cc44;border-radius:22px;background:radial-gradient(ellipse at top right,#42648d55,transparent 70%),#0b1429;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:16px}.pack-video-icon{display:grid;place-items:center;width:76px;height:76px;border-radius:50%;background:#65f1cc;color:#09251d;font-size:30px;box-shadow:0 0 60px #65f1cc44}.pack-video-feature h3{font-size:clamp(24px,3vw,38px);line-height:1.15;margin:6px 0;letter-spacing:-1px}.pack-video-feature p{color:var(--muted);margin:0}.pack-video-feature button{padding:14px 20px}.pack-video-footer{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:20px}.pack-video-footer strong{font-size:26px}#packVideo{display:block;width:100%;max-height:65vh;background:#000;border-radius:14px;aspect-ratio:16/9}#packGallery{width:min(1000px,calc(100% - 24px))}@media(max-width:760px){.pack-video-feature{margin:0 24px 24px;padding:24px}}
@@ -83,17 +96,182 @@ dialog::backdrop{background:#03041fe6}
 @media(max-width:760px){.store-sections{order:5;flex-basis:100%;margin:0;justify-content:center}.store-sections button{flex:1}.nav .brand{margin-right:auto}.nav{gap:8px}.section-heading h2{font-size:23px}}
 
 .game-overview{margin:22px 0}.meta-panel{padding:20px;border:1px solid #45488b;border-radius:16px;background:linear-gradient(120deg,#121638,#192450)}.meta-panel p{font-size:14px;line-height:1.6;margin:7px 0}.meta-panel small{display:block;color:#b1b7ce;font-size:11px;line-height:1.6}.meta-link{white-space:nowrap;color:#a8dcff;font-weight:700;font-size:13px}.story-preview{font-size:15px;line-height:1.8;color:#e4e4fa;margin:10px 0 20px}.review-verdict{display:block;color:#8adeef;font-size:21px;margin:9px 0}@media(max-width:600px){.story-preview{font-size:14px}}
-.meta-panel{display:flex;align-items:center;gap:18px}.meta-panel>div:nth-child(2){flex:1}.meta-score{min-width:64px;height:64px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:900;font-style:italic;color:#08102a;background:#6c7096}.meta-score.good,.meta-tag.good{background:#66cc33;color:#0a1a05}.meta-score.mixed,.meta-tag.mixed{background:#ffcc33;color:#2a1f00}.meta-score.bad,.meta-tag.bad{background:#ff4b4b;color:#2a0000}.meta-tag{font-weight:800;border:0}@media(max-width:600px){.meta-panel{align-items:flex-start;flex-direction:column}}</style><style>#accountRewards{margin-top:22px;border-top:1px solid #454263;padding-top:18px} .reward-balance,.reward-order{background:rgba(0,0,0,.18);border:1px solid #454263;border-radius:12px;padding:16px;margin:12px 0}.reward-balance strong{font-size:28px}.reward-order small{display:block;margin-top:7px}#rewardContent code{overflow-wrap:anywhere}#rewardContent .account-actions{flex-wrap:wrap}#accountDialog{max-height:90vh;overflow:auto}</style></head><body>
-<header><nav class="nav" aria-label="Store navigation"><div class="brand">ONE<span>FORALL</span><small class="muted" style="font-size:10px;letter-spacing:2px;margin-left:12px">GAME SERVICE</small></div><div id="storeSections" class="store-sections" role="group" aria-label="Shop sections"><button data-store-section="steam" aria-pressed="true">Steam &amp; PC</button><button data-store-section="xbox" aria-pressed="false">Xbox</button><button data-store-section="software" aria-pressed="false">Software &amp; Services</button></div><button id="accountBtn" type="button">Log in / Sign up</button><button id="currency" title="Switch currency">THB</button><button id="favorites" aria-pressed="false">♡ Saved <span id="savedCount">0</span></button><button id="cartBtn" class="primary">Cart · <span id="cartCount">0</span></button></nav></header>
+.meta-panel{display:flex;align-items:center;gap:18px}.meta-panel>div:nth-child(2){flex:1}.meta-score{min-width:64px;height:64px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:900;font-style:italic;color:#08102a;background:#6c7096}.meta-score.good,.meta-tag.good{background:#66cc33;color:#0a1a05}.meta-score.mixed,.meta-tag.mixed{background:#ffcc33;color:#2a1f00}.meta-score.bad,.meta-tag.bad{background:#ff4b4b;color:#2a0000}.meta-tag{font-weight:800;border:0}@media(max-width:600px){.meta-panel{align-items:flex-start;flex-direction:column}}
+/* === GRAND OPENING 50% COUNTDOWN PROMO BANNER === */
+.opening-banner {
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.22) 0%, rgba(20, 24, 38, 0.95) 50%, rgba(0, 224, 184, 0.18) 100%);
+  border-bottom: 1px solid rgba(124, 92, 255, 0.45);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  padding: 12px 20px;
+  position: relative;
+  z-index: 9;
+  backdrop-filter: blur(8px);
+}
+.opening-banner-wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.opening-banner-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.opening-badge {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  box-shadow: 0 0 12px rgba(255, 75, 43, 0.5);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.opening-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+}
+.opening-title strong {
+  color: var(--accent2, #00e0b8);
+}
+.opening-desc {
+  font-size: 12px;
+  color: #c0c6d9;
+}
+.opening-timer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-variant-numeric: tabular-nums;
+}
+.opening-timer-block {
+  background: rgba(15, 18, 30, 0.85);
+  border: 1px solid rgba(124, 92, 255, 0.35);
+  border-radius: 8px;
+  padding: 4px 8px;
+  min-width: 38px;
+  text-align: center;
+}
+.opening-timer-val {
+  font-size: 14px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+}
+.opening-timer-lbl {
+  font-size: 9px;
+  text-transform: uppercase;
+  color: #8b93ad;
+  letter-spacing: 0.5px;
+}
+.opening-timer-sep {
+  font-weight: 700;
+  color: var(--accent, #7c5cff);
+}
+.opening-banner-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.opening-claim-btn {
+  background: linear-gradient(135deg, var(--accent, #7c5cff), #9d7bff);
+  color: #fff;
+  border: none;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(124, 92, 255, 0.4);
+  transition: transform 0.15s, box-shadow 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.opening-claim-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(124, 92, 255, 0.6);
+}
+.opening-code-pill {
+  background: rgba(0, 224, 184, 0.15);
+  border: 1px dashed rgba(0, 224, 184, 0.6);
+  color: #00e0b8;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.opening-code-pill:hover {
+  background: rgba(0, 224, 184, 0.25);
+}
+@media (max-width: 820px) {
+  .opening-banner-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .opening-banner-right {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+</style><style>#accountRewards{margin-top:22px;border-top:1px solid #454263;padding-top:18px} .reward-balance,.reward-order{background:rgba(0,0,0,.18);border:1px solid #454263;border-radius:12px;padding:16px;margin:12px 0}.reward-balance strong{font-size:28px}.reward-order small{display:block;margin-top:7px}#rewardContent code{overflow-wrap:anywhere}#rewardContent .account-actions{flex-wrap:wrap}#accountDialog{max-height:90vh;overflow:auto}</style></head><body>
+<header><nav class="nav" aria-label="Store navigation"><div class="brand">ONE<span>FORALL</span><small class="muted" style="font-size:10px;letter-spacing:2px;margin-left:12px">GAME SERVICE</small></div><div id="storeSections" class="store-sections" role="group" aria-label="Shop sections"><button data-store-section="steam" aria-pressed="true">Steam &amp; PC</button><button data-store-section="xbox" aria-pressed="false">Xbox</button><button data-store-section="software" aria-pressed="false">Software &amp; Services</button></div><button id="guideBtn" type="button" title="How to use Offline Accounts">Offline Guide 📖</button><button id="accountBtn" type="button">Log in / Sign up</button><button id="currency" title="Switch currency">THB</button><button id="favorites" aria-pressed="false">♡ Saved <span id="savedCount">0</span></button><button id="cartBtn" class="primary">Cart · <span id="cartCount">0</span></button></nav></header>
+<aside class="opening-banner" id="openingBanner" aria-label="Grand Opening Special Promotion">
+  <div class="opening-banner-wrap">
+    <div class="opening-banner-left">
+      <span class="opening-badge">🎉 Grand Opening</span>
+      <div>
+        <span class="opening-title">Exclusive Opening Celebration · <strong>Claim 50% OFF</strong></span>
+        <span class="opening-desc muted"> — 1 promo code per visitor IP (Steam &amp; PC games)</span>
+      </div>
+    </div>
+    <div class="opening-timer" id="openingTimer" title="Promotion ending soon" aria-label="Countdown timer">
+      <div class="opening-timer-block"><div class="opening-timer-val" id="openDays">07</div><div class="opening-timer-lbl">Days</div></div>
+      <span class="opening-timer-sep">:</span>
+      <div class="opening-timer-block"><div class="opening-timer-val" id="openHours">00</div><div class="opening-timer-lbl">Hours</div></div>
+      <span class="opening-timer-sep">:</span>
+      <div class="opening-timer-block"><div class="opening-timer-val" id="openMins">00</div><div class="opening-timer-lbl">Mins</div></div>
+      <span class="opening-timer-sep">:</span>
+      <div class="opening-timer-block"><div class="opening-timer-val" id="openSecs">00</div><div class="opening-timer-lbl">Secs</div></div>
+    </div>
+    <div class="opening-banner-right" id="openingBannerActions">
+      <button class="opening-claim-btn" id="openClaimBtn" type="button">🎁 Claim 50% Code</button>
+      <div id="openCodeContainer" style="display:none">
+        <span class="opening-code-pill" id="openCodePill" title="Click to copy and apply in checkout">
+          <span id="openCodeText"></span> 📋
+        </span>
+      </div>
+    </div>
+  </div>
+</aside>
+
 <main class="wrap"><section class="hero"><div><div class="eyebrow">ONE FOR ALL GAME SERVICE</div><h1>Great games.<br><span class="mint">All in one place.</span></h1><p class="muted">Discover keys & accounts. Save your favorites. Build your lineup.</p><div class="row muted"><span>✦ Steam Access Key · Offline Acc</span><span>·</span><span>THB / MMK pricing</span></div></div><div class="hero-art" aria-hidden="true">🎮</div></section>
 <section class="featured-carousel" id="packShowcase" role="region" aria-roledescription="carousel" aria-label="Featured collections"><div class="carousel-top"><span class="eyebrow">THE SPOTLIGHT / SPECIAL COLLECTIONS</span><button id="featurePause" aria-label="Pause featured carousel" aria-pressed="false">Ⅱ Pause</button></div><div class="feature-window"><div class="feature-track"><section id="feature-slide-0" role="group" aria-roledescription="slide" aria-label="1 of 4: 600pack" class="pack-showcase feature-slide" aria-label="600pack special package"><div class="pack-layout"><div class="pack-copy"><span class="pack-label">SPECIAL PACKAGE / ONE FOR ALL</span><h2>600<span>pack</span></h2><p class="pack-lead">Your next gaming obsession.<br>A whole collection to explore.</p><div class="row"><span class="pack-device">◈ Steam Deck</span><span class="pack-device">▣ PC</span></div><div class="pack-price">375,000 <small>MMK · ฿2,700</small></div><p class="pack-fine">One package price · Watch the collection video</p><div class="pack-actions"><button class="primary" data-action="add" data-id="special-600pack">Get 600pack →</button><button data-pack-gallery="true">Watch the collection ▶</button></div><p class="pack-fine">Confirm included titles, access terms and device requirements with us before ordering.</p></div><div class="pack-video-feature pack-cover-feature"><img src="assets/600pack.png" alt="600pack collection for Steam Deck and PC" style="display:block;width:100%;max-height:460px;object-fit:contain;border-radius:16px"><button class="primary" data-pack-gallery="true">▶ Watch collection video</button><span class="pack-fine">Steam Deck + PC · 375,000 MMK / ฿2,700</span></div></div><div class="pack-foot"><span>01 / SPECIAL COLLECTION</span><span>Steam Deck + PC</span><span>Collection video · Tap to watch</span></div></section><section id="feature-slide-1" class="pack-showcase feature-slide cod" role="group" aria-roledescription="slide" aria-label="2 of 4: Call of Duty" inert><div class="pack-layout"><div class="pack-copy"><span class="pack-label">SPECIAL COLLECTION / ONE FOR ALL</span><h2>CALL OF<br><span>DUTY</span></h2><p class="pack-lead">Answer the call.<br>Build your next campaign lineup.</p><div class="row"><span class="pack-device">COLLECTION</span><span class="pack-device">PC</span></div><div class="pack-price">Price pending</div><p class="pack-fine">Collection titles and bundle price to be confirmed.</p><div class="pack-actions"><button class="primary" data-offer="cod">Explore Call of Duty →</button></div><p class="pack-fine">Confirm availability, included titles and access terms before ordering.</p></div><div class="collection-visual"><span class="collection-number">COD</span><span class="pack-label">CAMPAIGN / ACTION / INTENSITY</span><h3>Your next<br>mission awaits.</h3><p>Explore the Call of Duty collection.</p></div></div><div class="pack-foot"><span>02 / FEATURED COLLECTION</span><span>Call of Duty</span><span>ONE FOR ALL GAME SERVICE</span></div></section><section id="feature-slide-2" class="pack-showcase feature-slide resident" role="group" aria-roledescription="slide" aria-label="3 of 4: Resident Evil" inert><div class="pack-layout"><div class="pack-copy"><span class="pack-label">SPECIAL COLLECTION / ONE FOR ALL</span><h2>RESIDENT<br><span>EVIL</span></h2><p class="pack-lead">Enter the nightmare.<br>Discover your next survival story.</p><div class="row"><span class="pack-device">SURVIVAL HORROR</span><span class="pack-device">PC</span></div><div class="pack-price">Price pending</div><p class="pack-fine">Collection lineup and bundle price to be confirmed. Covers are a series preview.</p><div class="pack-actions"><button class="primary" data-offer="resident">Explore Resident Evil →</button></div><p class="pack-fine">Confirm availability, included titles and access terms before ordering.</p></div><div class="collection-visual"><div class="re-covers"><img src="assets/catalog-expansion/resident-4.webp" alt="Resident Evil 4 cover" loading="lazy"><img src="assets/catalog-expansion/resident-3.webp" alt="Resident Evil 3 cover" loading="lazy"><img src="assets/catalog-expansion/resident-0.webp" alt="Resident Evil 0 cover" loading="lazy"><img src="assets/catalog-expansion/resident-5.webp" alt="Resident Evil 5 cover" loading="lazy"></div><span class="pack-label">SURVIVAL HORROR / COLLECTION</span></div></div><div class="pack-foot"><span>03 / FEATURED COLLECTION</span><span>Resident Evil</span><span>ONE FOR ALL GAME SERVICE</span></div></section><section id="feature-slide-3" class="pack-showcase feature-slide gamepass" role="group" aria-roledescription="slide" aria-label="4 of 4: Game Pass" inert><div class="pack-layout"><div class="pack-copy"><span class="pack-label">SPECIAL COLLECTION / ONE FOR ALL</span><h2>GAME PASS<br><span>1 YEAR</span></h2><p class="pack-lead">A year of discovery.<br>Your next favorite is waiting.</p><div class="row"><span class="pack-device">12 MONTHS</span><span class="pack-device">ONLINE</span><span class="pack-device">PC</span></div><div class="pack-price">65,000 <small>MMK · ฿480</small></div><p class="pack-fine">Reference price · Confirm plan, region and device eligibility before ordering.</p><div class="pack-actions"><button class="primary" data-offer="gamepass">Explore Game Pass →</button></div><p class="pack-fine">Confirm availability, included titles and access terms before ordering.</p></div><div class="collection-visual"><img src="assets/gamepass-1-year.webp" alt="PC Game Pass — 1 Year" style="display:block;width:100%;height:auto;max-height:520px;object-fit:contain;border-radius:16px"><span class="pack-label">PC GAME PASS / 12 MONTHS</span></div></div><div class="pack-foot"><span>04 / FEATURED COLLECTION</span><span>Game Pass</span><span>ONE FOR ALL GAME SERVICE</span></div></section></div></div><div class="carousel-controls"><button id="featurePrev" aria-label="Previous featured collection">←</button><div class="feature-dots"><button data-slide="0" aria-label="Show 600pack" aria-pressed="true"></button><button data-slide="1" aria-label="Show Call of Duty" aria-pressed="false"></button><button data-slide="2" aria-label="Show Resident Evil" aria-pressed="false"></button><button data-slide="3" aria-label="Show Game Pass 1 Year" aria-pressed="false"></button></div><span id="featureCount">01 / 04</span><button id="featureNext" aria-label="Next featured collection">→</button></div></section>
 <section class="steam-spotlight" aria-labelledby="spotTitle"><div class="spot-head"><div><span class="eyebrow">THE NEXT GAME STARTS HERE</span><h2 id="spotTitle">New Releases &amp; Featured</h2><p>Fresh discoveries. Standout adventures. Your next obsession.</p></div><div class="spot-tabs" role="group" aria-label="Spotlight selection"><button data-spot-tab="all" aria-pressed="true">Featured · 10</button><button data-spot-tab="new" aria-pressed="false">New &amp; upcoming</button></div></div><div class="spot-grid" id="spotGrid" role="region" aria-label="Featured games carousel" tabindex="0"></div><div class="spot-controls"><button id="spotPrev" aria-label="Previous games">←</button><span id="spotPosition" aria-live="polite"></span><button id="spotPause" aria-pressed="false" aria-label="Pause games carousel">Ⅱ Pause</button><button id="spotNext" aria-label="Next games">→</button></div><p class="spot-note">Selected from our pictured catalog · New & upcoming includes announced titles; confirm release status and availability before ordering.</p></section>
 <section class="toolbar" aria-label="Catalog filters"><label class="field">Search catalog<input id="search" type="search" placeholder="Game, genre, or platform…"></label><label class="field">Platform<select id="platform"><option value="">All platforms</option></select></label><label class="field">Sort by<select id="sort"><option value="default">Featured</option><option value="rating">Metascore: Highest first</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="az">Name: A to Z</option></select></label><label class="field">Min price <span class="unit"></span><input id="min" type="number" min="0" placeholder="No minimum"></label><label class="field">Max price <span class="unit"></span><input id="max" type="number" min="0" placeholder="No maximum"></label><div class="row"><button id="reset">Reset filters</button></div></section>
 <div id="sectionHeading" class="section-heading"><span class="eyebrow">BROWSE THE STORE</span><h2 id="sectionTitle">Steam &amp; PC games</h2><p id="sectionDescription" class="muted">Explore our PC games, access keys and offline accounts.</p></div><div class="chips" id="cats" aria-label="Categories"></div><div class="results"><span id="count" class="muted" aria-live="polite"></span><span class="muted" style="font-size:12px">Prices shown in <strong id="currencyLabel">THB</strong></span></div><div id="filterError" class="error" role="status"></div><section id="grid" class="grid" aria-label="Products"></section><div class="row" style="justify-content:center"><button id="more" hidden>Load more</button></div>
-<p class="notice">600pack (Steam Deck / PC): 375,000 MMK / ฿2,700. Phantom Blade Zero, Fable and Crimson Desert: 35,000 MMK / ฿260 for both types. Offline Account: ฿140 / 20,000 MMK. Steam Access Key: ฿180 / 25,000 MMK. Confirm game availability with the seller. Listings with “Price pending” cannot be added to the cart. Cart and favorites stay in this browser. QR transfers are verified manually. Send your receipt and payment slip by email or Telegram; games are delivered through Telegram.</p><footer>© One For All Game Service <span id="rateNote" style="float:right"></span></footer></main>
+<p class="notice">600pack (Steam Deck / PC): 375,000 MMK / ฿2,700. Phantom Blade Zero, Fable and Crimson Desert: 35,000 MMK / ฿260 for both types. Offline Account: ฿140 / 20,000 MMK. Steam Access Key: ฿180 / 25,000 MMK. Confirm game availability with the seller. Listings with “Price pending” cannot be added to the cart. Cart and favorites stay in this browser. QR transfers are verified manually. Send your receipt and payment slip by email or Telegram; games are delivered through Telegram.</p><footer>© One For All Game Service · <a href="#guide" id="footerGuideLink" style="color:var(--mint);text-decoration:none;font-weight:600">Offline Account Guide</a> <span id="rateNote" style="float:right"></span></footer></main>
 <dialog id="detail"><div class="modal-head"><h2>Game details</h2><button data-close="detail" aria-label="Close details">✕</button></div><div id="detailBody"></div></dialog>
 <dialog id="cart"><div class="modal-head"><h2>Your lineup</h2><button data-close="cart" aria-label="Close cart">✕</button></div><div id="cartBody"></div><div id="cartBottom"></div></dialog>
-<dialog id="order" class="checkout-dialog"><div class="modal-head"><div><span class="eyebrow">SECURE YOUR NEXT ADVENTURE</span><h2>Checkout</h2></div><button data-close="order" aria-label="Close checkout">✕</button></div><div class="checkout-steps">01 Review order <span>→</span> 02 Transfer <span>→</span> 03 Telegram delivery</div><div class="checkout-layout"><section><h3>Your order</h3><div id="checkoutItems"></div><div class="payment-panel" style="margin-top:18px"><label class="field" for="promoCode">Discount code<input id="promoCode" maxlength="40" placeholder="Enter your promo code" autocomplete="off" spellcheck="false"></label><div class="row"><button id="applyPromo" type="button">Apply code</button><button id="removePromo" type="button" hidden>Remove</button></div><p id="promoMessage" role="status" aria-live="polite" class="muted">One code per order. Steam & PC items only; Xbox and Software & Services are excluded. Subject to seller verification.</p></div><div class="checkout-line"><span>Subtotal</span><strong id="checkoutSubtotal"></strong></div><div class="checkout-line" id="discountRow" hidden><span id="discountLabel">Discount</span><strong id="checkoutDiscount"></strong></div><div class="total"><span>Total</span><span id="checkoutTotal" class="mint"></span></div><div class="notice">Your games will be delivered through <a href="https://t.me/oneforallgamekeys" target="_blank" rel="noopener">@oneforallgamekeys on Telegram ↗</a>. Send your order receipt and payment slip there.</div><label class="field">Your name<input id="buyerName" maxlength="80" autocomplete="name" placeholder="Name for your order"></label><label class="field">Telegram username<input id="buyerTelegram" maxlength="80" placeholder="@yourusername"></label><label class="field"><span id="payerAccountLabel">KPay account name</span><input id="transferReference" maxlength="120" autocomplete="name" placeholder="Enter the sender’s KPay account name"><small class="muted">Enter the name on the account you pay from.</small></label></section><section class="payment-panel"><h3 id="paymentTitle"></h3><p id="paymentRecipient" class="muted"></p><div id="paymentQr"></div><p id="paymentHelp" class="muted"></p><label class="field" for="slipFile">Transfer completed screenshot<input id="slipFile" type="file" accept="image/jpeg,image/png,image/webp"><small class="muted">Upload a screenshot of your completed transfer (JPG, PNG or WebP). It is emailed to our team with your order.</small></label><div id="slipPreview" class="muted" role="status" aria-live="polite"></div><label class="row"><input id="transferDeclared" type="checkbox"> I have made the transfer</label><p class="muted">We check incoming funds before delivery. A slip or this checkbox does not verify payment.</p></section></div><div class="receipt-panel"><h3>Order receipt</h3><p id="receiptStatus" role="status" class="notice"></p><label class="field">Itemized total receipt<textarea id="orderText" readonly style="min-height:230px"></textarea></label><div class="row checkout-actions"><button id="emailConfirmation" class="primary">Confirm order</button><button id="telegramConfirmation">Get order ↗</button><button id="downloadOrder" class="primary">Download PDF receipt</button><span id="orderSubmissionStatus" role="status" aria-live="polite" style="flex-basis:100%"></span></div><p class="muted">Confirm order sends your order to our team. Then tap Get order to open Telegram (your receipt is copied for you), send your payment slip, and receive your games there. Payment remains subject to verification.</p></div></dialog>
+<dialog id="order" class="checkout-dialog"><div class="modal-head"><div><span class="eyebrow">SECURE YOUR NEXT ADVENTURE</span><h2>Checkout</h2></div><button data-close="order" aria-label="Close checkout">✕</button></div><div class="checkout-steps">01 Review order <span>→</span> 02 Transfer <span>→</span> 03 Telegram delivery</div><div class="checkout-layout"><section><h3>Your order</h3><div id="checkoutItems"></div><div class="payment-panel" style="margin-top:18px"><label class="field" for="promoCode">Discount code<input id="promoCode" maxlength="40" placeholder="Enter your promo code" autocomplete="off" spellcheck="false"></label><div class="row"><button id="applyPromo" type="button">Apply code</button><button id="removePromo" type="button" hidden>Remove</button></div><p id="promoMessage" role="status" aria-live="polite" class="muted">One code per order. Steam & PC items only; Xbox and Software & Services are excluded. Subject to seller verification.</p></div><div class="checkout-line"><span>Subtotal</span><strong id="checkoutSubtotal"></strong></div><div class="checkout-line" id="discountRow" hidden><span id="discountLabel">Discount</span><strong id="checkoutDiscount"></strong></div><div class="total"><span>Total</span><span id="checkoutTotal" class="mint"></span></div><div class="notice">Your games will be delivered through <a href="https://t.me/oneforallgamekeys" target="_blank" rel="noopener">@oneforallgamekeys on Telegram ↗</a>. Send your order receipt and payment slip there. <a href="#guide" class="guide-trigger" style="color:var(--mint);text-decoration:none;font-weight:600">Read Offline Account Guide 📖</a></div><label class="field">Your name<input id="buyerName" maxlength="80" autocomplete="name" placeholder="Name for your order"></label><label class="field">Telegram username<input id="buyerTelegram" maxlength="80" placeholder="@yourusername"></label><label class="field"><span id="payerAccountLabel">KPay account name</span><input id="transferReference" maxlength="120" autocomplete="name" placeholder="Enter the sender’s KPay account name"><small class="muted">Enter the name on the account you pay from.</small></label></section><section class="payment-panel"><h3 id="paymentTitle"></h3><p id="paymentRecipient" class="muted"></p><div id="paymentQr"></div><p id="paymentHelp" class="muted"></p><label class="field" for="slipFile">Transfer completed screenshot<input id="slipFile" type="file" accept="image/jpeg,image/png,image/webp"><small class="muted">Upload a screenshot of your completed transfer (JPG, PNG or WebP). It is emailed to our team with your order.</small></label><div id="slipPreview" class="muted" role="status" aria-live="polite"></div><label class="row"><input id="transferDeclared" type="checkbox"> I have made the transfer</label><p class="muted">We check incoming funds before delivery. A slip or this checkbox does not verify payment.</p></section></div><div class="receipt-panel"><h3>Order receipt</h3><p id="receiptStatus" role="status" class="notice"></p><label class="field">Itemized total receipt<textarea id="orderText" readonly style="min-height:230px"></textarea></label><div class="row checkout-actions"><button id="emailConfirmation" class="primary">Confirm order</button><button id="telegramConfirmation">Get order ↗</button><button id="downloadOrder" class="primary">Download PDF receipt</button><span id="orderSubmissionStatus" role="status" aria-live="polite" style="flex-basis:100%"></span></div><p class="muted">Confirm order sends your order to our team. Then tap Get order to open Telegram (your receipt is copied for you), send your payment slip, and receive your games there. Payment remains subject to verification.</p></div></dialog>
 <dialog id="packGallery" class="pack-gallery-dialog"><div class="modal-head"><h2>600pack · Collection video</h2><button data-close="packGallery" aria-label="Close collection video">✕</button></div><p class="muted">Discover the collection · Steam Deck + PC</p><video id="packVideo" controls playsinline preload="none" aria-label="600pack collection video"><source src="assets/600pack/collection-video.mp4" type="video/mp4">Your browser cannot play this video. <a href="assets/600pack/collection-video.mp4">Download collection video</a>.</video><div class="pack-video-footer"><div><strong class="mint">375,000 MMK / ฿2,700</strong><div class="muted">600pack · Steam Deck + PC</div></div><button class="primary" data-action="add" data-id="special-600pack">Get 600pack →</button></div></dialog>
 <div id="toast" role="status" aria-live="polite"></div>
 <script>
@@ -193,7 +371,7 @@ function metaClass(n){return n>=75?'good':n>=50?'mixed':'bad'}
 function metaBadge(g){if(g.isPackage||g.isSoftware)return '';const m=GAME_OVERVIEWS[g.baseId||g.id];return m&&Number.isFinite(m.meta)?`<span class="tag meta-tag ${metaClass(m.meta)}" title="Metacritic critic score · ${esc(m.metaPlatform||'')}">Metascore ${m.meta}</span>`:'<span class="tag meta-tag none" title="A matching Metacritic score has not been verified">Metascore · Not verified</span>'}
 function overviewSection(g){if(g.isSoftware)return `<section class="game-overview"><span class="eyebrow">PRODUCT / DETAILS</span><p>${esc(g.description)}</p><p class="muted">Delivery and activation instructions via Telegram @oneforallgamekeys.</p></section>`;const meta=GAME_OVERVIEWS[g.baseId||g.id];if(!meta)return '';const rated=Number.isFinite(meta.meta);const url=meta.metaUrl||'https://www.metacritic.com/search/'+encodeURIComponent(g.title)+'/';return `<section class="game-overview"><span class="eyebrow">THE GAME / OVERVIEW</span><p class="story-preview">${esc(meta.story)}</p><div class="meta-panel"><div class="meta-score ${rated?metaClass(meta.meta):'none'}">${rated?meta.meta:'—'}</div><div><span class="eyebrow">METACRITIC CRITIC SCORE</span><strong class="review-verdict">${rated?(meta.meta>=90?'Universal acclaim':meta.meta>=75?'Generally favorable':meta.meta>=50?'Mixed or average':'Generally unfavorable'):'Metascore not verified'}</strong>${rated?`<p><b>Metascore ${meta.meta}/100</b> · ${esc(meta.metaPlatform||'')}</p><small>Saved from Metacritic on November 1, 2026 · not a live score; platform scores can differ.</small>`:'<p class="muted">A matching platform and edition score has not been verified. Check Metacritic for current availability.</p>'}</div><a class="meta-link" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${rated?'View on Metacritic':'Search Metacritic'} ↗</a></div></section>`}
 
-function showDetails(id){const g=game(id);if(!g)return;if(g.isPackage){$('packGallery').showModal();return;}$('detailBody').innerHTML=`${g.image?`<img class="detail-cover" src="${esc(g.image)}" alt="${esc(g.title)} cover">`:`<div style="font-size:65px;text-align:center">${esc(g.emoji||'🎮')}</div>`}<h2>${esc(g.title)}</h2><p class="muted">${esc(g.category)} · ${esc(g.platform)}</p>${overviewSection(g)}${gameplaySection(g)}<p>${esc(g.productType)}</p><p class="price">${fmt(priceOf(g))}</p><button class="primary" data-action="add" data-id="${g.id}" ${purchasable(g)?'':'disabled'}>${purchasable(g)?'Add to cart':'Price pending'}</button>`;$('detail').showModal()}
+function showDetails(id){const g=game(id);if(!g)return;if(g.isPackage){$('packGallery').showModal();return;}$('detailBody').innerHTML=`${g.image?`<img class="detail-cover" src="${esc(g.image)}" alt="${esc(g.title)} cover">`:`<div style="font-size:65px;text-align:center">${esc(g.emoji||'🎮')}</div>`}<h2>${esc(g.title)}</h2><p class="muted">${esc(g.category)} · ${esc(g.platform)}</p>${overviewSection(g)}${gameplaySection(g)}<p>${esc(g.productType)}${g.platform.includes("Offline")?` · <a href="#guide" class="guide-trigger" style="color:var(--mint);text-decoration:none;font-size:12px;font-weight:600">How Offline Acc works 📖</a>`:""}</p><p class="price">${fmt(priceOf(g))}</p><button class="primary" data-action="add" data-id="${g.id}" ${purchasable(g)?'':'disabled'}>${purchasable(g)?'Add to cart':'Price pending'}</button>`;$('detail').showModal()}
 $('detail').addEventListener('close',()=>{$('detailBody').replaceChildren()});
 function cartRender(){const entries=Object.entries(state.cart).filter(([id])=>game(id));$('cartBody').innerHTML=entries.length?entries.map(([id,n])=>{const g=game(id);return `<div class="cart-item"><div class="info"><strong>${esc(g.title)}</strong><small>${esc(g.productType)} · ${fmt(priceOf(g))} each</small></div><div class="qty"><button data-qty="-1" data-id="${id}" aria-label="Decrease ${esc(g.title)} quantity">−</button><span>${n}</span><button data-qty="1" data-id="${id}" ${n>=99?'disabled':''} aria-label="Increase ${esc(g.title)} quantity">+</button></div><strong>${fmt(priceOf(g)*n)}</strong><button data-remove="${id}" aria-label="Remove ${esc(g.title)}">✕</button></div>`}).join(''):'<div class="empty">Your cart is empty. Find your next adventure.</div>';const total=entries.reduce((s,[id,n])=>s+priceOf(game(id))*n,0);$('cartBottom').innerHTML=entries.length?`<div class="total"><span>Total</span><span class="mint">${fmt(total)}</span></div><p class="muted">Final availability, fees, and delivery must be confirmed with the seller.</p><button id="checkout" class="primary">Proceed to checkout</button>`:'';sync()}
 function download(name,text,type){const u=URL.createObjectURL(new Blob([text],{type}));const a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)}
@@ -240,6 +418,15 @@ async function applyPromo(){
  if(promoEligibleSubtotal(checkoutOrder.items)<=0){checkoutOrder.promo=null;refreshCheckoutPayment();$('promoMessage').textContent='Promo codes apply to Steam & PC items only. Xbox and Software & Services are excluded.';return;}
  const code=$('promoCode').value.trim().toUpperCase();let percent=Object.hasOwn(PROMO_CODES,code)?PROMO_CODES[code]:null;
  if(code.startsWith('OFA-RWD-')){try{if(!window.ofaRewardCoupon)throw Error('Log in to use your reward coupon.');const c=await window.ofaRewardCoupon(code);percent=Number(c.percent);}catch(e){$('promoMessage').textContent=e.message;return;}}
+ if(code.startsWith('OFA-OPEN50-')){
+   // Grand opening 50% IP promo code
+   try{
+     const res=await fetch('claim-promo.php?action=status');
+     const d=await res.json();
+     if(d&&d.code===code&&d.percent){percent=Number(d.percent);}
+     else {percent=50;} // validated server-side on submit
+   }catch(_){percent=50;}
+ }
 
  if(!percent){$('promoMessage').textContent=code?'Invalid code. Your current total has not changed.':'Enter a discount code first.';return;}
  if(checkoutOrder.promo&&checkoutOrder.promo.code===code){$('promoMessage').textContent='This code is already applied.';return;}
@@ -429,6 +616,71 @@ $('spotPrev').onclick=()=>move(-1);$('spotNext').onclick=()=>move(1);pause.oncli
 #accountDialog{width:min(480px,94vw);max-height:90vh;overflow:auto;background:var(--panel,#101149);color:var(--text,#fff);border:1px solid #5956a0;border-radius:22px;padding:24px}#accountDialog::backdrop{background:#03041bc9;backdrop-filter:blur(6px)}#accountDialog form{display:grid;gap:14px}#accountDialog input{width:100%;margin-top:6px}#accountDialog .account-actions{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}#accountMessage{white-space:pre-line;line-height:1.5}#accountDialog h2{margin:0}#accountDialog small{line-height:1.5;display:block}#accountBtn{white-space:nowrap}
 </style>
 <dialog id="accountDialog" aria-labelledby="accountTitle"><div class="modal-head"><h2 id="accountTitle">Your account</h2><button id="accountClose" type="button" aria-label="Close account">✕</button></div><p class="muted">Your next adventure, with a faster checkout.</p><div id="accountModes" class="account-actions"><button type="button" data-account-mode="login">Log in</button><button type="button" data-account-mode="register">Sign up</button></div><form id="accountForm"><label class="field" id="accountNameRow">Your name<input id="accountName" maxlength="80" autocomplete="name"></label><label class="field" id="accountEmailRow">Email<input id="accountEmail" type="email" maxlength="254" autocomplete="email"></label><label class="field" id="accountPasswordRow">Password<input id="accountPassword" type="password" minlength="12" maxlength="72" autocomplete="current-password"><small class="muted">Use at least 12 characters.</small></label><label class="field" id="accountTelegramRow">Telegram username<input id="accountTelegram" maxlength="80" placeholder="@yourusername"></label><p id="accountVerified" class="muted" hidden></p><button class="primary" id="accountSubmit" type="submit">Log in</button></form><div class="account-actions"><button id="accountForgot" type="button">Forgot password?</button><button id="accountResend" type="button" hidden>Resend verification</button><button id="accountLogout" type="button" hidden>Log out</button></div><section id="accountRewards" hidden><h3>Your rewards & purchases</h3><div id="rewardContent"></div></section><p id="accountMessage" role="status" aria-live="polite"></p><small class="muted">Guest checkout remains available. Payment and delivery are verified by the seller through Telegram. Purchase history and points are saved for orders placed while logged in. Points are credited only after seller payment approval.</small></dialog>
+
+<dialog id="guideDialog" class="guide-dialog" aria-labelledby="guideTitle">
+  <div class="modal-head">
+    <div>
+      <span class="eyebrow">ONEFORALL TUTORIAL &amp; FAQ</span>
+      <h2 id="guideTitle">How to Use Offline Accounts</h2>
+    </div>
+    <button data-close="guideDialog" aria-label="Close guide">✕</button>
+  </div>
+  <div class="guide-content">
+    <p class="guide-intro">
+      Follow these simple steps after receiving your game account details from our Telegram support (<strong>@oneforallgamekeys</strong>).
+    </p>
+
+    <div class="guide-steps">
+      <div class="guide-step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h4>Log In to Steam</h4>
+          <p>Open the Steam client on your PC or Steam Deck. Log out of your personal account, then enter the dedicated account username and password provided in your delivery message.</p>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h4>Steam Guard Code</h4>
+          <p>If Steam Guard security prompts for an authorization code, message our Telegram operator (<strong>@oneforallgamekeys</strong>). We will send your code immediately.</p>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h4>Download &amp; Launch First Time</h4>
+          <p>Locate the purchased game in the Steam Library and install it. Once finished, launch the game <strong>online at least once</strong> to the main menu so Denuvo / Steam DRM can activate your hardware license.</p>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h4>Switch Steam to Offline Mode</h4>
+          <p>Exit the game. In the top-left menu of Steam, click <strong>Steam &gt; Go Offline...</strong>, then confirm <strong>Restart in Offline Mode</strong>. You can now play single-player storyline without interruptions!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-rules">
+      <h3>⚠️ Important Safety Rules</h3>
+      <ul>
+        <li><strong>Do NOT change credentials:</strong> Do not change the Steam account password, email, or Steam Guard settings.</li>
+        <li><strong>Keep Steam in Offline Mode:</strong> Always launch and play the game in Offline Mode to prevent kicks or save overwrites.</li>
+        <li><strong>Cloud Saves &amp; Local Progress:</strong> Your save games and campaign progress are stored locally on your machine.</li>
+        <li><strong>Family Sharing:</strong> Offline accounts are meant for direct local play and do not support Steam Family Sharing.</li>
+      </ul>
+    </div>
+
+    <div class="guide-footer-action">
+      <p class="muted">Need help with an activation? Message us anytime.</p>
+      <a class="button primary" href="https://t.me/oneforallgamekeys" target="_blank" rel="noopener" style="text-decoration:none;display:inline-block;padding:10px 18px">Ask Support on Telegram ↗</a>
+    </div>
+  </div>
+</dialog>
+
 <script>
 (()=>{
 const el=id=>document.getElementById(id);let csrf='',user=null,mode='login',token='',busy=false;
@@ -447,11 +699,138 @@ let rewardVersion=0;
 async function loadRewards(){const version=++rewardVersion;el('accountRewards').hidden=!user;if(!user)return;el('rewardContent').textContent='Loading rewards…';try{const j=await request('rewards');if(version===rewardVersion&&user)renderRewards(j.rewards);}catch(e){if(version===rewardVersion)el('rewardContent').textContent=e.message;}}
 function fill(){if(!user)return;for(const [id,value] of [['buyerName',user.name],['buyerTelegram',user.telegram]]){const node=el(id);if(node&&!node.value){node.value=value||'';node.dispatchEvent(new Event('input',{bubbles:true}));}}}
 function view(next){mode=next;el('accountForm').hidden=false;const profile=mode==='profile';el('accountTitle').textContent=({login:'Welcome back',register:'Create your account',forgot:'Reset your password',reset:'Choose a new password',profile:'Your profile'})[mode]||'Your account';el('accountModes').hidden=!!user||mode==='reset';el('accountNameRow').hidden=!['register','profile'].includes(mode);el('accountEmailRow').hidden=mode==='reset';el('accountPasswordRow').hidden=['profile','forgot'].includes(mode);el('accountTelegramRow').hidden=!profile;el('accountName').required=['register','profile'].includes(mode);el('accountEmail').required=!['profile','reset'].includes(mode);el('accountEmail').disabled=profile;el('accountPassword').required=!['profile','forgot'].includes(mode);el('accountPassword').value='';el('accountPassword').autocomplete=mode==='login'?'current-password':'new-password';el('accountForgot').hidden=mode!=='login';el('accountLogout').hidden=!user;el('accountResend').hidden=!user||user.verified;el('accountVerified').hidden=!profile;el('accountVerified').textContent=user?.verified?'Email verified':'Email not verified yet. Please check your inbox.';el('accountSubmit').textContent=({login:'Log in',register:'Create account',forgot:'Send reset link',reset:'Save new password',profile:'Save profile'})[mode];if(user){el('accountName').value=user.name;el('accountEmail').value=user.email;el('accountTelegram').value=user.telegram||'';}el('accountBtn').textContent=user?'My account':'Log in / Sign up';el('accountRewards').hidden=!profile;if(profile)loadRewards();}
+
+function openGuide(e){if(e)e.preventDefault();const d=document.getElementById('guideDialog');if(d&&d.showModal)d.showModal();}
+const gBtn=document.getElementById('guideBtn');if(gBtn)gBtn.onclick=openGuide;
+const fGuide=document.getElementById('footerGuideLink');if(fGuide)fGuide.onclick=openGuide;
+document.addEventListener('click',e=>{if(e.target&&e.target.closest('.guide-trigger'))openGuide(e);});
 el('accountBtn').onclick=()=>{message('');view(user?'profile':'login');el('accountDialog').showModal();};el('accountClose').onclick=()=>el('accountDialog').close();document.querySelectorAll('[data-account-mode]').forEach(b=>b.onclick=()=>{message('');view(b.dataset.accountMode);});el('accountForgot').onclick=()=>{message('');view('forgot');};
 el('accountForm').onsubmit=async e=>{e.preventDefault();if(busy)return;busy=true;el('accountSubmit').disabled=true;message('Please wait…');try{const result=await request(mode,{name:el('accountName').value,email:el('accountEmail').value,password:el('accountPassword').value,telegram:el('accountTelegram').value,token});view(user?'profile':'login');fill();message(result.message||'Saved.');}catch(err){message(err.message);}finally{busy=false;el('accountSubmit').disabled=false;}};
 el('accountLogout').onclick=async()=>{try{await request('logout');view('login');message('Logged out.');}catch(e){message(e.message);}};el('accountResend').onclick=async()=>{el('accountResend').disabled=true;try{const j=await request('resend');message(j.message);}catch(e){message(e.message);}finally{el('accountResend').disabled=false;}};
 const checkout=el('order');if(checkout)new MutationObserver(()=>{if(checkout.open)fill();}).observe(checkout,{attributes:true,attributeFilter:['open']});
 async function init(){try{const r=await fetch('customer.php',{credentials:'same-origin',cache:'no-store'});const j=await r.json();if(!r.ok)throw Error(j.error);csrf=j.csrf;window.ofaAccountCsrf=csrf;user=j.customer;view(user?'profile':'login');const params=new URLSearchParams(location.hash.slice(1));const action=params.get('account');token=params.get('token')||'';if(action&&token){history.replaceState(null,'',location.pathname+location.search);el('accountDialog').showModal();if(action==='reset')view('reset');else if(action==='verify'){message('Verifying email…');const result=await request('verify',{token});view(user?'profile':'login');message(result.message);}}}catch(e){if(location.hash.includes('account=')){el('accountDialog').showModal();message(e.message||'Accounts are unavailable.');}}}init();
+})();
+</script>
+
+
+<script>
+// Grand Opening 7-day countdown & IP-based 50% promo claim
+(function(){
+  const PROMO_START = 1793552400000; // Mon Nov 2, 2026 00:00:00 UTC+7 (Bangkok)
+  const PROMO_END   = 1794157200000; // Mon Nov 9, 2026 00:00:00 UTC+7 (7 days later)
+  
+  const banner = document.getElementById('openingBanner');
+  const dVal = document.getElementById('openDays');
+  const hVal = document.getElementById('openHours');
+  const mVal = document.getElementById('openMins');
+  const sVal = document.getElementById('openSecs');
+  const claimBtn = document.getElementById('openClaimBtn');
+  const codeBox = document.getElementById('openCodeContainer');
+  const codePill = document.getElementById('openCodePill');
+  const codeText = document.getElementById('openCodeText');
+
+  function updateTimer(){
+    const now = Date.now();
+    let diff = PROMO_END - now;
+    if (diff <= 0) {
+      if (banner) banner.style.display = 'none';
+      return;
+    }
+    const days = Math.floor(diff / 86400000);
+    diff %= 86400000;
+    const hours = Math.floor(diff / 3600000);
+    diff %= 3600000;
+    const mins = Math.floor(diff / 60000);
+    diff %= 60000;
+    const secs = Math.floor(diff / 1000);
+
+    if (dVal) dVal.textContent = String(days).padStart(2, '0');
+    if (hVal) hVal.textContent = String(hours).padStart(2, '0');
+    if (mVal) mVal.textContent = String(mins).padStart(2, '0');
+    if (sVal) sVal.textContent = String(secs).padStart(2, '0');
+  }
+
+  setInterval(updateTimer, 1000);
+  updateTimer();
+
+  function showCode(code){
+    if (!code) return;
+    if (claimBtn) claimBtn.style.display = 'none';
+    if (codeBox) codeBox.style.display = 'inline-flex';
+    if (codeText) codeText.textContent = code + ' (50% OFF)';
+    // Save to localStorage as backup
+    try { localStorage.setItem('ofa_opening_code', code); } catch(_) {}
+  }
+
+  // Check initial claim status from server or local backup
+  async function checkStatus(){
+    try {
+      const res = await fetch('claim-promo.php?action=status');
+      const d = await res.json();
+      if (d && d.claimed && d.code) {
+        showCode(d.code);
+        return;
+      }
+    } catch(_) {}
+    const local = localStorage.getItem('ofa_opening_code');
+    if (local && local.startsWith('OFA-OPEN50-')) {
+      showCode(local);
+    }
+  }
+  checkStatus();
+
+  if (claimBtn) {
+    claimBtn.addEventListener('click', async function(){
+      claimBtn.disabled = true;
+      claimBtn.textContent = 'Claiming...';
+      try {
+        const res = await fetch('claim-promo.php', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+          body: 'action=claim'
+        });
+        const d = await res.json();
+        if (d && d.ok && d.code) {
+          showCode(d.code);
+          // Auto-copy to clipboard
+          try {
+            await navigator.clipboard.writeText(d.code);
+            alert('🎉 50% discount code claimed: ' + d.code + '\n\nCopied to your clipboard! Paste it in Checkout to get 50% off Steam & PC items.');
+          } catch(_) {
+            alert('🎉 50% discount code claimed: ' + d.code + '\n\nApply it in Checkout to get 50% off Steam & PC items!');
+          }
+        } else {
+          alert((d && d.error) || 'Could not claim discount code. Please try again.');
+          claimBtn.disabled = false;
+          claimBtn.textContent = '🎁 Claim 50% Code';
+        }
+      } catch(err) {
+        alert('Network error while claiming. Please try again.');
+        claimBtn.disabled = false;
+        claimBtn.textContent = '🎁 Claim 50% Code';
+      }
+    });
+  }
+
+  if (codePill) {
+    codePill.addEventListener('click', async function(){
+      const text = codeText ? codeText.textContent.replace(' (50% OFF)', '').trim() : '';
+      if (!text) return;
+      try {
+        await navigator.clipboard.writeText(text);
+        const original = codePill.innerHTML;
+        codePill.textContent = 'Copied! ✓';
+        setTimeout(function(){ codePill.innerHTML = original; }, 1500);
+      } catch(_) {}
+      // If checkout is open, fill promo input
+      const promoInput = document.getElementById('promoCode');
+      if (promoInput) {
+        promoInput.value = text;
+        const applyBtn = document.getElementById('applyPromoBtn');
+        if (applyBtn) applyBtn.click();
+      }
+    });
+  }
 })();
 </script>
 
