@@ -30,7 +30,7 @@ try {
 } catch(Throwable $e) { error_log('OFA customer storage: '.$e->getMessage()); reply(503,['error'=>'Customer accounts need server setup. Guest checkout is still available.']); }
 require_once __DIR__.'/rewards.php';
 rwDb();
-function customer(): ?array { global $db; if(empty($_SESSION['uid'])) return null; $q=$db->prepare('SELECT id,email,name,telegram,verified FROM customers WHERE id=?'); $q->execute([$_SESSION['uid']]); $u=$q->fetch(PDO::FETCH_ASSOC); if(!$u)return null; $u['verified']=(bool)$u['verified']; unset($u['id']); return $u; }
+function customer(): ?array { global $db; if(empty($_SESSION['uid'])) return null; $q=$db->prepare('SELECT id,email,name,telegram,verified FROM customers WHERE id=?'); $q->execute([$_SESSION['uid']]); $u=$q->fetch(PDO::FETCH_ASSOC); if(!$u)return null; $u['verified']=(bool)$u['verified']; $u['points']=rwBalance($db,(int)$_SESSION['uid']); unset($u['id']); return $u; }
 if(empty($_SESSION['google_nonce']))$_SESSION['google_nonce']=bin2hex(random_bytes(32));
 if ($_SERVER['REQUEST_METHOD']==='GET') reply(200,['ok'=>true,'csrf'=>$_SESSION['csrf'],'googleNonce'=>$_SESSION['google_nonce'],'customer'=>customer()]);
 if ($_SERVER['REQUEST_METHOD']!=='POST') reply(405,['error'=>'Method not allowed.']);

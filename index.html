@@ -237,7 +237,9 @@ dialog::backdrop{background:#03041fe6}
 @media(min-width:761px){.nav{position:relative;padding-right:134px;min-height:78px}.nav #cartBtn{position:absolute;right:24px;top:17px;margin:0;white-space:nowrap;min-height:44px}}
 
 .password-control{position:relative;display:block;width:100%}.password-control #accountPassword{width:100%;box-sizing:border-box;padding-right:54px}.password-control #accountPasswordToggle{position:absolute;right:4px;top:50%;transform:translateY(-50%);display:flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:0;border-radius:9px;background:transparent;color:var(--muted,#c6c3e0);cursor:pointer}.password-control #accountPasswordToggle:hover{background:rgba(140,120,255,.15);color:white}.password-control #accountPasswordToggle:focus-visible{outline:2px solid #a99aff;outline-offset:-2px}.password-eye-slash{display:none}#accountPasswordToggle[aria-pressed="true"] .password-eye-slash{display:block}
-</style><style>#accountRewards{margin-top:22px;border-top:1px solid #454263;padding-top:18px} .reward-balance,.reward-order{background:rgba(0,0,0,.18);border:1px solid #454263;border-radius:12px;padding:16px;margin:12px 0}.reward-balance strong{font-size:28px}.reward-order small{display:block;margin-top:7px}#rewardContent code{overflow-wrap:anywhere}#rewardContent .account-actions{flex-wrap:wrap}#accountDialog{max-height:90vh;overflow:auto}</style><style id="mobileLayoutFix">
+
+</style><style>#accountRewards{margin-top:22px;border-top:1px solid #454263;padding-top:18px} .reward-balance,.reward-order{background:rgba(0,0,0,.18);border:1px solid #454263;border-radius:12px;padding:16px;margin:12px 0}.reward-balance strong{font-size:28px}.reward-order small{display:block;margin-top:7px}#rewardContent code{overflow-wrap:anywhere}#rewardContent .account-actions{flex-wrap:wrap}#accountDialog{max-height:90vh;overflow:auto}
+</style><style id="mobileLayoutFix">
 @media(max-width:760px){
  header{position:static}
  .nav{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;padding:12px 14px;align-items:stretch}
@@ -274,6 +276,7 @@ dialog::backdrop{background:#03041fe6}
  .toolbar{grid-template-columns:1fr 1fr}
 }
 @media(max-width:380px){.grid{grid-template-columns:1fr}.nav>button{font-size:11px}}
+
 </style><style>
 /* Side-mounted carousel navigation; indicators remain below the content. */
 .carousel-stage{display:grid;grid-template-columns:44px minmax(0,1fr) 44px;align-items:center;gap:12px;min-width:0}
@@ -284,8 +287,248 @@ dialog::backdrop{background:#03041fe6}
 .carousel-controls{justify-content:center;gap:18px}.carousel-controls .feature-dots{margin-right:0}
 .spot-controls{justify-content:center}
 @media(max-width:760px){.carousel-stage{grid-template-columns:32px minmax(0,1fr) 32px;gap:5px}.carousel-stage>button{width:32px;height:44px;font-size:21px;border-radius:10px}.carousel-top{padding-inline:6px}}
+
 </style>
-<style id="ofa-language-style">#languageSelect{min-width:70px;padding:10px 12px;border-radius:12px;background:#10123c;color:#fff;border:1px solid #7775c866;font:inherit}html[lang="my"] body{font-family:"Myanmar Text","Pyidaungsu","Noto Sans Myanmar",system-ui,sans-serif}html[lang="my"] p,html[lang="my"] label,html[lang="my"] button{line-height:1.65}html[lang="my"] .eyebrow{letter-spacing:.04em}@media(max-width:760px){#languageSelect{grid-column:1/-1;justify-self:center;width:110px}html[lang="my"] .nav button{white-space:normal;min-width:0}}</style>
+<style id="ofa-language-style">#languageSelect{min-width:70px;padding:10px 12px;border-radius:12px;background:#10123c;color:#fff;border:1px solid #7775c866;font:inherit}html[lang="my"] body{font-family:"Myanmar Text","Pyidaungsu","Noto Sans Myanmar",system-ui,sans-serif}html[lang="my"] p,html[lang="my"] label,html[lang="my"] button{line-height:1.65}html[lang="my"] .eyebrow{letter-spacing:.04em}@media(max-width:760px){#languageSelect{grid-column:1/-1;justify-self:center;width:110px}html[lang="my"] .nav button{white-space:normal;min-width:0}}
+</style>
+
+<style id="ofa-compact-promo-and-user">
+/* ============================================================
+   Compact Spotlight & Special Collections (PC & Mobile)
+   ============================================================ */
+/* Grand Opening Promo Banner */
+.opening-banner {
+  padding: 8px 18px !important;
+  font-size: 13px !important;
+}
+.opening-banner-wrap {
+  gap: 12px !important;
+}
+.opening-banner-left {
+  gap: 10px !important;
+}
+.opening-badge {
+  font-size: 10px !important;
+  padding: 3px 8px !important;
+}
+.opening-title {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+}
+.opening-desc {
+  font-size: 12px !important;
+}
+.opening-timer {
+  gap: 4px !important;
+}
+.opening-timer-block {
+  min-width: 44px !important;
+  padding: 3px 5px !important;
+  border-radius: 6px !important;
+}
+.opening-timer-val {
+  font-size: 14px !important;
+  line-height: 1.1 !important;
+}
+.opening-timer-label {
+  font-size: 9px !important;
+}
+.opening-claim-btn {
+  padding: 6px 14px !important;
+  font-size: 12px !important;
+  border-radius: 8px !important;
+}
+.opening-code-pill {
+  padding: 5px 12px !important;
+  font-size: 12px !important;
+  border-radius: 8px !important;
+}
+
+/* Spotlight / Special Collections Carousel */
+.featured-carousel {
+  margin: 6px 0 16px !important;
+}
+.carousel-top {
+  margin-bottom: 4px !important;
+}
+.pack-showcase {
+  border-radius: 16px !important;
+  margin: 4px 0 10px !important;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4) !important;
+}
+.pack-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  min-height: 0;
+}
+.pack-copy {
+  padding: 16px 22px !important;
+}
+.pack-copy h2 {
+  font-size: clamp(26px, 3.2vw, 42px) !important;
+  letter-spacing: -1.5px !important;
+  margin: 6px 0 4px !important;
+  line-height: 1.05 !important;
+}
+.pack-lead {
+  font-size: 13px !important;
+  line-height: 1.35 !important;
+  margin: 4px 0 6px !important;
+  max-width: 320px !important;
+}
+.pack-price {
+  font-size: 24px !important;
+  margin-top: 6px !important;
+  letter-spacing: -0.5px !important;
+}
+.pack-price small {
+  font-size: 12px !important;
+}
+.pack-actions {
+  margin: 8px 0 6px !important;
+  gap: 8px !important;
+}
+.pack-actions button {
+  padding: 8px 16px !important;
+  font-size: 12px !important;
+  border-radius: 8px !important;
+}
+.pack-fine {
+  font-size: 11px !important;
+  margin: 3px 0 !important;
+  line-height: 1.3 !important;
+}
+.pack-foot {
+  padding: 8px 20px !important;
+  font-size: 11px !important;
+}
+.pack-video-feature, .collection-visual {
+  margin: 12px !important;
+  padding: 14px !important;
+  min-height: 180px !important;
+  max-height: 280px !important;
+  border-radius: 14px !important;
+  gap: 8px !important;
+}
+.pack-cover-feature img {
+  max-height: 220px !important;
+  width: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+}
+.collection-number {
+  font-size: clamp(38px, 4.5vw, 56px) !important;
+  letter-spacing: -2px !important;
+}
+.collection-visual h3, .pack-video-feature h3 {
+  font-size: clamp(16px, 2vw, 22px) !important;
+  margin: 2px 0 !important;
+}
+.pack-video-icon {
+  width: 48px !important;
+  height: 48px !important;
+  font-size: 20px !important;
+}
+.pack-wall {
+  gap: 6px !important;
+  padding: 14px !important;
+}
+
+@media (max-width: 900px) {
+  .pack-layout {
+    grid-template-columns: 1fr;
+  }
+  .pack-copy {
+    padding: 12px 14px !important;
+  }
+  .pack-copy h2 {
+    font-size: clamp(22px, 5vw, 30px) !important;
+    margin: 4px 0 3px !important;
+  }
+  .pack-lead {
+    font-size: 12px !important;
+    margin: 2px 0 4px !important;
+  }
+  .pack-price {
+    font-size: 20px !important;
+    margin-top: 4px !important;
+  }
+  .pack-actions {
+    margin: 6px 0 4px !important;
+  }
+  .pack-actions button {
+    padding: 7px 12px !important;
+    font-size: 11px !important;
+  }
+  .pack-fine {
+    font-size: 10px !important;
+  }
+  .pack-video-feature, .collection-visual {
+    margin: 6px 12px 12px !important;
+    padding: 10px !important;
+    min-height: 130px !important;
+  }
+  .pack-cover-feature img {
+    max-height: 160px !important;
+  }
+  .pack-wall {
+    padding: 8px 12px 12px !important;
+    gap: 4px !important;
+  }
+}
+
+/* ============================================================
+   Logged-in User Header Button (Username + Coin Icon Points)
+   ============================================================ */
+.user-badge-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  vertical-align: middle;
+  max-width: 100%;
+}
+.user-name-text {
+  font-weight: 750;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+}
+.user-coin-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: linear-gradient(135deg, #ffd056, #f39c12);
+  color: #211200;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font: 800 11px system-ui, sans-serif;
+  letter-spacing: 0.2px;
+  box-shadow: 0 1px 6px rgba(243, 156, 18, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  line-height: 1.2;
+}
+.user-coin-icon {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1;
+}
+.user-coin-val {
+  font-weight: 850;
+}
+@media (max-width: 760px) {
+  .user-name-text {
+    max-width: 78px;
+    font-size: 11px;
+  }
+  .user-coin-pill {
+    padding: 1px 5px;
+    font-size: 10px;
+  }
+}
+</style>
 </head><body>
 <header><nav class="nav" aria-label="Store navigation"><div class="brand">ONE<span>FORALL</span><small class="muted" style="font-size:10px;letter-spacing:2px;margin-left:12px">GAME SERVICE</small></div><div id="storeSections" class="store-sections" role="group" aria-label="Shop sections"><button data-store-section="steam" aria-pressed="true">Steam &amp; PC</button><button data-store-section="xbox" aria-pressed="false">Xbox</button><button data-store-section="software" aria-pressed="false">Software &amp; Services</button></div><button id="guideBtn" type="button" title="How to use Offline Accounts">Offline Guide 📖</button><button id="accountBtn" type="button" aria-label="Login or Google Login">Login / <img src="assets/google-login-logo.webp" alt="" width="20" height="20" style="object-fit:contain;vertical-align:middle;flex-shrink:0"> Google Login</button><button id="currency" title="Switch currency">THB</button><button id="favorites" aria-pressed="false">♡ Saved <span id="savedCount">0</span></button><button id="cartBtn" class="primary">Cart · <span id="cartCount">0</span></button></nav></header>
 <aside class="opening-banner" id="openingBanner" aria-label="Grand Opening Special Promotion">
@@ -677,6 +920,7 @@ $('spotPrev').onclick=()=>move(-1);$('spotNext').onclick=()=>move(1);row.addEven
 </script>
 <style>
 #accountDialog{width:min(480px,94vw);max-height:90vh;overflow:auto;background:var(--panel,#101149);color:var(--text,#fff);border:1px solid #5956a0;border-radius:22px;padding:24px}#accountDialog::backdrop{background:#03041bc9;backdrop-filter:blur(6px)}#accountDialog form{display:grid;gap:14px}#accountDialog input{width:100%;margin-top:6px}#accountDialog .account-actions{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}#accountMessage{white-space:pre-line;line-height:1.5}#accountDialog h2{margin:0}#accountDialog small{line-height:1.5;display:block}#accountBtn{white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+
 </style>
 <dialog id="accountDialog" aria-labelledby="accountTitle"><div class="modal-head"><h2 id="accountTitle">Your account</h2><button id="accountClose" type="button" aria-label="Close account">✕</button></div><p class="muted">Your next adventure, with a faster checkout.</p><div id="accountModes" class="account-actions"><button type="button" data-account-mode="login">Log in</button><button type="button" data-account-mode="register">Sign up</button></div><section id="googleAccountArea" hidden style="margin:18px 0;text-align:center"><div id="googleAccountButton" style="min-height:44px;display:flex;justify-content:center;align-items:center"></div><small id="googleAccountNote" class="muted" style="display:block;margin-top:10px;line-height:1.4">Existing account? Log in with password first to link Google and keep your points.</small><div style="display:flex;align-items:center;gap:12px;margin:18px 0 8px;color:#8a87b0;font-size:12px;letter-spacing:1px;text-transform:uppercase"><span style="flex:1;height:1px;background:#353257"></span>or with email<span style="flex:1;height:1px;background:#353257"></span></div></section><form id="accountForm"><label class="field" id="accountNameRow">Your name<input id="accountName" maxlength="80" autocomplete="name"></label><label class="field" id="accountEmailRow">Email<input id="accountEmail" type="email" maxlength="254" autocomplete="email"></label><label class="field" id="accountPasswordRow">Password<span class="password-control"><input id="accountPassword" type="password" minlength="12" maxlength="72" autocomplete="current-password"><button id="accountPasswordToggle" type="button" aria-label="Show password" aria-controls="accountPassword" aria-pressed="false" title="Show password"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path class="password-eye-slash" d="m3 3 18 18"/></svg></button></span><small class="muted">Use at least 12 characters.</small></label><label class="field" id="accountTelegramRow">Telegram username<input id="accountTelegram" maxlength="80" placeholder="@yourusername"></label><p id="accountVerified" class="muted" hidden></p><button class="primary" id="accountSubmit" type="submit">Log in</button></form><div class="account-actions"><button id="accountForgot" type="button">Forgot password?</button><button id="accountResend" type="button" hidden>Resend verification</button><button id="accountLogout" type="button" hidden>Log out</button></div><section id="accountRewards" hidden><h3>Your rewards & purchases</h3><div id="rewardContent"></div></section><p id="accountMessage" role="status" aria-live="polite"></p><small class="muted">Guest checkout remains available. Payment and delivery are verified by the seller through Telegram. Purchase history and points are saved for orders placed while logged in. Points are credited only after seller payment approval.</small></dialog>
 
@@ -752,20 +996,64 @@ function googleView(){const show=['login','register','profile'].includes(mode);e
 function setupGoogle(){if(googleReady||!googleNonce||!window.google?.accounts?.id)return;googleReady=true;google.accounts.id.initialize({client_id:'915039082117-4eu73pdmohp7tqk7bbpvevdjel23j07s.apps.googleusercontent.com',nonce:googleNonce,auto_select:false,callback:async response=>{if(busy)return;busy=true;message('Verifying Google sign-in…');try{const j=await request('google',{credential:response.credential});view('profile');fill();message(j.message);}catch(e){message(e.message);}finally{busy=false;}}});google.accounts.id.renderButton(el('googleAccountButton'),{theme:'outline',size:'large',text:'continue_with',shape:'rectangular',width:280});}
 const googleScript=document.createElement('script');googleScript.src='https://accounts.google.com/gsi/client';googleScript.async=true;googleScript.onload=setupGoogle;googleScript.onerror=()=>{el('googleAccountButton').textContent='Google sign-in is unavailable. Please use email login.';};document.head.appendChild(googleScript);
 
-async function request(action,data={}){if(!csrf){const r=await fetch('customer.php',{credentials:'same-origin',cache:'no-store'});const j=await r.json();if(!r.ok)throw Error(j.error||'Accounts unavailable.');csrf=j.csrf;googleNonce=j.googleNonce||googleNonce;setupGoogle();window.ofaAccountCsrf=csrf;user=j.customer;}const r=await fetch('customer.php',{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json','X-CSRF-Token':csrf},body:JSON.stringify({action,...data})});const j=await r.json();if(!r.ok)throw Error(j.error||'Please try again.');if(j.csrf){csrf=j.csrf;window.ofaAccountCsrf=csrf;}if('customer'in j)user=j.customer;return j;}
+async function request(action,data={}){if(!csrf){const r=await fetch('customer.php',{credentials:'same-origin',cache:'no-store'});const j=await r.json();if(!r.ok)throw Error(j.error||'Accounts unavailable.');csrf=j.csrf;googleNonce=j.googleNonce||googleNonce;setupGoogle();window.ofaAccountCsrf=csrf;user=j.customer;}const r=await fetch('customer.php',{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json','X-CSRF-Token':csrf},body:JSON.stringify({action,...data})});const j=await r.json();if(!r.ok)throw Error(j.error||'Please try again.');if(j.csrf){csrf=j.csrf;window.ofaAccountCsrf=csrf;}if('customer'in j){user=j.customer;userPoints=user?Number(user.points)||0:0;updateUserHeader();}return j;}
 const safe=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 window.ofaRewardCoupon=async code=>(await request('coupon',{code})).coupon;
 function renderRewards(r){
+ userPoints = (r && typeof r.balance === "number") ? r.balance : 0;
+ updateUserHeader();
  const money=(n,c)=>(n/(c==='THB'?100:1)).toLocaleString('en-US',{maximumFractionDigits:2})+' '+c;
  const date=n=>new Date(Number(n)*1000).toLocaleDateString();
- el('rewardContent').innerHTML=`<div class="reward-balance"><strong>${Number(r.balance)} points</strong><p>Earn 1 point per 1,000 MMK or ฿7 paid, rounded down. Points are added after seller approval.</p></div><div class="account-actions">${[[100,5],[200,10],[300,15]].map(([cost,pct])=>`<button type="button" data-redeem="${cost}" ${r.balance<cost||!user?.verified?'disabled':''}>${cost} points → ${pct}% coupon</button>`).join('')}</div><small>Reward coupons are single-use, account-bound, Steam & PC only. One code per order. Redeeming points is final.</small><h4>Your coupons</h4>${r.coupons.length?r.coupons.map(c=>`<p><code>${safe(c.code)}</code> · ${Number(c.percent)}% · ${safe(c.state)} ${c.state==='available'?`<button type="button" data-copy-reward="${safe(c.code)}">Copy</button>`:''}</p>`).join(''):'<p>No reward coupons yet.</p>'}<h4>Recent purchases</h4>${r.orders.length?r.orders.map(o=>`<article class="reward-order"><strong>${safe(o.id)}</strong><small>${date(o.created)} · ${safe(o.status.replaceAll('_',' '))}</small><p>${o.items.map(i=>safe(i.title)+' × '+Number(i.quantity)).join('<br>')}</p><strong>${money(o.total,o.currency)}</strong><small>${o.status==='payment_verified'?Number(o.points)+' points earned':Number(o.points)+' points pending seller approval'}</small></article>`).join(''):'<p>No saved orders yet. Log in before checkout to earn points.</p>'}<h4>Points activity</h4>${r.ledger.length?r.ledger.map(l=>`<p>${Number(l.amount)>0?'+':''}${Number(l.amount)} · ${safe(l.reason)} · ${safe(l.reference)} · ${date(l.created)}</p>`).join(''):'<p>No points activity yet.</p>'}`;
+ let openingClaimed = '';
+ try {
+   const op = localStorage.getItem('ofa_opening_code');
+   if (op && op.startsWith('OFA-OPEN50-')) {
+     openingClaimed = `<div class="reward-balance" style="margin:10px 0;background:rgba(101,241,204,0.08);border:1px solid rgba(101,241,204,0.35);padding:12px;border-radius:10px;"><strong style="color:var(--mint,#65f1cc);font-size:15px;display:flex;align-items:center;gap:6px">🎁 Opening 50% Off Code: <code style="color:#fff;background:rgba(0,0,0,0.3);padding:2px 8px;border-radius:6px">${safe(op)}</code></strong><p style="margin:4px 0 0;font-size:12px;color:var(--muted)">1 per customer. Paste in checkout to claim 50% off Steam & PC games.</p></div>`;
+   }
+ } catch(_) {}
+
+ el('rewardContent').innerHTML = `
+   <div class="reward-balance" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px;background:rgba(255,208,86,0.06);border:1px solid rgba(255,208,86,0.25);border-radius:12px">
+     <div>
+       <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;font-weight:700">Coin Points Balance</div>
+       <div style="display:flex;align-items:center;gap:8px;margin-top:2px"><span style="font-size:26px">🪙</span><strong style="font-size:26px;color:#ffd056">${Number(r.balance)} Points</strong></div>
+     </div>
+     <div style="font-size:12px;color:var(--muted);max-width:240px;line-height:1.35">Earn 1 point per 1,000 MMK or ฿7 spent. Redeem points for discount coupons below.</div>
+   </div>
+   <div class="account-actions" style="margin:12px 0 6px">
+     ${[[100,5],[200,10],[300,15]].map(([cost,pct])=>`<button type="button" data-redeem="${cost}" ${r.balance<cost||!user?.verified?'disabled':''}>🪙 ${cost} pts → ${pct}% coupon</button>`).join('')}
+   </div>
+   <small style="color:var(--muted);display:block;margin-bottom:12px;line-height:1.4">Reward coupons are single-use, account-bound, Steam & PC only. One code per order.</small>
+   ${openingClaimed}
+   <h4 style="margin:16px 0 8px;display:flex;align-items:center;gap:6px">🎟️ Your Coupons</h4>
+   ${r.coupons.length?r.coupons.map(c=>`<p style="background:rgba(0,0,0,0.2);padding:8px 12px;border-radius:8px;border:1px solid #454263;margin:6px 0;display:flex;align-items:center;justify-content:space-between"><span><code>${safe(c.code)}</code> · <strong>${Number(c.percent)}% OFF</strong> · <span style="text-transform:capitalize">${safe(c.state)}</span></span> ${c.state==='available'?`<button type="button" data-copy-reward="${safe(c.code)}" style="padding:4px 10px;font-size:11px">Copy</button>`:''}</p>`).join(''):'<p class="muted" style="font-size:13px">No reward coupons redeemed yet.</p>'}
+   <h4 style="margin:16px 0 8px;display:flex;align-items:center;gap:6px">🎮 Recent Purchases & Game Access</h4>
+   ${r.orders.length?r.orders.map(o=>`<article class="reward-order" style="margin:8px 0;padding:12px"><strong>${safe(o.id)}</strong><small>${date(o.created)} · ${safe(o.status.replaceAll('_',' '))}</small><p style="margin:6px 0;font-size:13px">${o.items.map(i=>'<strong>'+safe(i.title)+'</strong> ('+safe(i.type||'Game')+') × '+Number(i.quantity)).join('<br>')}</p><strong>${money(o.total,o.currency)}</strong><small style="color:var(--mint);display:block;margin-top:4px">${o.status==='payment_verified'?'✓ '+Number(o.points)+' points earned':Number(o.points)+' points pending seller approval'}</small></article>`).join(''):'<p class="muted" style="font-size:13px">No orders found on this account yet. Place an order to build your library.</p>'}
+   <h4 style="margin:16px 0 8px;display:flex;align-items:center;gap:6px">📜 Points Activity</h4>
+   ${r.ledger.length?r.ledger.map(l=>`<p style="font-size:12px;padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.06);margin:4px 0"><span style="font-weight:700;color:${Number(l.amount)>=0?'var(--mint)':'#ff7b7b'}">${Number(l.amount)>0?'+':''}${Number(l.amount)} pts</span> · ${safe(l.reason)} · <span class="muted">${safe(l.reference)} · ${date(l.created)}</span></p>`).join(''):'<p class="muted" style="font-size:13px">No points activity recorded yet.</p>'}`;
  el('rewardContent').querySelectorAll('[data-redeem]').forEach(b=>b.onclick=async()=>{b.disabled=true;try{const j=await request('redeem',{cost:Number(b.dataset.redeem)});renderRewards(j.rewards);message('Coupon created: '+j.reward.code);}catch(e){message(e.message);b.disabled=false;}});
  el('rewardContent').querySelectorAll('[data-copy-reward]').forEach(b=>b.onclick=async()=>{try{await navigator.clipboard.writeText(b.dataset.copyReward);message('Coupon copied. Apply it in checkout.');}catch(e){message('Select and copy the displayed coupon code.');}});
 }
 let rewardVersion=0;
-async function loadRewards(){const version=++rewardVersion;el('accountRewards').hidden=!user;if(!user)return;el('rewardContent').textContent='Loading rewards…';try{const j=await request('rewards');if(version===rewardVersion&&user)renderRewards(j.rewards);}catch(e){if(version===rewardVersion)el('rewardContent').textContent=e.message;}}
+async function loadRewards(){const version=++rewardVersion;el('accountRewards').hidden=!user;if(!user)return;el('rewardContent').textContent='Loading rewards…';try{const j=await request('rewards');if(version===rewardVersion&&user){renderRewards(j.rewards);}}catch(e){if(version===rewardVersion)el('rewardContent').textContent=e.message;}}
 function fill(){if(!user)return;for(const [id,value] of [['buyerName',user.name],['buyerTelegram',user.telegram]]){const node=el(id);if(node&&!node.value){node.value=value||'';node.dispatchEvent(new Event('input',{bubbles:true}));}}}
-function view(next){mode=next;googleView();el('accountForm').hidden=false;const profile=mode==='profile';el('accountTitle').textContent=({login:'Welcome back',register:'Create your account',forgot:'Reset your password',reset:'Choose a new password',profile:'Your profile'})[mode]||'Your account';el('accountModes').hidden=!!user||mode==='reset';el('accountNameRow').hidden=!['register','profile'].includes(mode);el('accountEmailRow').hidden=mode==='reset';el('accountPasswordRow').hidden=['profile','forgot'].includes(mode);el('accountTelegramRow').hidden=!profile;el('accountName').required=['register','profile'].includes(mode);el('accountEmail').required=!['profile','reset'].includes(mode);el('accountEmail').disabled=profile;el('accountPassword').required=!['profile','forgot'].includes(mode);el('accountPassword').value='';el('accountPassword').type='password';el('accountPasswordToggle').setAttribute('aria-pressed','false');el('accountPasswordToggle').setAttribute('aria-label','Show password');el('accountPasswordToggle').title='Show password';el('accountPassword').autocomplete=mode==='login'?'current-password':'new-password';el('accountForgot').hidden=mode!=='login';el('accountLogout').hidden=!user;el('accountResend').hidden=!user||user.verified;el('accountVerified').hidden=!profile;el('accountVerified').textContent=user?.verified?'Email verified':'Email not verified yet. Please check your inbox.';el('accountSubmit').textContent=({login:'Log in',register:'Create account',forgot:'Send reset link',reset:'Save new password',profile:'Save profile'})[mode];if(user){el('accountName').value=user.name;el('accountEmail').value=user.email;el('accountTelegram').value=user.telegram||'';}el('accountBtn').innerHTML=user?'My account':'Login / <img src="assets/google-login-logo.webp" alt="" width="20" height="20" style="object-fit:contain;vertical-align:middle;flex-shrink:0"> Google Login';el('accountBtn').setAttribute('aria-label',user?'My account':'Login or Google Login');el('accountRewards').hidden=!profile;if(profile)loadRewards();}
+
+let userPoints = 0;
+function updateUserHeader() {
+  const btn = el('accountBtn');
+  if (!btn) return;
+  if (!user) {
+    btn.innerHTML = 'Login / <img src="assets/google-login-logo.webp" alt="" width="20" height="20" style="object-fit:contain;vertical-align:middle;flex-shrink:0"> Google Login';
+    btn.setAttribute('aria-label', 'Login or Google Login');
+    return;
+  }
+  const rawName = user.name || (user.email ? user.email.split('@')[0] : 'Customer');
+  const displayName = rawName.trim();
+  btn.innerHTML = `<span class="user-badge-wrap" data-no-translate="true"><span class="user-name-text">${safe(displayName)}</span><span class="user-coin-pill" title="${userPoints} Coin Points"><span class="user-coin-icon">🪙</span><span class="user-coin-val">${userPoints}</span></span></span>`;
+  btn.setAttribute('aria-label', `${displayName} - ${userPoints} Points`);
+}
+
+function view(next){mode=next;googleView();el('accountForm').hidden=false;const profile=mode==='profile';el('accountTitle').textContent=({login:'Welcome back',register:'Create your account',forgot:'Reset your password',reset:'Choose a new password',profile:'Your profile'})[mode]||'Your account';el('accountModes').hidden=!!user||mode==='reset';el('accountNameRow').hidden=!['register','profile'].includes(mode);el('accountEmailRow').hidden=mode==='reset';el('accountPasswordRow').hidden=['profile','forgot'].includes(mode);el('accountTelegramRow').hidden=!profile;el('accountName').required=['register','profile'].includes(mode);el('accountEmail').required=!['profile','reset'].includes(mode);el('accountEmail').disabled=profile;el('accountPassword').required=!['profile','forgot'].includes(mode);el('accountPassword').value='';el('accountPassword').type='password';el('accountPasswordToggle').setAttribute('aria-pressed','false');el('accountPasswordToggle').setAttribute('aria-label','Show password');el('accountPasswordToggle').title='Show password';el('accountPassword').autocomplete=mode==='login'?'current-password':'new-password';el('accountForgot').hidden=mode!=='login';el('accountLogout').hidden=!user;el('accountResend').hidden=!user||user.verified;el('accountVerified').hidden=!profile;el('accountVerified').textContent=user?.verified?'Email verified':'Email not verified yet. Please check your inbox.';el('accountSubmit').textContent=({login:'Log in',register:'Create account',forgot:'Send reset link',reset:'Save new password',profile:'Save profile'})[mode];if(user){el('accountName').value=user.name;el('accountEmail').value=user.email;el('accountTelegram').value=user.telegram||'';}updateUserHeader();el('accountRewards').hidden=!profile;if(profile)loadRewards();}
 
 function openGuide(e){if(e)e.preventDefault();const d=document.getElementById('guideDialog');if(d&&d.showModal)d.showModal();}
 const gBtn=document.getElementById('guideBtn');if(gBtn)gBtn.onclick=openGuide;
@@ -776,7 +1064,7 @@ el('accountPasswordToggle').onclick=()=>{const input=el('accountPassword'),butto
  el('accountForm').onsubmit=async e=>{e.preventDefault();if(busy)return;busy=true;el('accountSubmit').disabled=true;message('Please wait…');try{const result=await request(mode,{name:el('accountName').value,email:el('accountEmail').value,password:el('accountPassword').value,telegram:el('accountTelegram').value,token});view(user?'profile':'login');fill();message(result.message||'Saved.');}catch(err){message(err.message);}finally{busy=false;el('accountSubmit').disabled=false;}};
 el('accountLogout').onclick=async()=>{try{await request('logout');view('login');message('Logged out.');}catch(e){message(e.message);}};el('accountResend').onclick=async()=>{el('accountResend').disabled=true;try{const j=await request('resend');message(j.message);}catch(e){message(e.message);}finally{el('accountResend').disabled=false;}};
 const checkout=el('order');if(checkout)new MutationObserver(()=>{if(checkout.open)fill();}).observe(checkout,{attributes:true,attributeFilter:['open']});
-async function init(){try{const r=await fetch('customer.php',{credentials:'same-origin',cache:'no-store'});const j=await r.json();if(!r.ok)throw Error(j.error);csrf=j.csrf;googleNonce=j.googleNonce||googleNonce;setupGoogle();window.ofaAccountCsrf=csrf;user=j.customer;view(user?'profile':'login');const params=new URLSearchParams(location.hash.slice(1));const action=params.get('account');token=params.get('token')||'';if(action&&token){history.replaceState(null,'',location.pathname+location.search);el('accountDialog').showModal();if(action==='reset')view('reset');else if(action==='verify'){message('Verifying email…');const result=await request('verify',{token});view(user?'profile':'login');message(result.message);}}}catch(e){if(location.hash.includes('account=')){el('accountDialog').showModal();message(e.message||'Accounts are unavailable.');}}}init();
+async function init(){try{const r=await fetch('customer.php',{credentials:'same-origin',cache:'no-store'});const j=await r.json();if(!r.ok)throw Error(j.error);csrf=j.csrf;googleNonce=j.googleNonce||googleNonce;setupGoogle();window.ofaAccountCsrf=csrf;user=j.customer;if(user&&typeof user.points==='number'){userPoints=user.points;}updateUserHeader();view(user?'profile':'login');const params=new URLSearchParams(location.hash.slice(1));const action=params.get('account');token=params.get('token')||'';if(action&&token){history.replaceState(null,'',location.pathname+location.search);el('accountDialog').showModal();if(action==='reset')view('reset');else if(action==='verify'){message('Verifying email…');const result=await request('verify',{token});view(user?'profile':'login');message(result.message);}}}catch(e){if(location.hash.includes('account=')){el('accountDialog').showModal();message(e.message||'Accounts are unavailable.');}}}init();
 })();
 </script>
 
