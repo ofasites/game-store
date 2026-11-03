@@ -763,10 +763,10 @@ function clearSubmittedCart(order){
  persist();cartRender();
 }
 function download(name,text,type){const u=URL.createObjectURL(new Blob([text],{type}));const a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)}
-const PROMO_CODES=Object.freeze({"OFA-54LHP89P2C": 20, "OFA-VSGEJB9BZC": 20, "OFA-EEQFRK4UGJ": 20, "OFA-3KQ8LUDFR8": 20, "OFA-3J4D5RVVW2": 20, "OFA-DHV7PCMAGL": 20, "OFA-WFDJ26XXYQ": 20, "OFA-6W45T6ZQAF": 20, "OFA-YUE2Q99UUX": 20, "OFA-ZA2CN47Q2F": 20, "OFA-JEYSCH9BC5": 20, "OFA-MPKNBWTW2X": 20, "OFA-PQJ887SZBP": 20, "OFA-DZ4XHTWLL8": 20, "OFA-4VGTCW2DXA": 20, "OFA-PMFT5ZA27J": 20, "OFA-KT5K35KSVH": 20, "OFA-KUUR5RYN5X": 20, "OFA-ELHDGXXAXC": 20, "OFA-V4B4QL8ZEC": 20, "OFA-3SHLS54JRT": 20, "OFA-ZWA4PSRYM8": 20, "OFA-7NELPDFU2Y": 20, "OFA-9EWZ2B7GAQ": 20, "OFA-NLSBM52JZK": 20, "OFA-6RFLNEUX5D": 20, "OFA-5FC9JYWDDE": 20, "OFA-JDQS4WUS7H": 20, "OFA-UVMEAG3CGX": 20, "OFA-L24FT633TV": 20, "OFA-MBXZXC4T5X": 20, "OFA-FVKL83Q3M3": 20, "OFA-NRRB9Q8TAT": 20, "OFA-L7DG4QUCQ3": 20, "OFA-64MG4MVWK4": 20, "OFA-R59U37ACY4": 20, "OFA-WHTLTVR26Q": 20, "OFA-3NEE92C36L": 20, "OFA-EVQ5NBAGHE": 20, "OFA-FXJN4U2RSY": 20, "OFA-QDLZ38HYE3": 20, "OFA-DASD2XE4U9": 20, "OFA-ALJ27XUDBB": 20, "OFA-K3WFRVYCWQ": 20, "OFA-LHKWXBAP5T": 20, "OFA-53ESGL35D5": 20, "OFA-C8UUMFBRSU": 20, "OFA-V48LYSRPYH": 20, "OFA-5BCFM5S4KL": 20, "OFA-TGH5MQVTAB": 20, "OFA-JHLVZKFFNZ": 35, "OFA-DSYBMYVVNT": 35, "OFA-54RU7AXGRL": 35, "OFA-MRW4PRUCVT": 35, "OFA-P8CYHEQP7V": 35, "OFA-WRZYRMYPSQ": 35, "OFA-4ESZMKCFQR": 35, "OFA-CSC98YU5TE": 35, "OFA-N3E6K3RVBC": 35, "OFA-ZUV5N6FDS7": 35, "OFA-U9KNZSWHTQ": 35, "OFA-JCQYCQTAQQ": 35, "OFA-KL4JGDWBEA": 35, "OFA-YJH2PJNFBQ": 35, "OFA-7HKRHTMSSN": 35, "OFA-L5GHGJU2WF": 35, "OFA-2XS9MF97YB": 35, "OFA-HM45B759DU": 35, "OFA-DH8S7X75T5": 35, "OFA-N8C8U935LZ": 35, "OFA-RH2B3Q4HJP": 50, "OFA-47XM567NPR": 50, "OFA-Z2LQLEMEKF": 50, "OFA-TJKCWTLYAE": 50, "OFA-5ATY4ZLL6G": 50, "OFA-YL6SQUHY4R": 50, "OFA-J588A6PCX3": 50, "OFA-BX25RH8GB4": 50, "OFA-EH52RD5C3V": 50, "OFA-K3H25WKCXB": 50, "OFA-RXWVRZQCK3": 15, "OFA-EX8978CU5W": 15, "OFA-NCKTAU85TF": 15, "OFA-VMU5EY9E9G": 15, "OFA-QM97BHH44K": 15, "OFA-WM4YNLAJQ8": 15, "OFA-GM9VLLSYFH": 15, "OFA-PKGJE4SL6R": 15, "OFA-WMNRSV4C8U": 15, "OFA-CGYNQQY3ZK": 15, "OFA-X8TC28Y7FS": 15, "OFA-63CP8P7ZZ8": 15, "OFA-KU6VF6SJEQ": 15, "OFA-6VQ4BDKMSH": 15, "OFA-2U95JNSUTF": 15, "OFA-ACMC3WRZ2Y": 15, "OFA-7YN5F8J4L3": 15, "OFA-A4X9CYJ8TG": 15, "OFA-QERLLA5HA7": 15, "OFA-VJKYY2BTWL": 15, "OFA-MANUAL50-BE975D90": 50});
+const PROMO_CODES=Object.freeze({"OFA-54LHP89P2C": 20, "OFA-VSGEJB9BZC": 20, "OFA-EEQFRK4UGJ": 20, "OFA-3KQ8LUDFR8": 20, "OFA-3J4D5RVVW2": 20, "OFA-DHV7PCMAGL": 20, "OFA-WFDJ26XXYQ": 20, "OFA-6W45T6ZQAF": 20, "OFA-YUE2Q99UUX": 20, "OFA-ZA2CN47Q2F": 20, "OFA-JEYSCH9BC5": 20, "OFA-MPKNBWTW2X": 20, "OFA-PQJ887SZBP": 20, "OFA-DZ4XHTWLL8": 20, "OFA-4VGTCW2DXA": 20, "OFA-PMFT5ZA27J": 20, "OFA-KT5K35KSVH": 20, "OFA-KUUR5RYN5X": 20, "OFA-ELHDGXXAXC": 20, "OFA-V4B4QL8ZEC": 20, "OFA-3SHLS54JRT": 20, "OFA-ZWA4PSRYM8": 20, "OFA-7NELPDFU2Y": 20, "OFA-9EWZ2B7GAQ": 20, "OFA-NLSBM52JZK": 20, "OFA-6RFLNEUX5D": 20, "OFA-5FC9JYWDDE": 20, "OFA-JDQS4WUS7H": 20, "OFA-UVMEAG3CGX": 20, "OFA-L24FT633TV": 20, "OFA-MBXZXC4T5X": 20, "OFA-FVKL83Q3M3": 20, "OFA-NRRB9Q8TAT": 20, "OFA-L7DG4QUCQ3": 20, "OFA-64MG4MVWK4": 20, "OFA-R59U37ACY4": 20, "OFA-WHTLTVR26Q": 20, "OFA-3NEE92C36L": 20, "OFA-EVQ5NBAGHE": 20, "OFA-FXJN4U2RSY": 20, "OFA-QDLZ38HYE3": 20, "OFA-DASD2XE4U9": 20, "OFA-ALJ27XUDBB": 20, "OFA-K3WFRVYCWQ": 20, "OFA-LHKWXBAP5T": 20, "OFA-53ESGL35D5": 20, "OFA-C8UUMFBRSU": 20, "OFA-V48LYSRPYH": 20, "OFA-5BCFM5S4KL": 20, "OFA-TGH5MQVTAB": 20, "OFA-JHLVZKFFNZ": 35, "OFA-DSYBMYVVNT": 35, "OFA-54RU7AXGRL": 35, "OFA-MRW4PRUCVT": 35, "OFA-P8CYHEQP7V": 35, "OFA-WRZYRMYPSQ": 35, "OFA-4ESZMKCFQR": 35, "OFA-CSC98YU5TE": 35, "OFA-N3E6K3RVBC": 35, "OFA-ZUV5N6FDS7": 35, "OFA-U9KNZSWHTQ": 35, "OFA-JCQYCQTAQQ": 35, "OFA-KL4JGDWBEA": 35, "OFA-YJH2PJNFBQ": 35, "OFA-7HKRHTMSSN": 35, "OFA-L5GHGJU2WF": 35, "OFA-2XS9MF97YB": 35, "OFA-HM45B759DU": 35, "OFA-DH8S7X75T5": 35, "OFA-N8C8U935LZ": 35, "OFA-RH2B3Q4HJP": 50, "OFA-47XM567NPR": 50, "OFA-Z2LQLEMEKF": 50, "OFA-TJKCWTLYAE": 50, "OFA-5ATY4ZLL6G": 50, "OFA-YL6SQUHY4R": 50, "OFA-J588A6PCX3": 50, "OFA-BX25RH8GB4": 50, "OFA-EH52RD5C3V": 50, "OFA-K3H25WKCXB": 50, "OFA-RXWVRZQCK3": 15, "OFA-EX8978CU5W": 15, "OFA-NCKTAU85TF": 15, "OFA-VMU5EY9E9G": 15, "OFA-QM97BHH44K": 15, "OFA-WM4YNLAJQ8": 15, "OFA-GM9VLLSYFH": 15, "OFA-PKGJE4SL6R": 15, "OFA-WMNRSV4C8U": 15, "OFA-CGYNQQY3ZK": 15, "OFA-X8TC28Y7FS": 15, "OFA-63CP8P7ZZ8": 15, "OFA-KU6VF6SJEQ": 15, "OFA-6VQ4BDKMSH": 15, "OFA-2U95JNSUTF": 15, "OFA-ACMC3WRZ2Y": 15, "OFA-7YN5F8J4L3": 15, "OFA-A4X9CYJ8TG": 15, "OFA-QERLLA5HA7": 15, "OFA-VJKYY2BTWL": 15});
 let checkoutOrder=null;
 function promoEligible(g){if(!g)return false;if(g.storeSection)return g.storeSection==='steam';return !g.isSoftware&&!/software|services/i.test(g.category||'')&&!/xbox/i.test((g.title||'')+' '+(g.platform||''));}
-function promoEligibleSubtotal(items){return items.reduce((sum,i)=>sum+(i.promoEligible===true?i.unit*i.quantity:0),0);}
+function promoEligibleSubtotal(items,promo=null){return items.reduce((sum,i)=>sum+((promo?.eligibleProductIds?promo.eligibleProductIds.includes(i.id):i.promoEligible===true)?i.unit*i.quantity:0),0);}
 function receiptMoney(amount,currency){return currency==='THB'?'฿'+amount.toLocaleString('en-US'):amount.toLocaleString('en-US')+' MMK'}
 function orderSummary(){
  const items=Object.entries(state.cart).filter(([id])=>game(id)).map(([id,quantity])=>{const g=game(id);return {id:g.id,title:g.title,type:g.productType||g.platform,quantity,unit:priceOf(g),promoEligible:promoEligible(g)}});
@@ -789,7 +789,7 @@ function refreshCheckoutPayment(){
  const m=o.currency==='MMK'?'KBZPay':'PromptPay';
  $('payerAccountLabel').textContent=o.currency==='MMK'?'KPay account name':'Thai banking account name';
  $('transferReference').placeholder=o.currency==='MMK'?'Enter the sender’s KPay account name':'Enter the sender’s Thai banking account name';
- const eligible=promoEligibleSubtotal(o.items);if(eligible<=0)o.promo=null;const result=calculatePromo(eligible,o.promo?o.promo.percent:0,o.currency);o.discount=result.discount;const scale=o.currency==='THB'?100:1;o.total=Math.max(0,Math.round((o.subtotal-o.discount)*scale)/scale);
+ const eligible=promoEligibleSubtotal(o.items,o.promo);if(eligible<=0)o.promo=null;const result=calculatePromo(eligible,o.promo?o.promo.percent:0,o.currency);o.discount=result.discount;const scale=o.currency==='THB'?100:1;o.total=Math.max(0,Math.round((o.subtotal-o.discount)*scale)/scale);
  $('checkoutSubtotal').textContent=receiptMoney(o.subtotal,o.currency);
  $('discountRow').hidden=!o.promo;$('removePromo').hidden=!o.promo;
  $('discountLabel').textContent=o.promo?`Steam & PC discount (${o.promo.percent}% · ${o.promo.code})`:'Discount';
@@ -804,7 +804,14 @@ function refreshCheckoutPayment(){
 async function applyPromo(){
  if(!checkoutOrder)return;
  if(promoEligibleSubtotal(checkoutOrder.items)<=0){checkoutOrder.promo=null;refreshCheckoutPayment();$('promoMessage').textContent='Promo codes apply to Steam & PC items only. Xbox and Software & Services are excluded.';return;}
+ const targetOrder=checkoutOrder;const requestId=(targetOrder.promoRequestId||0)+1;targetOrder.promoRequestId=requestId;let eligibleProductIds=null;
  const code=$('promoCode').value.trim().toUpperCase();let percent=Object.hasOwn(PROMO_CODES,code)?PROMO_CODES[code]:null;
+ if(code.startsWith('OFA-SINGLE50-')){
+  try{const res=await fetch('validate-coupon.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code})});const d=await res.json();if(!res.ok||!d.ok)throw Error(d.error||'Code validation unavailable.');percent=d.percent;eligibleProductIds=d.eligibleProductIds;
+  if(checkoutOrder!==targetOrder||targetOrder.promoRequestId!==requestId)return;
+  if(promoEligibleSubtotal(targetOrder.items,{eligibleProductIds})<=0)throw Error('No eligible games in this cart. Games need a verified Steam PC release at least one calendar month ago. Phantom Blade is excluded.');
+  }catch(e){if(checkoutOrder===targetOrder&&targetOrder.promoRequestId===requestId)$('promoMessage').textContent=e.message;return;}
+ }
  if(code.startsWith('OFA-RWD-')){try{if(!window.ofaRewardCoupon)throw Error('Log in to use your reward coupon.');const c=await window.ofaRewardCoupon(code);percent=Number(c.percent);}catch(e){$('promoMessage').textContent=e.message;return;}}
  if(code.startsWith('OFA-OPEN50-')){
    // Grand opening 50% IP promo code
@@ -816,15 +823,16 @@ async function applyPromo(){
    }catch(_){percent=50;}
  }
 
+ if(checkoutOrder!==targetOrder||targetOrder.promoRequestId!==requestId)return;
  if(!percent){$('promoMessage').textContent=code?'Invalid code. Your current total has not changed.':'Enter a discount code first.';return;}
  if(checkoutOrder.promo&&checkoutOrder.promo.code===code){$('promoMessage').textContent='This code is already applied.';return;}
- checkoutOrder.promo={code,percent};$('promoCode').value=code;
- $('promoMessage').textContent=`${percent}% off Steam & PC items only. Other items remain full price. Check the updated total before transferring. Seller verification required.`;
+ checkoutOrder.promo={code,percent,eligibleProductIds};$('promoCode').value=code;
+ $('promoMessage').textContent=eligibleProductIds?'50% off eligible Steam PC games released at least one calendar month ago (Bangkok date). Phantom Blade and unknown release dates are excluded. Other items stay full price. Code is reserved when you submit; check the total before transferring.':`${percent}% off Steam & PC items only. Other items remain full price. Check the updated total before transferring. Seller verification required.`;
  refreshCheckoutPayment();
 }
 $('applyPromo').onclick=applyPromo;
 $('promoCode').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();applyPromo();}});
-$('removePromo').onclick=()=>{if(!checkoutOrder)return;checkoutOrder.promo=null;$('promoCode').value='';$('promoMessage').textContent='Discount removed. Check the updated total before transferring.';refreshCheckoutPayment();};
+$('removePromo').onclick=()=>{if(!checkoutOrder)return;checkoutOrder.promoRequestId=(checkoutOrder.promoRequestId||0)+1;checkoutOrder.promo=null;$('promoCode').value='';$('promoMessage').textContent='Discount removed. Check the updated total before transferring.';refreshCheckoutPayment();};
 
 function updateReceipt(){if(!checkoutOrder)return;const o=checkoutOrder,declared=$('transferDeclared').checked,status=declared?'TRANSFER REPORTED — AWAITING SELLER VERIFICATION':'AWAITING PAYMENT — NOT A PAID RECEIPT';
  $('receiptStatus').textContent=status;

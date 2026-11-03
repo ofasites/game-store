@@ -1,0 +1,1806 @@
+{
+  "description": "Verified Steam API Windows release dates; exact title/edition matches only. Unknown, ambiguous and unreleased titles excluded. License variants share the same game release date. Eligibility is calculated at redemption in Asia/Bangkok.",
+  "verifiedOn": "2026-11-03",
+  "products": {
+    "aow-spiderman-miles-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2022-11-18",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1817190&l=english&cc=us",
+      "steamAppId": "1817190",
+      "steamTitle": "Marvel’s Spider-Man: Miles Morales",
+      "verifiedOn": "2026-11-03"
+    },
+    "aow-spiderman-miles-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2022-11-18",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1817190&l=english&cc=us",
+      "steamAppId": "1817190",
+      "steamTitle": "Marvel’s Spider-Man: Miles Morales",
+      "verifiedOn": "2026-11-03"
+    },
+    "aow-spiderman-2-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-01-30",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2651280&l=english&cc=us",
+      "steamAppId": "2651280",
+      "steamTitle": "Marvel's Spider-Man 2",
+      "verifiedOn": "2026-11-03"
+    },
+    "aow-spiderman-2-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-01-30",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2651280&l=english&cc=us",
+      "steamAppId": "2651280",
+      "steamTitle": "Marvel's Spider-Man 2",
+      "verifiedOn": "2026-11-03"
+    },
+    "aow-dragon-dogma-2-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2024-03-21",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2054970&l=english&cc=us",
+      "steamAppId": "2054970",
+      "steamTitle": "Dragon's Dogma 2",
+      "verifiedOn": "2026-11-03"
+    },
+    "aow-dragon-dogma-2-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2024-03-21",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2054970&l=english&cc=us",
+      "steamAppId": "2054970",
+      "steamTitle": "Dragon's Dogma 2",
+      "verifiedOn": "2026-11-03"
+    },
+    "aow-dawnwalker-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-09-02",
+      "source": "https://store.steampowered.com/api/appdetails?appids=3751260&l=english&cc=us",
+      "steamAppId": "3751260",
+      "steamTitle": "The Blood of Dawnwalker",
+      "verifiedOn": "2026-11-03"
+    },
+    "aow-dawnwalker-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-09-02",
+      "source": "https://store.steampowered.com/api/appdetails?appids=3751260&l=english&cc=us",
+      "steamAppId": "3751260",
+      "steamTitle": "The Blood of Dawnwalker",
+      "verifiedOn": "2026-11-03"
+    },
+    "aow-cyberpunk-2077-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2020-12-09",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1091500&l=english&cc=us",
+      "steamAppId": "1091500",
+      "steamTitle": "Cyberpunk 2077",
+      "verifiedOn": "2026-11-03"
+    },
+    "aow-cyberpunk-2077-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2020-12-09",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1091500&l=english&cc=us",
+      "steamAppId": "1091500",
+      "steamTitle": "Cyberpunk 2077",
+      "verifiedOn": "2026-11-03"
+    },
+    "aow-tr-rise-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2016-02-09",
+      "source": "https://store.steampowered.com/api/appdetails?appids=391220&l=english&cc=us",
+      "steamAppId": "391220",
+      "steamTitle": "Rise of the Tomb Raider™",
+      "verifiedOn": "2026-11-03"
+    },
+    "aow-tr-rise-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2016-02-09",
+      "source": "https://store.steampowered.com/api/appdetails?appids=391220&l=english&cc=us",
+      "steamAppId": "391220",
+      "steamTitle": "Rise of the Tomb Raider™",
+      "verifiedOn": "2026-11-03"
+    },
+    "asd-resonance-plague-tale-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-08-27",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2713000&l=english&cc=us",
+      "steamAppId": "2713000",
+      "steamTitle": "Resonance: A Plague Tale Legacy",
+      "verifiedOn": "2026-11-03"
+    },
+    "asd-resonance-plague-tale-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-08-27",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2713000&l=english&cc=us",
+      "steamAppId": "2713000",
+      "steamTitle": "Resonance: A Plague Tale Legacy",
+      "verifiedOn": "2026-11-03"
+    },
+    "asd-gears-of-war-eday-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-10-06",
+      "source": "https://store.steampowered.com/api/appdetails?appids=3010850&l=english&cc=us",
+      "steamAppId": "3010850",
+      "steamTitle": "Gears of War: E-Day",
+      "verifiedOn": "2026-11-03"
+    },
+    "asd-gears-of-war-eday-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-10-06",
+      "source": "https://store.steampowered.com/api/appdetails?appids=3010850&l=english&cc=us",
+      "steamAppId": "3010850",
+      "steamTitle": "Gears of War: E-Day",
+      "verifiedOn": "2026-11-03"
+    },
+    "extra-subnautica-2-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-05-14",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1962700&l=english&cc=us",
+      "steamAppId": "1962700",
+      "steamTitle": "Subnautica 2",
+      "verifiedOn": "2026-11-03"
+    },
+    "extra-subnautica-2-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-05-14",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1962700&l=english&cc=us",
+      "steamAppId": "1962700",
+      "steamTitle": "Subnautica 2",
+      "verifiedOn": "2026-11-03"
+    },
+    "extra-granblue-relink-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2024-01-31",
+      "source": "https://store.steampowered.com/api/appdetails?appids=881020&l=english&cc=us",
+      "steamAppId": "881020",
+      "steamTitle": "Granblue Fantasy: Relink",
+      "verifiedOn": "2026-11-03"
+    },
+    "extra-granblue-relink-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2024-01-31",
+      "source": "https://store.steampowered.com/api/appdetails?appids=881020&l=english&cc=us",
+      "steamAppId": "881020",
+      "steamTitle": "Granblue Fantasy: Relink",
+      "verifiedOn": "2026-11-03"
+    },
+    "extra-forza-horizon-6-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-05-18",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2483190&l=english&cc=us",
+      "steamAppId": "2483190",
+      "steamTitle": "Forza Horizon 6",
+      "verifiedOn": "2026-11-03"
+    },
+    "extra-forza-horizon-6-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-05-18",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2483190&l=english&cc=us",
+      "steamAppId": "2483190",
+      "steamTitle": "Forza Horizon 6",
+      "verifiedOn": "2026-11-03"
+    },
+    "extra-007-first-light-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-05-26",
+      "source": "https://store.steampowered.com/api/appdetails?appids=3768760&l=english&cc=us",
+      "steamAppId": "3768760",
+      "steamTitle": "007 First Light",
+      "verifiedOn": "2026-11-03"
+    },
+    "extra-007-first-light-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-05-26",
+      "source": "https://store.steampowered.com/api/appdetails?appids=3768760&l=english&cc=us",
+      "steamAppId": "3768760",
+      "steamTitle": "007 First Light",
+      "verifiedOn": "2026-11-03"
+    },
+    "extra-resident-evil-requiem-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-02-26",
+      "source": "https://store.steampowered.com/api/appdetails?appids=3764200&l=english&cc=us",
+      "steamAppId": "3764200",
+      "steamTitle": "Resident Evil Requiem",
+      "verifiedOn": "2026-11-03"
+    },
+    "extra-resident-evil-requiem-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-02-26",
+      "source": "https://store.steampowered.com/api/appdetails?appids=3764200&l=english&cc=us",
+      "steamAppId": "3764200",
+      "steamTitle": "Resident Evil Requiem",
+      "verifiedOn": "2026-11-03"
+    },
+    "extra-steins-gate-reboot-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-08-19",
+      "source": "https://store.steampowered.com/api/appdetails?appids=4012810&l=english&cc=us",
+      "steamAppId": "4012810",
+      "steamTitle": "STEINS;GATE RE:BOOT",
+      "verifiedOn": "2026-11-03"
+    },
+    "extra-steins-gate-reboot-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-08-19",
+      "source": "https://store.steampowered.com/api/appdetails?appids=4012810&l=english&cc=us",
+      "steamAppId": "4012810",
+      "steamTitle": "STEINS;GATE RE:BOOT",
+      "verifiedOn": "2026-11-03"
+    },
+    "extra-baldurs-gate-3-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2023-08-03",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1086940&l=english&cc=us",
+      "steamAppId": "1086940",
+      "steamTitle": "Baldur's Gate 3",
+      "verifiedOn": "2026-11-03"
+    },
+    "extra-baldurs-gate-3-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2023-08-03",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1086940&l=english&cc=us",
+      "steamAppId": "1086940",
+      "steamTitle": "Baldur's Gate 3",
+      "verifiedOn": "2026-11-03"
+    },
+    "extra-kingdom-come-2-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-02-04",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1771300&l=english&cc=us",
+      "steamAppId": "1771300",
+      "steamTitle": "Kingdom Come: Deliverance II",
+      "verifiedOn": "2026-11-03"
+    },
+    "extra-kingdom-come-2-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-02-04",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1771300&l=english&cc=us",
+      "steamAppId": "1771300",
+      "steamTitle": "Kingdom Come: Deliverance II",
+      "verifiedOn": "2026-11-03"
+    },
+    "extra-banishers-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2024-02-12",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1493640&l=english&cc=us",
+      "steamAppId": "1493640",
+      "steamTitle": "Banishers: Ghosts of New Eden",
+      "verifiedOn": "2026-11-03"
+    },
+    "extra-banishers-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2024-02-12",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1493640&l=english&cc=us",
+      "steamAppId": "1493640",
+      "steamTitle": "Banishers: Ghosts of New Eden",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-monsterhunter-wild-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-02-27",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2246340&l=english&cc=us",
+      "steamAppId": "2246340",
+      "steamTitle": "Monster Hunter Wilds",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-monsterhunter-wild-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-02-27",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2246340&l=english&cc=us",
+      "steamAppId": "2246340",
+      "steamTitle": "Monster Hunter Wilds",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-snowrunner-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2021-05-17",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1465360&l=english&cc=us",
+      "steamAppId": "1465360",
+      "steamTitle": "SnowRunner",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-snowrunner-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2021-05-17",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1465360&l=english&cc=us",
+      "steamAppId": "1465360",
+      "steamTitle": "SnowRunner",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-pragmata-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-04-16",
+      "source": "https://store.steampowered.com/api/appdetails?appids=3357650&l=english&cc=us",
+      "steamAppId": "3357650",
+      "steamTitle": "PRAGMATA",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-pragmata-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-04-16",
+      "source": "https://store.steampowered.com/api/appdetails?appids=3357650&l=english&cc=us",
+      "steamAppId": "3357650",
+      "steamTitle": "PRAGMATA",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-bayonetta-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2017-04-11",
+      "source": "https://store.steampowered.com/api/appdetails?appids=460790&l=english&cc=us",
+      "steamAppId": "460790",
+      "steamTitle": "Bayonetta",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-bayonetta-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2017-04-11",
+      "source": "https://store.steampowered.com/api/appdetails?appids=460790&l=english&cc=us",
+      "steamAppId": "460790",
+      "steamTitle": "Bayonetta",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-stellar-blade-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-06-11",
+      "source": "https://store.steampowered.com/api/appdetails?appids=3489700&l=english&cc=us",
+      "steamAppId": "3489700",
+      "steamTitle": "Stellar Blade™",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-stellar-blade-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-06-11",
+      "source": "https://store.steampowered.com/api/appdetails?appids=3489700&l=english&cc=us",
+      "steamAppId": "3489700",
+      "steamTitle": "Stellar Blade™",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-final-fantasy-7-rebirth-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-01-23",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2909400&l=english&cc=us",
+      "steamAppId": "2909400",
+      "steamTitle": "FINAL FANTASY VII REBIRTH",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-final-fantasy-7-rebirth-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-01-23",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2909400&l=english&cc=us",
+      "steamAppId": "2909400",
+      "steamTitle": "FINAL FANTASY VII REBIRTH",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-wukong-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2024-08-19",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2358720&l=english&cc=us",
+      "steamAppId": "2358720",
+      "steamTitle": "Black Myth: Wukong",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-wukong-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2024-08-19",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2358720&l=english&cc=us",
+      "steamAppId": "2358720",
+      "steamTitle": "Black Myth: Wukong",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-monsterhunter-rise-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2022-01-12",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1446780&l=english&cc=us",
+      "steamAppId": "1446780",
+      "steamTitle": "MONSTER HUNTER RISE",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-monsterhunter-rise-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2022-01-12",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1446780&l=english&cc=us",
+      "steamAppId": "1446780",
+      "steamTitle": "MONSTER HUNTER RISE",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-resident-4-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2023-03-23",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2050650&l=english&cc=us",
+      "steamAppId": "2050650",
+      "steamTitle": "Resident Evil 4",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-resident-4-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2023-03-23",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2050650&l=english&cc=us",
+      "steamAppId": "2050650",
+      "steamTitle": "Resident Evil 4",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-elderring-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2022-02-24",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1245620&l=english&cc=us",
+      "steamAppId": "1245620",
+      "steamTitle": "ELDEN RING",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-elderring-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2022-02-24",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1245620&l=english&cc=us",
+      "steamAppId": "1245620",
+      "steamTitle": "ELDEN RING",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-resident-3-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2020-04-02",
+      "source": "https://store.steampowered.com/api/appdetails?appids=952060&l=english&cc=us",
+      "steamAppId": "952060",
+      "steamTitle": "Resident Evil 3",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-resident-3-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2020-04-02",
+      "source": "https://store.steampowered.com/api/appdetails?appids=952060&l=english&cc=us",
+      "steamAppId": "952060",
+      "steamTitle": "Resident Evil 3",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-resident-0-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2016-01-19",
+      "source": "https://store.steampowered.com/api/appdetails?appids=339340&l=english&cc=us",
+      "steamAppId": "339340",
+      "steamTitle": "Resident Evil 0",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-resident-0-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2016-01-19",
+      "source": "https://store.steampowered.com/api/appdetails?appids=339340&l=english&cc=us",
+      "steamAppId": "339340",
+      "steamTitle": "Resident Evil 0",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-resident-5-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2009-09-15",
+      "source": "https://store.steampowered.com/api/appdetails?appids=21690&l=english&cc=us",
+      "steamAppId": "21690",
+      "steamTitle": "Resident Evil 5",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-resident-5-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2009-09-15",
+      "source": "https://store.steampowered.com/api/appdetails?appids=21690&l=english&cc=us",
+      "steamAppId": "21690",
+      "steamTitle": "Resident Evil 5",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-bleach-rebirth-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-03-20",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1689620&l=english&cc=us",
+      "steamAppId": "1689620",
+      "steamTitle": "BLEACH Rebirth of Souls",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-bleach-rebirth-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-03-20",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1689620&l=english&cc=us",
+      "steamAppId": "1689620",
+      "steamTitle": "BLEACH Rebirth of Souls",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-digimon-time-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-10-02",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1984270&l=english&cc=us",
+      "steamAppId": "1984270",
+      "steamTitle": "Digimon Story Time Stranger",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-digimon-time-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-10-02",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1984270&l=english&cc=us",
+      "steamAppId": "1984270",
+      "steamTitle": "Digimon Story Time Stranger",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-dragonball-zero-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2024-10-10",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1790600&l=english&cc=us",
+      "steamAppId": "1790600",
+      "steamTitle": "DRAGON BALL: Sparking! ZERO",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-dragonball-zero-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2024-10-10",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1790600&l=english&cc=us",
+      "steamAppId": "1790600",
+      "steamTitle": "DRAGON BALL: Sparking! ZERO",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-jjk-clash-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2024-02-01",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1877020&l=english&cc=us",
+      "steamAppId": "1877020",
+      "steamTitle": "Jujutsu Kaisen Cursed Clash",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-jjk-clash-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2024-02-01",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1877020&l=english&cc=us",
+      "steamAppId": "1877020",
+      "steamTitle": "Jujutsu Kaisen Cursed Clash",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-naruto-4-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2016-02-04",
+      "source": "https://store.steampowered.com/api/appdetails?appids=349040&l=english&cc=us",
+      "steamAppId": "349040",
+      "steamTitle": "NARUTO SHIPPUDEN: Ultimate Ninja STORM 4",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-naruto-4-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2016-02-04",
+      "source": "https://store.steampowered.com/api/appdetails?appids=349040&l=english&cc=us",
+      "steamAppId": "349040",
+      "steamTitle": "NARUTO SHIPPUDEN: Ultimate Ninja STORM 4",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-persona-4-golden-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2020-06-13",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1113000&l=english&cc=us",
+      "steamAppId": "1113000",
+      "steamTitle": "Persona 4 Golden",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-persona-4-golden-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2020-06-13",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1113000&l=english&cc=us",
+      "steamAppId": "1113000",
+      "steamTitle": "Persona 4 Golden",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-persona-3-reload-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2024-02-01",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2161700&l=english&cc=us",
+      "steamAppId": "2161700",
+      "steamTitle": "Persona 3 Reload",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-persona-3-reload-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2024-02-01",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2161700&l=english&cc=us",
+      "steamAppId": "2161700",
+      "steamTitle": "Persona 3 Reload",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-metaphor-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2024-10-10",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2679460&l=english&cc=us",
+      "steamAppId": "2679460",
+      "steamTitle": "Metaphor: ReFantazio",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-metaphor-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2024-10-10",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2679460&l=english&cc=us",
+      "steamAppId": "2679460",
+      "steamTitle": "Metaphor: ReFantazio",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-dragonquest-vii-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-02-05",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2499860&l=english&cc=us",
+      "steamAppId": "2499860",
+      "steamTitle": "DRAGON QUEST VII Reimagined",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-dragonquest-vii-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-02-05",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2499860&l=english&cc=us",
+      "steamAppId": "2499860",
+      "steamTitle": "DRAGON QUEST VII Reimagined",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-bannerlord-2-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2022-10-25",
+      "source": "https://store.steampowered.com/api/appdetails?appids=261550&l=english&cc=us",
+      "steamAppId": "261550",
+      "steamTitle": "Mount & Blade II: Bannerlord",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-bannerlord-2-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2022-10-25",
+      "source": "https://store.steampowered.com/api/appdetails?appids=261550&l=english&cc=us",
+      "steamAppId": "261550",
+      "steamTitle": "Mount & Blade II: Bannerlord",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-oblivion-remastered-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-04-22",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2623190&l=english&cc=us",
+      "steamAppId": "2623190",
+      "steamTitle": "The Elder Scrolls IV: Oblivion Remastered",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-oblivion-remastered-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-04-22",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2623190&l=english&cc=us",
+      "steamAppId": "2623190",
+      "steamTitle": "The Elder Scrolls IV: Oblivion Remastered",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-kingdom-1-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2018-02-13",
+      "source": "https://store.steampowered.com/api/appdetails?appids=379430&l=english&cc=us",
+      "steamAppId": "379430",
+      "steamTitle": "Kingdom Come: Deliverance",
+      "verifiedOn": "2026-11-03"
+    },
+    "batch-kingdom-1-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2018-02-13",
+      "source": "https://store.steampowered.com/api/appdetails?appids=379430&l=english&cc=us",
+      "steamAppId": "379430",
+      "steamTitle": "Kingdom Come: Deliverance",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-greedfall-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2019-09-09",
+      "source": "https://store.steampowered.com/api/appdetails?appids=606880&l=english&cc=us",
+      "steamAppId": "606880",
+      "steamTitle": "GreedFall",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-greedfall-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2019-09-09",
+      "source": "https://store.steampowered.com/api/appdetails?appids=606880&l=english&cc=us",
+      "steamAppId": "606880",
+      "steamTitle": "GreedFall",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-borderland-3-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2020-03-13",
+      "source": "https://store.steampowered.com/api/appdetails?appids=397540&l=english&cc=us",
+      "steamAppId": "397540",
+      "steamTitle": "Borderlands 3",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-borderland-3-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2020-03-13",
+      "source": "https://store.steampowered.com/api/appdetails?appids=397540&l=english&cc=us",
+      "steamAppId": "397540",
+      "steamTitle": "Borderlands 3",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-tales-arise-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2023-11-08",
+      "source": "https://store.steampowered.com/api/appdetails?appids=740130&l=english&cc=us",
+      "steamAppId": "740130",
+      "steamTitle": "Tales of ARISE",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-tales-arise-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2023-11-08",
+      "source": "https://store.steampowered.com/api/appdetails?appids=740130&l=english&cc=us",
+      "steamAppId": "740130",
+      "steamTitle": "Tales of ARISE",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-hogwart-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2023-02-10",
+      "source": "https://store.steampowered.com/api/appdetails?appids=990080&l=english&cc=us",
+      "steamAppId": "990080",
+      "steamTitle": "Hogwarts Legacy",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-hogwart-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2023-02-10",
+      "source": "https://store.steampowered.com/api/appdetails?appids=990080&l=english&cc=us",
+      "steamAppId": "990080",
+      "steamTitle": "Hogwarts Legacy",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-nier-automata-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2017-03-17",
+      "source": "https://store.steampowered.com/api/appdetails?appids=524220&l=english&cc=us",
+      "steamAppId": "524220",
+      "steamTitle": "NieR:Automata™",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-nier-automata-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2017-03-17",
+      "source": "https://store.steampowered.com/api/appdetails?appids=524220&l=english&cc=us",
+      "steamAppId": "524220",
+      "steamTitle": "NieR:Automata™",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-mafia-old-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-08-07",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1941540&l=english&cc=us",
+      "steamAppId": "1941540",
+      "steamTitle": "Mafia: The Old Country",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-mafia-old-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-08-07",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1941540&l=english&cc=us",
+      "steamAppId": "1941540",
+      "steamTitle": "Mafia: The Old Country",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-mafia-remake-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2020-09-24",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1030840&l=english&cc=us",
+      "steamAppId": "1030840",
+      "steamTitle": "Mafia: Definitive Edition",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-mafia-remake-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2020-09-24",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1030840&l=english&cc=us",
+      "steamAppId": "1030840",
+      "steamTitle": "Mafia: Definitive Edition",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-trail-inthesky-1st-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-09-19",
+      "source": "https://store.steampowered.com/api/appdetails?appids=3375780&l=english&cc=us",
+      "steamAppId": "3375780",
+      "steamTitle": "Trails in the Sky 1st Chapter",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-trail-inthesky-1st-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-09-19",
+      "source": "https://store.steampowered.com/api/appdetails?appids=3375780&l=english&cc=us",
+      "steamAppId": "3375780",
+      "steamTitle": "Trails in the Sky 1st Chapter",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-trail-horizon-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-01-15",
+      "source": "https://store.steampowered.com/api/appdetails?appids=3316940&l=english&cc=us",
+      "steamAppId": "3316940",
+      "steamTitle": "The Legend of Heroes: Trails beyond the Horizon",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-trail-horizon-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-01-15",
+      "source": "https://store.steampowered.com/api/appdetails?appids=3316940&l=english&cc=us",
+      "steamAppId": "3316940",
+      "steamTitle": "The Legend of Heroes: Trails beyond the Horizon",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-trail-inthesky-2nd-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-09-16",
+      "source": "https://store.steampowered.com/api/appdetails?appids=4225980&l=english&cc=us",
+      "steamAppId": "4225980",
+      "steamTitle": "Trails in the Sky 2nd Chapter",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-trail-inthesky-2nd-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-09-16",
+      "source": "https://store.steampowered.com/api/appdetails?appids=4225980&l=english&cc=us",
+      "steamAppId": "4225980",
+      "steamTitle": "Trails in the Sky 2nd Chapter",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-slient-hill-2-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2024-10-07",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2124490&l=english&cc=us",
+      "steamAppId": "2124490",
+      "steamTitle": "SILENT HILL 2",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-slient-hill-2-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2024-10-07",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2124490&l=english&cc=us",
+      "steamAppId": "2124490",
+      "steamTitle": "SILENT HILL 2",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-slient-hill-f-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-09-24",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2947440&l=english&cc=us",
+      "steamAppId": "2947440",
+      "steamTitle": "SILENT HILL f",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-slient-hill-f-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-09-24",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2947440&l=english&cc=us",
+      "steamAppId": "2947440",
+      "steamTitle": "SILENT HILL f",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-life-is-strange-2-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2018-09-26",
+      "source": "https://store.steampowered.com/api/appdetails?appids=532210&l=english&cc=us",
+      "steamAppId": "532210",
+      "steamTitle": "Life is Strange 2",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-life-is-strange-2-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2018-09-26",
+      "source": "https://store.steampowered.com/api/appdetails?appids=532210&l=english&cc=us",
+      "steamAppId": "532210",
+      "steamTitle": "Life is Strange 2",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-life-is-strange-3-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2021-09-09",
+      "source": "https://store.steampowered.com/api/appdetails?appids=936790&l=english&cc=us",
+      "steamAppId": "936790",
+      "steamTitle": "Life is Strange: True Colors",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-life-is-strange-3-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2021-09-09",
+      "source": "https://store.steampowered.com/api/appdetails?appids=936790&l=english&cc=us",
+      "steamAppId": "936790",
+      "steamTitle": "Life is Strange: True Colors",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-life-is-strange-4-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2024-10-29",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1874000&l=english&cc=us",
+      "steamAppId": "1874000",
+      "steamTitle": "Life is Strange: Double Exposure",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-life-is-strange-4-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2024-10-29",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1874000&l=english&cc=us",
+      "steamAppId": "1874000",
+      "steamTitle": "Life is Strange: Double Exposure",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-life-is-strange-5-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-03-26",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2624870&l=english&cc=us",
+      "steamAppId": "2624870",
+      "steamTitle": "Life is Strange: Reunion",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-life-is-strange-5-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-03-26",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2624870&l=english&cc=us",
+      "steamAppId": "2624870",
+      "steamTitle": "Life is Strange: Reunion",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-forza-5-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2021-11-08",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1551360&l=english&cc=us",
+      "steamAppId": "1551360",
+      "steamTitle": "Forza Horizon 5",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-forza-5-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2021-11-08",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1551360&l=english&cc=us",
+      "steamAppId": "1551360",
+      "steamTitle": "Forza Horizon 5",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-planet-zoo-2-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-10-13",
+      "source": "https://store.steampowered.com/api/appdetails?appids=3219030&l=english&cc=us",
+      "steamAppId": "3219030",
+      "steamTitle": "Planet Zoo 2",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-planet-zoo-2-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-10-13",
+      "source": "https://store.steampowered.com/api/appdetails?appids=3219030&l=english&cc=us",
+      "steamAppId": "3219030",
+      "steamTitle": "Planet Zoo 2",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-control-2-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-09-24",
+      "source": "https://store.steampowered.com/api/appdetails?appids=3669870&l=english&cc=us",
+      "steamAppId": "3669870",
+      "steamTitle": "CONTROL Resonant",
+      "verifiedOn": "2026-11-03"
+    },
+    "new-control-2-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-09-24",
+      "source": "https://store.steampowered.com/api/appdetails?appids=3669870&l=english&cc=us",
+      "steamAppId": "3669870",
+      "steamTitle": "CONTROL Resonant",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-euro-truck-simulator-2-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2012-10-12",
+      "source": "https://store.steampowered.com/api/appdetails?appids=227300&l=english&cc=us",
+      "steamAppId": "227300",
+      "steamTitle": "Euro Truck Simulator 2",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-euro-truck-simulator-2-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2012-10-12",
+      "source": "https://store.steampowered.com/api/appdetails?appids=227300&l=english&cc=us",
+      "steamAppId": "227300",
+      "steamTitle": "Euro Truck Simulator 2",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-cod-mw4-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-10-22",
+      "source": "https://store.steampowered.com/api/appdetails?appids=4435490&l=english&cc=us",
+      "steamAppId": "4435490",
+      "steamTitle": "Call of Duty®: Modern Warfare® 4",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-cod-mw4-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-10-22",
+      "source": "https://store.steampowered.com/api/appdetails?appids=4435490&l=english&cc=us",
+      "steamAppId": "4435490",
+      "steamTitle": "Call of Duty®: Modern Warfare® 4",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-dynasty-warriors-origins-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-01-16",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2384580&l=english&cc=us",
+      "steamAppId": "2384580",
+      "steamTitle": "DYNASTY WARRIORS: ORIGINS",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-dynasty-warriors-origins-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-01-16",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2384580&l=english&cc=us",
+      "steamAppId": "2384580",
+      "steamTitle": "DYNASTY WARRIORS: ORIGINS",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-fate-samurai-remnant-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2023-09-28",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1902690&l=english&cc=us",
+      "steamAppId": "1902690",
+      "steamTitle": "Fate/Samurai Remnant",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-fate-samurai-remnant-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2023-09-28",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1902690&l=english&cc=us",
+      "steamAppId": "1902690",
+      "steamTitle": "Fate/Samurai Remnant",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-ori-wisps-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2020-03-10",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1057090&l=english&cc=us",
+      "steamAppId": "1057090",
+      "steamTitle": "Ori and the Will of the Wisps",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-ori-wisps-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2020-03-10",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1057090&l=english&cc=us",
+      "steamAppId": "1057090",
+      "steamTitle": "Ori and the Will of the Wisps",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-ori-blind-forest-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2015-03-10",
+      "source": "https://store.steampowered.com/api/appdetails?appids=261570&l=english&cc=us",
+      "steamAppId": "261570",
+      "steamTitle": "Ori and the Blind Forest",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-ori-blind-forest-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2015-03-10",
+      "source": "https://store.steampowered.com/api/appdetails?appids=261570&l=english&cc=us",
+      "steamAppId": "261570",
+      "steamTitle": "Ori and the Blind Forest",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-ninja-gaiden-2-black-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-01-23",
+      "source": "https://store.steampowered.com/api/appdetails?appids=3287520&l=english&cc=us",
+      "steamAppId": "3287520",
+      "steamTitle": "NINJA GAIDEN 2 Black",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-ninja-gaiden-2-black-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-01-23",
+      "source": "https://store.steampowered.com/api/appdetails?appids=3287520&l=english&cc=us",
+      "steamAppId": "3287520",
+      "steamTitle": "NINJA GAIDEN 2 Black",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-mortal-kombat-1-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2023-09-19",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1971870&l=english&cc=us",
+      "steamAppId": "1971870",
+      "steamTitle": "Mortal Kombat 1",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-mortal-kombat-1-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2023-09-19",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1971870&l=english&cc=us",
+      "steamAppId": "1971870",
+      "steamTitle": "Mortal Kombat 1",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-shadow-of-war-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2017-10-09",
+      "source": "https://store.steampowered.com/api/appdetails?appids=356190&l=english&cc=us",
+      "steamAppId": "356190",
+      "steamTitle": "Middle-earth™: Shadow of War™",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-shadow-of-war-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2017-10-09",
+      "source": "https://store.steampowered.com/api/appdetails?appids=356190&l=english&cc=us",
+      "steamAppId": "356190",
+      "steamTitle": "Middle-earth™: Shadow of War™",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-hollow-knight-silksong-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-09-04",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1030300&l=english&cc=us",
+      "steamAppId": "1030300",
+      "steamTitle": "Hollow Knight: Silksong",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-hollow-knight-silksong-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-09-04",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1030300&l=english&cc=us",
+      "steamAppId": "1030300",
+      "steamTitle": "Hollow Knight: Silksong",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-hollow-knight-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2017-02-24",
+      "source": "https://store.steampowered.com/api/appdetails?appids=367520&l=english&cc=us",
+      "steamAppId": "367520",
+      "steamTitle": "Hollow Knight",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-hollow-knight-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2017-02-24",
+      "source": "https://store.steampowered.com/api/appdetails?appids=367520&l=english&cc=us",
+      "steamAppId": "367520",
+      "steamTitle": "Hollow Knight",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-halo-infinite-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2021-11-15",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1240440&l=english&cc=us",
+      "steamAppId": "1240440",
+      "steamTitle": "Halo Infinite",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-halo-infinite-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2021-11-15",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1240440&l=english&cc=us",
+      "steamAppId": "1240440",
+      "steamTitle": "Halo Infinite",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-hades-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2020-09-17",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1145360&l=english&cc=us",
+      "steamAppId": "1145360",
+      "steamTitle": "Hades",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-hades-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2020-09-17",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1145360&l=english&cc=us",
+      "steamAppId": "1145360",
+      "steamTitle": "Hades",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-gears-5-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2019-09-09",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1097840&l=english&cc=us",
+      "steamAppId": "1097840",
+      "steamTitle": "Gears 5",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-gears-5-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2019-09-09",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1097840&l=english&cc=us",
+      "steamAppId": "1097840",
+      "steamTitle": "Gears 5",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-expeditions-mudrunner-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2024-03-05",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2477340&l=english&cc=us",
+      "steamAppId": "2477340",
+      "steamTitle": "Expeditions: A MudRunner Game",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-expeditions-mudrunner-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2024-03-05",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2477340&l=english&cc=us",
+      "steamAppId": "2477340",
+      "steamTitle": "Expeditions: A MudRunner Game",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-evil-west-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2022-11-21",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1065310&l=english&cc=us",
+      "steamAppId": "1065310",
+      "steamTitle": "Evil West",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-evil-west-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2022-11-21",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1065310&l=english&cc=us",
+      "steamAppId": "1065310",
+      "steamTitle": "Evil West",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-clair-obscur-33-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-04-24",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1903340&l=english&cc=us",
+      "steamAppId": "1903340",
+      "steamTitle": "Clair Obscur: Expedition 33",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-clair-obscur-33-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-04-24",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1903340&l=english&cc=us",
+      "steamAppId": "1903340",
+      "steamTitle": "Clair Obscur: Expedition 33",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-commandos-origins-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-04-09",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1479730&l=english&cc=us",
+      "steamAppId": "1479730",
+      "steamTitle": "Commandos: Origins",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-commandos-origins-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-04-09",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1479730&l=english&cc=us",
+      "steamAppId": "1479730",
+      "steamTitle": "Commandos: Origins",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-celeste-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2018-01-25",
+      "source": "https://store.steampowered.com/api/appdetails?appids=504230&l=english&cc=us",
+      "steamAppId": "504230",
+      "steamTitle": "Celeste",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-celeste-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2018-01-25",
+      "source": "https://store.steampowered.com/api/appdetails?appids=504230&l=english&cc=us",
+      "steamAppId": "504230",
+      "steamTitle": "Celeste",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-dispatch-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-10-22",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2592160&l=english&cc=us",
+      "steamAppId": "2592160",
+      "steamTitle": "Dispatch",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-dispatch-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-10-22",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2592160&l=english&cc=us",
+      "steamAppId": "2592160",
+      "steamTitle": "Dispatch",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-detroit-become-human-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2020-06-18",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1222140&l=english&cc=us",
+      "steamAppId": "1222140",
+      "steamTitle": "Detroit: Become Human",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-detroit-become-human-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2020-06-18",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1222140&l=english&cc=us",
+      "steamAppId": "1222140",
+      "steamTitle": "Detroit: Become Human",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-wwe-2k26-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-03-12",
+      "source": "https://store.steampowered.com/api/appdetails?appids=3717070&l=english&cc=us",
+      "steamAppId": "3717070",
+      "steamTitle": "WWE 2K26",
+      "verifiedOn": "2026-11-03"
+    },
+    "n2-wwe-2k26-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-03-12",
+      "source": "https://store.steampowered.com/api/appdetails?appids=3717070&l=english&cc=us",
+      "steamAppId": "3717070",
+      "steamTitle": "WWE 2K26",
+      "verifiedOn": "2026-11-03"
+    },
+    "n3-dark-souls-remastered-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2018-05-23",
+      "source": "https://store.steampowered.com/api/appdetails?appids=570940&l=english&cc=us",
+      "steamAppId": "570940",
+      "steamTitle": "DARK SOULS™: REMASTERED",
+      "verifiedOn": "2026-11-03"
+    },
+    "n3-dark-souls-remastered-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2018-05-23",
+      "source": "https://store.steampowered.com/api/appdetails?appids=570940&l=english&cc=us",
+      "steamAppId": "570940",
+      "steamTitle": "DARK SOULS™: REMASTERED",
+      "verifiedOn": "2026-11-03"
+    },
+    "n3-dark-souls-3-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2016-04-11",
+      "source": "https://store.steampowered.com/api/appdetails?appids=374320&l=english&cc=us",
+      "steamAppId": "374320",
+      "steamTitle": "DARK SOULS™ III",
+      "verifiedOn": "2026-11-03"
+    },
+    "n3-dark-souls-3-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2016-04-11",
+      "source": "https://store.steampowered.com/api/appdetails?appids=374320&l=english&cc=us",
+      "steamAppId": "374320",
+      "steamTitle": "DARK SOULS™ III",
+      "verifiedOn": "2026-11-03"
+    },
+    "n3-lords-of-the-fallen-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2023-10-13",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1501750&l=english&cc=us",
+      "steamAppId": "1501750",
+      "steamTitle": "Lords of the Fallen",
+      "verifiedOn": "2026-11-03"
+    },
+    "n3-lords-of-the-fallen-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2023-10-13",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1501750&l=english&cc=us",
+      "steamAppId": "1501750",
+      "steamTitle": "Lords of the Fallen",
+      "verifiedOn": "2026-11-03"
+    },
+    "n3-wo-long-fallen-dynasty-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2023-03-03",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1448440&l=english&cc=us",
+      "steamAppId": "1448440",
+      "steamTitle": "Wo Long: Fallen Dynasty",
+      "verifiedOn": "2026-11-03"
+    },
+    "n3-wo-long-fallen-dynasty-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2023-03-03",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1448440&l=english&cc=us",
+      "steamAppId": "1448440",
+      "steamTitle": "Wo Long: Fallen Dynasty",
+      "verifiedOn": "2026-11-03"
+    },
+    "n3-hades-2-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-09-25",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1145350&l=english&cc=us",
+      "steamAppId": "1145350",
+      "steamTitle": "Hades II",
+      "verifiedOn": "2026-11-03"
+    },
+    "n3-hades-2-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-09-25",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1145350&l=english&cc=us",
+      "steamAppId": "1145350",
+      "steamTitle": "Hades II",
+      "verifiedOn": "2026-11-03"
+    },
+    "n3-little-nightmares-2-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2021-02-10",
+      "source": "https://store.steampowered.com/api/appdetails?appids=860510&l=english&cc=us",
+      "steamAppId": "860510",
+      "steamTitle": "Little Nightmares II",
+      "verifiedOn": "2026-11-03"
+    },
+    "n3-little-nightmares-2-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2021-02-10",
+      "source": "https://store.steampowered.com/api/appdetails?appids=860510&l=english&cc=us",
+      "steamAppId": "860510",
+      "steamTitle": "Little Nightmares II",
+      "verifiedOn": "2026-11-03"
+    },
+    "n3-palworld-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-07-09",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1623730&l=english&cc=us",
+      "steamAppId": "1623730",
+      "steamTitle": "Palworld",
+      "verifiedOn": "2026-11-03"
+    },
+    "n3-palworld-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-07-09",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1623730&l=english&cc=us",
+      "steamAppId": "1623730",
+      "steamTitle": "Palworld",
+      "verifiedOn": "2026-11-03"
+    },
+    "n3-yakuza-like-a-dragon-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2020-11-10",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1235140&l=english&cc=us",
+      "steamAppId": "1235140",
+      "steamTitle": "Yakuza: Like a Dragon",
+      "verifiedOn": "2026-11-03"
+    },
+    "n3-yakuza-like-a-dragon-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2020-11-10",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1235140&l=english&cc=us",
+      "steamAppId": "1235140",
+      "steamTitle": "Yakuza: Like a Dragon",
+      "verifiedOn": "2026-11-03"
+    },
+    "n3-yakuza-0-directors-cut-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-12-08",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2988580&l=english&cc=us",
+      "steamAppId": "2988580",
+      "steamTitle": "Yakuza 0 Director's Cut",
+      "verifiedOn": "2026-11-03"
+    },
+    "n3-yakuza-0-directors-cut-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-12-08",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2988580&l=english&cc=us",
+      "steamAppId": "2988580",
+      "steamTitle": "Yakuza 0 Director's Cut",
+      "verifiedOn": "2026-11-03"
+    },
+    "n3-like-a-dragon-infinite-wealth-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2024-01-25",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2072450&l=english&cc=us",
+      "steamAppId": "2072450",
+      "steamTitle": "Like a Dragon: Infinite Wealth",
+      "verifiedOn": "2026-11-03"
+    },
+    "n3-like-a-dragon-infinite-wealth-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2024-01-25",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2072450&l=english&cc=us",
+      "steamAppId": "2072450",
+      "steamTitle": "Like a Dragon: Infinite Wealth",
+      "verifiedOn": "2026-11-03"
+    },
+    "n3-yakuza-kiwami-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-12-11",
+      "source": "https://store.steampowered.com/api/appdetails?appids=3717330&l=english&cc=us",
+      "steamAppId": "3717330",
+      "steamTitle": "Yakuza Kiwami",
+      "verifiedOn": "2026-11-03"
+    },
+    "n3-yakuza-kiwami-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-12-11",
+      "source": "https://store.steampowered.com/api/appdetails?appids=3717330&l=english&cc=us",
+      "steamAppId": "3717330",
+      "steamTitle": "Yakuza Kiwami",
+      "verifiedOn": "2026-11-03"
+    },
+    "n3-pirate-yakuza-in-hawaii-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-02-20",
+      "source": "https://store.steampowered.com/api/appdetails?appids=3061810&l=english&cc=us",
+      "steamAppId": "3061810",
+      "steamTitle": "Like a Dragon: Pirate Yakuza in Hawaii",
+      "verifiedOn": "2026-11-03"
+    },
+    "n3-pirate-yakuza-in-hawaii-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-02-20",
+      "source": "https://store.steampowered.com/api/appdetails?appids=3061810&l=english&cc=us",
+      "steamAppId": "3061810",
+      "steamTitle": "Like a Dragon: Pirate Yakuza in Hawaii",
+      "verifiedOn": "2026-11-03"
+    },
+    "n3-like-a-dragon-ishin-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2023-02-21",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1805480&l=english&cc=us",
+      "steamAppId": "1805480",
+      "steamTitle": "Like a Dragon: Ishin!",
+      "verifiedOn": "2026-11-03"
+    },
+    "n3-like-a-dragon-ishin-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2023-02-21",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1805480&l=english&cc=us",
+      "steamAppId": "1805480",
+      "steamTitle": "Like a Dragon: Ishin!",
+      "verifiedOn": "2026-11-03"
+    },
+    "n3-yakuza-6-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2021-03-25",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1388590&l=english&cc=us",
+      "steamAppId": "1388590",
+      "steamTitle": "Yakuza 6: The Song of Life",
+      "verifiedOn": "2026-11-03"
+    },
+    "n3-yakuza-6-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2021-03-25",
+      "source": "https://store.steampowered.com/api/appdetails?appids=1388590&l=english&cc=us",
+      "steamAppId": "1388590",
+      "steamTitle": "Yakuza 6: The Song of Life",
+      "verifiedOn": "2026-11-03"
+    },
+    "n3-yakuza-kiwami-3-dark-ties-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-02-11",
+      "source": "https://store.steampowered.com/api/appdetails?appids=3937550&l=english&cc=us",
+      "steamAppId": "3937550",
+      "steamTitle": "Yakuza Kiwami 3 & Dark Ties",
+      "verifiedOn": "2026-11-03"
+    },
+    "n3-yakuza-kiwami-3-dark-ties-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2026-02-11",
+      "source": "https://store.steampowered.com/api/appdetails?appids=3937550&l=english&cc=us",
+      "steamAppId": "3937550",
+      "steamTitle": "Yakuza Kiwami 3 & Dark Ties",
+      "verifiedOn": "2026-11-03"
+    },
+    "n3-yakuza-kiwami-2-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-12-11",
+      "source": "https://store.steampowered.com/api/appdetails?appids=3717340&l=english&cc=us",
+      "steamAppId": "3717340",
+      "steamTitle": "Yakuza Kiwami 2",
+      "verifiedOn": "2026-11-03"
+    },
+    "n3-yakuza-kiwami-2-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2025-12-11",
+      "source": "https://store.steampowered.com/api/appdetails?appids=3717340&l=english&cc=us",
+      "steamAppId": "3717340",
+      "steamTitle": "Yakuza Kiwami 2",
+      "verifiedOn": "2026-11-03"
+    },
+    "import-until-dawn-2172010-steam": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2024-10-04",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2172010&l=english&cc=us",
+      "steamAppId": "2172010",
+      "steamTitle": "Until Dawn™",
+      "verifiedOn": "2026-11-03"
+    },
+    "import-until-dawn-2172010-offline": {
+      "platform": "steam-pc",
+      "released": true,
+      "releaseDate": "2024-10-04",
+      "source": "https://store.steampowered.com/api/appdetails?appids=2172010&l=english&cc=us",
+      "steamAppId": "2172010",
+      "steamTitle": "Until Dawn™",
+      "verifiedOn": "2026-11-03"
+    }
+  }
+}
