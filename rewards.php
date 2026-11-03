@@ -46,7 +46,7 @@ function rwOrder(PDO $db,array $in,?int $uid,string $provider='manual'): array {
  $currency=$in['currency']??'';if(!in_array($currency,['MMK','THB'],true))throw new InvalidArgumentException('Invalid currency.');
  $scale=$currency==='THB'?100:1;$rows=$in['items']??null;if(!is_array($rows)||!count($rows)||count($rows)>100)throw new InvalidArgumentException('Please refresh checkout.');
  $code=strtoupper(trim((string)($in['promoCode']??'')));$campaign=strpos($code,'OFA-SINGLE50-')===0;
- $metadata=$campaign?c50Metadata():[];$redemptionDate=new DateTimeImmutable('now',new DateTimeZone('Asia/Bangkok'));
+ $metadata=[];$redemptionDate=new DateTimeImmutable('now',new DateTimeZone('Asia/Bangkok'));
  $items=[];$seen=[];$subtotal=0;$eligible=0;
  foreach($rows as $row){$id=$row['id']??'';$qty=$row['quantity']??0;if(!is_string($id)||!isset($catalog['products'][$id])||isset($seen[$id])||!is_int($qty)||$qty<1||$qty>99)throw new InvalidArgumentException('Invalid cart item. Please refresh checkout.');
  $seen[$id]=true;$p=$catalog['products'][$id];$unit=(int)round($p[$currency]*$scale);$sum=$unit*$qty;$subtotal+=$sum;$itemEligible=$campaign?c50Eligible($id,$p,$metadata,$redemptionDate):(bool)$p['eligible'];if($itemEligible)$eligible+=$sum;
@@ -57,7 +57,7 @@ function rwOrder(PDO $db,array $in,?int $uid,string $provider='manual'): array {
  $q=$db->prepare('SELECT * FROM reward_orders WHERE id=?');$q->execute([$id]);$old=$q->fetch(PDO::FETCH_ASSOC);
  if($old){$route=$db->prepare('SELECT 1 FROM stripe_payments WHERE order_id=?');$route->execute([$id]);if((bool)$route->fetchColumn()!==($provider==='stripe'))throw new InvalidArgumentException('This order uses another payment method. Reopen checkout.');if(!hash_equals($old['payload_hash'],$hash))throw new InvalidArgumentException('Order changed. Reopen checkout for a new order number.');$db->exec('COMMIT');return $old;}
  if($code!==''){
- if($eligible<=0)throw new InvalidArgumentException($campaign?'No eligible games: requires a verified Steam PC release at least one calendar month ago; Phantom Blade is excluded.':'Coupons apply to Steam & PC items only.');
+ if($eligible<=0)throw new InvalidArgumentException('Coupons apply to game listings only. Software and services are excluded.');
  if($campaign){$storedCode=c50Validate($db,$code);$percent=50;$reward=true;}
  elseif(strpos($code,'OFA-RWD-')===0){if(!$uid)throw new InvalidArgumentException('Log in to use your reward coupon.');$c=rwCoupon($db,$uid,$code);$percent=(int)$c['percent'];$reward=true;}
  elseif(strpos($code,'OFA-OPEN50-')===0){

@@ -8,19 +8,8 @@ function c50Metadata(): array {
  return $data['products'];
 }
 function c50Eligible(string $id,array $p,array $meta,?DateTimeImmutable $now=null): bool {
- if(empty($p['eligible'])||preg_match('/phantom[\s_-]*blade/i',$id.' '.($p['title']??'')))return false;
- $m=$meta[$id]??[];
- if(($m['platform']??'')!=='steam-pc'||($m['released']??false)!==true||empty($m['source']))return false;
- $date=$m['releaseDate']??'';
- if(!is_string($date))return false;
- $tz=new DateTimeZone('Asia/Bangkok');
- $release=DateTimeImmutable::createFromFormat('!Y-m-d',$date,$tz);
- if(!$release||$release->format('Y-m-d')!==$date)return false;
- $today=($now??new DateTimeImmutable('now',$tz))->setTimezone($tz)->setTime(0,0);
- // Calendar-month anniversary, clamped to the last day of the next month.
- $next=$release->modify('first day of next month');
- $anniversary=$next->setDate((int)$next->format('Y'),(int)$next->format('m'),min((int)$release->format('d'),(int)$next->format('t')));
- return $release<=$today&&$anniversary<=$today;
+ // Release-date campaign restrictions are paused. All catalog game listings qualify.
+ return !empty($p['eligible']);
 }
 function c50Key(string $code): string { return 'C50:'.hash('sha256',strtoupper(trim($code))); }
 function c50Validate(PDO $db,string $code): string {

@@ -13,7 +13,7 @@ try {
  $db=rwDb();c50Validate($db,strtoupper(trim($in['code'])));
  $catalog=json_decode((string)file_get_contents(__DIR__.'/reward-catalog.json'),true);
  if(!is_array($catalog))throw new RuntimeException('Catalog unavailable');
- $meta=c50Metadata();$now=new DateTimeImmutable('now',new DateTimeZone('Asia/Bangkok'));$ids=[];
+ $meta=[];$now=new DateTimeImmutable('now',new DateTimeZone('Asia/Bangkok'));$ids=[];
  foreach($catalog['products'] as $id=>$p)if(c50Eligible($id,$p,$meta,$now))$ids[]=$id;
  echo json_encode(['ok'=>true,'percent'=>50,'eligibleProductIds'=>$ids,'date'=>$now->format('Y-m-d'),'timezone'=>'Asia/Bangkok','reservation'=>'on_order_submission']);
 }catch(InvalidArgumentException $e){http_response_code(400);echo json_encode(['ok'=>false,'error'=>$e->getMessage()]);}
