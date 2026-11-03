@@ -66,6 +66,12 @@ function promoDb(): PDO {
 
 $action = (string)($_GET['action'] ?? $_POST['action'] ?? 'status');
 
+// Pause new public claims, including requests from cached storefronts.
+if ($action === 'claim') {
+    reply(403, ['ok' => false, 'error' => 'Public coupon claiming is currently paused.']);
+}
+
+
 try {
     $db = promoDb();
 } catch (Throwable $e) {
@@ -80,7 +86,7 @@ if ($action === 'status') {
 
     reply(200, [
         'ok' => true,
-        'active' => ($now < $promoEnd),
+        'active' => false,
         'start' => $promoStart,
         'end' => $promoEnd,
         'now' => $now,
