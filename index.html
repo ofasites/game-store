@@ -1557,6 +1557,7 @@ header .nav button{min-height:44px;font-size:13px}
 </style>
 
 <style id="ofa-centered-header">
+@media(min-width:681px){
 header .nav{display:flex!important;flex-wrap:wrap!important;justify-content:center!important;align-items:center!important;gap:12px!important;padding:14px 16px!important}
 header .nav .brand{flex:0 0 100%;justify-content:center;text-align:center;display:flex;align-items:center;margin:0!important}
 header .nav #storeSections{width:auto!important;flex:0 1 auto;max-width:100%;margin:0!important;justify-content:center}
@@ -1564,7 +1565,8 @@ header .nav .header-actions{display:flex;flex:0 1 auto;flex-wrap:wrap;justify-co
 header .header-actions>button{position:static!important;margin:0!important;flex:0 0 auto;min-height:44px;white-space:nowrap}
 header .header-actions #accountBtn{display:inline-flex;align-items:center;gap:6px;max-width:220px;overflow:hidden}
 header .header-actions #themeBtn{width:44px!important;height:44px!important;flex:0 0 44px}
-@media(max-width:680px){header .nav #storeSections{flex:0 0 100%;width:100%!important}header .nav .header-actions{flex:0 0 100%;gap:7px}header .header-actions>button{font-size:12px!important;padding:8px 10px!important}header .nav .brand{font-size:22px!important}}
+}
+@media(max-width:680px){header .nav .header-actions{display:contents}}
 </style>
 <script id="ofa-theme-controls">(function(){
 const T=['aurora','ocean','midnight','ember'],N={aurora:'Aurora Violet',ocean:'Ocean Teal',midnight:'Midnight Blue',ember:'Ember Rose'},h=document.documentElement,b=document.getElementById('themeBtn'),g=document.createElement('div');
