@@ -682,7 +682,8 @@ header .user-name-text{overflow:hidden;text-overflow:ellipsis;max-width:100px;}
 .grid select{min-width:0;max-width:100%;font-size:10px!important;padding:8px 3px!important;}
 .grid .price{font-size:20px!important;margin-bottom:8px;}.hero{padding:24px 0 18px!important;}.hero h1{font-size:30px!important;}
 }
-</style></head><body>
+</style><link rel="stylesheet" href="ada-popup.css?v=1">
+</head><body>
 <header><nav class="nav" aria-label="Store navigation"><div class="brand">ONE<span>FORALL</span><small class="muted" style="font-size:10px;letter-spacing:2px;margin-left:12px">GAME SERVICE</small></div><div id="storeSections" class="store-sections" role="group" aria-label="Shop sections"><button data-store-section="steam" aria-pressed="true">Steam &amp; PC</button><button data-store-section="xbox" aria-pressed="false">Xbox</button><button data-store-section="software" aria-pressed="false">Software &amp; Services</button></div><button id="guideBtn" type="button" title="How to use Offline Accounts">Offline Guide 📖</button><button id="accountBtn" type="button" aria-label="Login with Google">Login <img src="assets/google-login-logo.webp" alt="" width="20" height="20" style="object-fit:contain;vertical-align:middle;flex-shrink:0"></button><button id="themeBtn" class="theme-dot" type="button" aria-label="Change color theme" title="Change theme"><span aria-hidden="true" class="theme-hand">☝</span></button><button id="currency" title="Switch currency">THB</button><button id="favorites" aria-pressed="false">♡ Saved <span id="savedCount">0</span></button><button id="cartBtn" class="primary">Cart · <span id="cartCount">0</span></button></nav></header>
 <aside style="display:none" class="opening-banner" id="openingBanner" aria-label="Grand Opening Special Promotion">
   <div class="opening-banner-wrap">
@@ -937,7 +938,7 @@ async function applyPromo(){
  if(promoEligibleSubtotal(checkoutOrder.items)<=0){checkoutOrder.promo=null;refreshCheckoutPayment();$('promoMessage').textContent='Promo codes apply to all game listings. Software and services are excluded.';return;}
  const targetOrder=checkoutOrder;const requestId=(targetOrder.promoRequestId||0)+1;targetOrder.promoRequestId=requestId;let eligibleProductIds=null;
  const code=$('promoCode').value.trim().toUpperCase();let percent=Object.hasOwn(PROMO_CODES,code)?PROMO_CODES[code]:null;
- if(code.startsWith('OFA-SINGLE50-')){
+ if(code.startsWith('OFA-SINGLE50-')||code.startsWith('OFA-ADA25-')){
   try{const res=await fetch('validate-coupon.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code})});const d=await res.json();if(!res.ok||!d.ok)throw Error(d.error||'Code validation unavailable.');percent=d.percent;eligibleProductIds=d.eligibleProductIds;
   if(checkoutOrder!==targetOrder||targetOrder.promoRequestId!==requestId)return;
   if(promoEligibleSubtotal(targetOrder.items,{eligibleProductIds})<=0)throw Error('No eligible games in this cart. Software and services are excluded.');
@@ -958,7 +959,7 @@ async function applyPromo(){
  if(!percent){$('promoMessage').textContent=code?'Invalid code. Your current total has not changed.':'Enter a discount code first.';return;}
  if(checkoutOrder.promo&&checkoutOrder.promo.code===code){$('promoMessage').textContent='This code is already applied.';return;}
  checkoutOrder.promo={code,percent,eligibleProductIds};$('promoCode').value=code;
- $('promoMessage').textContent=eligibleProductIds?'50% off all game listings, including new and upcoming games. No release-date restrictions. Software and services stay full price. Single-use code is reserved when you submit; check the total before transferring.':`${percent}% off all game listings regardless of release date. Software and services remain full price. Check the updated total before transferring. Seller verification required.`;
+ $('promoMessage').textContent=eligibleProductIds?`${percent}% off game listings. Software and services stay full price. Single-use code is reserved on submission. Ada gifts expire 10 minutes after issuance; submit before expiry.`:`${percent}% off all game listings regardless of release date. Software and services remain full price. Check the updated total before transferring. Seller verification required.`;
  refreshCheckoutPayment();
 }
 $('applyPromo').onclick=applyPromo;
@@ -1556,4 +1557,5 @@ header .nav button{min-height:44px;font-size:13px}
 const T=['aurora','ocean','midnight','ember'],N={aurora:'Aurora Violet',ocean:'Ocean Teal',midnight:'Midnight Blue',ember:'Ember Rose'},h=document.documentElement,b=document.getElementById('themeBtn'),g=document.createElement('div');
 g.id='themeGlow';g.setAttribute('aria-hidden','true');document.body.appendChild(g);let timer;
 function label(){const t=h.dataset.theme||'aurora';b.title='Theme: '+N[t]+' — tap to change';b.setAttribute('aria-label','Change color theme. Current: '+N[t]);}label();
-b.addEventListener('click',function(){clearTimeout(timer);const n=T[(T.indexOf(h.dataset.theme||'aurora')+1)%T.length],r=b.getBoundingClientRect();g.style.setProperty('--gx',(r.left+r.width/2)+'px');g.style.setProperty('--gy',(r.top+r.height/2)+'px');h.classList.add('theme-fade');h.dataset.theme=n;try{localStorage.setItem('ofa-theme',n)}catch(e){}label();g.classList.remove('go');b.classList.remove('pulse');requestAnimationFrame(()=>{g.classList.add('go');b.classList.add('pulse')});timer=setTimeout(()=>{h.classList.remove('theme-fade');g.classList.remove('go');b.classList.remove('pulse')},750);});})();</script></body></html>
+b.addEventListener('click',function(){clearTimeout(timer);const n=T[(T.indexOf(h.dataset.theme||'aurora')+1)%T.length],r=b.getBoundingClientRect();g.style.setProperty('--gx',(r.left+r.width/2)+'px');g.style.setProperty('--gy',(r.top+r.height/2)+'px');h.classList.add('theme-fade');h.dataset.theme=n;try{localStorage.setItem('ofa-theme',n)}catch(e){}label();g.classList.remove('go');b.classList.remove('pulse');requestAnimationFrame(()=>{g.classList.add('go');b.classList.add('pulse')});timer=setTimeout(()=>{h.classList.remove('theme-fade');g.classList.remove('go');b.classList.remove('pulse')},750);});})();</script><script src="ada-popup.js?v=1" defer></script>
+</body></html>

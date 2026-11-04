@@ -2,6 +2,7 @@
 // Shared private order and rewards storage. No credentials are stored in public files.
 declare(strict_types=1);
 require_once __DIR__.'/campaign50.php';
+require_once __DIR__.'/ada-offer.php';
 function rwDb(): PDO {
  $dir=dirname(__DIR__).'/ofa-private';
  if(!is_dir($dir)||!is_writable($dir))throw new RuntimeException('Private storage unavailable');
@@ -58,7 +59,8 @@ function rwOrder(PDO $db,array $in,?int $uid,string $provider='manual'): array {
  if($old){$route=$db->prepare('SELECT 1 FROM stripe_payments WHERE order_id=?');$route->execute([$id]);if((bool)$route->fetchColumn()!==($provider==='stripe'))throw new InvalidArgumentException('This order uses another payment method. Reopen checkout.');if(!hash_equals($old['payload_hash'],$hash))throw new InvalidArgumentException('Order changed. Reopen checkout for a new order number.');$db->exec('COMMIT');return $old;}
  if($code!==''){
  if($eligible<=0)throw new InvalidArgumentException('Coupons apply to game listings only. Software and services are excluded.');
- if($campaign){$storedCode=c50Validate($db,$code);$percent=50;$reward=true;}
+ if(strpos($code,'OFA-ADA25-')===0){$storedCode=adaValidate($db,$code);$percent=25;$reward=true;}
+ elseif($campaign){$storedCode=c50Validate($db,$code);$percent=50;$reward=true;}
  elseif(strpos($code,'OFA-RWD-')===0){if(!$uid)throw new InvalidArgumentException('Log in to use your reward coupon.');$c=rwCoupon($db,$uid,$code);$percent=(int)$c['percent'];$reward=true;}
  elseif(strpos($code,'OFA-OPEN50-')===0){
    $chk=$db->prepare('SELECT code,percent,used FROM ip_promo_claims WHERE code=?');$chk->execute([$code]);$ipC=$chk->fetch(PDO::FETCH_ASSOC);
