@@ -17,7 +17,7 @@ try {
  $db->exec('BEGIN IMMEDIATE');
  $db->prepare('INSERT OR IGNORE INTO ada_offers(visitor,started) VALUES(?,?)')->execute([$visitor,$now]);
  $q=$db->prepare('SELECT * FROM ada_offers WHERE visitor=?');$q->execute([$visitor]);$row=$q->fetch(PDO::FETCH_ASSOC);
- if(($in['action']??'')==='claim'&&!$row['code']&&$now-(int)$row['started']>=300){$row['code']='OFA-ADA25-'.strtoupper(bin2hex(random_bytes(12)));$row['expires']=$now+600;$db->prepare('UPDATE ada_offers SET code=?,expires=? WHERE visitor=?')->execute([$row['code'],$row['expires'],$visitor]);}
+ if(($in['action']??'')==='claim'&&!$row['code']&&$now-(int)$row['started']>=180){$row['code']='OFA-ADA25-'.strtoupper(bin2hex(random_bytes(12)));$row['expires']=$now+600;$db->prepare('UPDATE ada_offers SET code=?,expires=? WHERE visitor=?')->execute([$row['code'],$row['expires'],$visitor]);}
  $db->exec('COMMIT');$available=false;if($row['code']){try{adaValidate($db,$row['code']);$available=true;}catch(InvalidArgumentException $e){}}
- echo json_encode(['ok'=>true,'available'=>$available,'issued'=>(bool)$row['code'],'code'=>$available?$row['code']:null,'expires'=>$available?(int)$row['expires']:null,'serverTime'=>$now,'wait'=>max(0,300-($now-(int)$row['started']))]);
+ echo json_encode(['ok'=>true,'available'=>$available,'issued'=>(bool)$row['code'],'code'=>$available?$row['code']:null,'expires'=>$available?(int)$row['expires']:null,'serverTime'=>$now,'wait'=>max(0,180-($now-(int)$row['started']))]);
 }catch(Throwable $e){if(isset($db)){try{$db->exec('ROLLBACK');}catch(Throwable $ignored){}}http_response_code(503);echo json_encode(['ok'=>false,'error'=>'Offer temporarily unavailable']);}
