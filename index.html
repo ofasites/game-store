@@ -683,7 +683,7 @@ header .user-name-text{overflow:hidden;text-overflow:ellipsis;max-width:100px;}
 .grid .price{font-size:20px!important;margin-bottom:8px;}.hero{padding:24px 0 18px!important;}.hero h1{font-size:30px!important;}
 }
 </style></head><body>
-<header><nav class="nav" aria-label="Store navigation"><div class="brand">ONE<span>FORALL</span><small class="muted" style="font-size:10px;letter-spacing:2px;margin-left:12px">GAME SERVICE</small></div><div id="storeSections" class="store-sections" role="group" aria-label="Shop sections"><button data-store-section="steam" aria-pressed="true">Steam &amp; PC</button><button data-store-section="xbox" aria-pressed="false">Xbox</button><button data-store-section="software" aria-pressed="false">Software &amp; Services</button></div><button id="guideBtn" type="button" title="How to use Offline Accounts">Offline Guide 📖</button><button id="accountBtn" type="button" aria-label="Login with Google">Login <img src="assets/google-login-logo.webp" alt="" width="20" height="20" style="object-fit:contain;vertical-align:middle;flex-shrink:0"></button><button id="themeBtn" class="theme-dot" type="button" aria-label="Change color theme" title="Change theme"></button><button id="currency" title="Switch currency">THB</button><button id="favorites" aria-pressed="false">♡ Saved <span id="savedCount">0</span></button><button id="cartBtn" class="primary">Cart · <span id="cartCount">0</span></button></nav></header>
+<header><nav class="nav" aria-label="Store navigation"><div class="brand">ONE<span>FORALL</span><small class="muted" style="font-size:10px;letter-spacing:2px;margin-left:12px">GAME SERVICE</small></div><div id="storeSections" class="store-sections" role="group" aria-label="Shop sections"><button data-store-section="steam" aria-pressed="true">Steam &amp; PC</button><button data-store-section="xbox" aria-pressed="false">Xbox</button><button data-store-section="software" aria-pressed="false">Software &amp; Services</button></div><button id="guideBtn" type="button" title="How to use Offline Accounts">Offline Guide 📖</button><button id="accountBtn" type="button" aria-label="Login with Google">Login <img src="assets/google-login-logo.webp" alt="" width="20" height="20" style="object-fit:contain;vertical-align:middle;flex-shrink:0"></button><button id="themeBtn" class="theme-dot" type="button" aria-label="Change color theme" title="Change theme"><span aria-hidden="true" class="theme-hand">☝</span></button><button id="currency" title="Switch currency">THB</button><button id="favorites" aria-pressed="false">♡ Saved <span id="savedCount">0</span></button><button id="cartBtn" class="primary">Cart · <span id="cartCount">0</span></button></nav></header>
 <aside style="display:none" class="opening-banner" id="openingBanner" aria-label="Grand Opening Special Promotion">
   <div class="opening-banner-wrap">
     <div class="opening-banner-left">
@@ -720,7 +720,7 @@ header .user-name-text{overflow:hidden;text-overflow:ellipsis;max-width:100px;}
 <div id="sectionHeading" class="section-heading"><span class="eyebrow">BROWSE THE STORE</span><h2 id="sectionTitle">Steam &amp; PC games</h2><p id="sectionDescription" class="muted">Explore our PC games, access keys and offline accounts.</p></div><section id="catalogNav" aria-label="Browse games">
 <div class="catalog-search"><label class="field">Search catalog<input id="search" type="search" placeholder="Game, genre, or platform…"></label></div>
 <div class="category-line"><div class="chips" id="cats" aria-label="Categories"></div><details id="moreGenres"><summary>More</summary><div id="genreMenu"></div></details></div>
-<div class="catalog-controls"><button id="toggleFilters" aria-expanded="false" aria-controls="advancedFilters">Filters</button><label class="field">Sort by<select id="sort"><option value="default">Featured</option><option value="rating">Metascore: Highest first</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="az">Name: A to Z</option><option value="release-new">Release date: Newest</option><option value="release-old">Release date: Oldest</option></select></label></div>
+<div class="catalog-controls"><button id="toggleFilters" aria-expanded="false" aria-controls="advancedFilters">Filters</button><label class="field">Sort by<select id="sort"><option value="release-new">Release date: Newest</option><option value="release-old">Release date: Oldest</option><option value="default">Featured</option><option value="rating">Metascore: Highest first</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="az">Name: A to Z</option></select></label></div>
 <div id="advancedFilters" hidden><label class="field">Platform<select id="platform"><option value="">All platforms</option></select></label><label class="field">Min price <span class="unit"></span><input id="min" type="number" min="0" placeholder="No minimum"></label><label class="field">Max price <span class="unit"></span><input id="max" type="number" min="0" placeholder="No maximum"></label><button id="reset">Clear all</button></div>
 <div id="activeFilters" aria-label="Active filters"></div></section><div class="results"><span id="count" class="muted" aria-live="polite"></span><span class="muted" style="font-size:12px">Prices shown in <strong id="currencyLabel">THB</strong></span></div><div id="filterError" class="error" role="status"></div><section id="grid" class="grid" aria-label="Products"></section><div class="row" style="justify-content:center"><button id="more" hidden>Load more</button></div>
 <p class="notice">600pack (Steam Deck / PC): 375,000 MMK / ฿2,700. Phantom Blade Zero, Fable and Crimson Desert: 35,000 MMK / ฿260 for both types. Offline Account: ฿140 / 20,000 MMK. Steam Access Key: ฿180 / 25,000 MMK. Confirm game availability with the seller. Listings with “Price pending” cannot be added to the cart. Cart and favorites stay in this browser. QR transfers are verified manually. Submit your order and payment slip together at checkout, then contact us on Telegram with your order ID for delivery.</p><footer>© One For All Game Service · <a href="#guide" id="footerGuideLink" style="color:var(--mint);text-decoration:none;font-weight:600">Offline Account Guide</a> <span id="rateNote" style="float:right"></span></footer></main>
@@ -1516,10 +1516,44 @@ html.theme-fade *,html.theme-fade *::before,html.theme-fade *::after{transition:
 @media(prefers-reduced-motion:reduce){#themeGlow.go,.theme-dot.pulse{animation:none}}
 .nav{gap:8px}
 </style>
-<script id="ofa-theme-controls">(function(){var T=['aurora','ocean','midnight','ember'],N={aurora:'Aurora Violet',ocean:'Ocean Teal',midnight:'Midnight Blue',ember:'Ember Rose'},h=document.documentElement,b=document.getElementById('themeBtn'),g=document.createElement('div');g.id='themeGlow';document.body.appendChild(g);
-function label(){var t=h.dataset.theme||'aurora';b.title='Theme: '+N[t]+' (tap to change)';b.setAttribute('aria-label','Change color theme. Current: '+N[t])}label();
-b.addEventListener('click',function(){var i=T.indexOf(h.dataset.theme||'aurora'),n=T[(i+1)%T.length],r=b.getBoundingClientRect();
-g.style.setProperty('--gx',(r.left+r.width/2)+'px');g.style.setProperty('--gy',(r.top+r.height/2)+'px');
-h.classList.add('theme-fade');g.classList.remove('go');void g.offsetWidth;g.classList.add('go');b.classList.remove('pulse');void b.offsetWidth;b.classList.add('pulse');
-setTimeout(function(){h.dataset.theme=n;try{localStorage.setItem('ofa-theme',n)}catch(e){}label()},180);
-setTimeout(function(){h.classList.remove('theme-fade');g.classList.remove('go');b.classList.remove('pulse')},1100)})})();</script></body></html>
+
+<style id="ofa-tablet-theme-refinement">
+/* One transparent radial glow; never a solid theme-colored overlay. */
+html[data-theme] #themeGlow{background-color:transparent!important;background-image:radial-gradient(circle at var(--gx,50%) var(--gy,0%),var(--accent) 0%,transparent 68%)!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important;clip-path:circle(150vmax at var(--gx,50%) var(--gy,0%));}
+#themeGlow.go{animation:themeGlow .7s ease-out!important}
+@keyframes themeGlow{0%{opacity:0}30%{opacity:.22}100%{opacity:0}}
+html.theme-fade *,html.theme-fade *::before,html.theme-fade *::after{transition:none!important}
+html.theme-fade body,html.theme-fade header,html.theme-fade .card,html.theme-fade button,html.theme-fade dialog{transition:background-color .45s ease,color .45s ease,border-color .45s ease!important}
+html[data-theme] #themeBtn{display:inline-flex;align-items:center;justify-content:center;overflow:hidden;isolation:isolate;-webkit-tap-highlight-color:transparent;touch-action:manipulation;background:linear-gradient(135deg,var(--accent),var(--mint))!important;color:#142036!important}
+.theme-hand{font:24px/1 sans-serif;pointer-events:none;filter:drop-shadow(0 1px 1px #ffffff80)}
+@media(min-width:681px) and (max-width:1400px){
+header .nav{display:grid!important;grid-template-columns:minmax(160px,1fr) auto 44px auto auto auto;gap:10px!important;padding:12px 20px!important;align-items:center;}
+header .nav>*{margin:0!important;min-width:0;max-width:100%;grid-column:auto;grid-row:auto;}
+header .nav .brand{grid-column:1/3;grid-row:1;white-space:nowrap;font-size:23px!important}
+header .nav #storeSections{grid-column:3/7;grid-row:1;display:flex;width:100%;justify-content:stretch}
+header #storeSections button{flex:1;min-height:44px;padding:9px 12px;white-space:normal}
+header .nav #guideBtn{grid-column:1;grid-row:2;justify-self:start}
+header .nav #accountBtn{grid-column:2;grid-row:2;white-space:nowrap;max-width:240px;overflow:hidden}
+header .nav #themeBtn{grid-column:3;grid-row:2;justify-self:center}
+header .nav #currency{grid-column:4;grid-row:2}
+header .nav #favorites{grid-column:5;grid-row:2;white-space:nowrap}
+header .nav #cartBtn{grid-column:6;grid-row:2;position:static!important;white-space:nowrap}
+header .nav button{min-height:44px;font-size:13px}
+.hero{padding:28px 0!important;gap:24px!important;grid-template-columns:minmax(0,1fr) 180px!important}
+.hero h1{font-size:clamp(30px,4.3vw,54px)!important}.hero-art{width:170px!important;height:170px!important;justify-self:center}
+.feature-slide .pack-layout{display:grid!important;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)!important;align-items:center!important;min-height:0!important}
+.feature-slide .pack-copy{min-height:0!important;padding:18px 24px!important}
+.feature-slide .pack-copy h2{font-size:32px!important}.feature-slide .pack-lead{font-size:14px!important}
+.feature-slide .collection-visual,.feature-slide .pack-video-feature{height:230px!important;min-height:0!important;max-height:230px!important;overflow:hidden;margin:12px 20px 12px 0!important;padding:12px!important}
+.re-covers{max-width:270px;margin:auto;gap:8px;transform:none}.re-covers img{max-height:96px;object-fit:cover}
+.feature-slide .pack-foot{min-height:0!important;padding:9px 20px!important}
+#catalogNav,.catalog-controls,.grid{min-width:0}.catalog-controls select{width:100%;min-width:0}
+}
+@media(min-width:681px) and (max-width:900px){header .nav .brand small{display:none}.hero-art{width:140px!important;height:140px!important}.hero{grid-template-columns:minmax(0,1fr) 150px!important}.feature-slide .pack-fine{display:none}}
+@media(prefers-reduced-motion:reduce){#themeGlow.go{animation:none!important}html.theme-fade body,html.theme-fade header,html.theme-fade .card,html.theme-fade button,html.theme-fade dialog{transition:none!important}}
+</style>
+<script id="ofa-theme-controls">(function(){
+const T=['aurora','ocean','midnight','ember'],N={aurora:'Aurora Violet',ocean:'Ocean Teal',midnight:'Midnight Blue',ember:'Ember Rose'},h=document.documentElement,b=document.getElementById('themeBtn'),g=document.createElement('div');
+g.id='themeGlow';g.setAttribute('aria-hidden','true');document.body.appendChild(g);let timer;
+function label(){const t=h.dataset.theme||'aurora';b.title='Theme: '+N[t]+' — tap to change';b.setAttribute('aria-label','Change color theme. Current: '+N[t]);}label();
+b.addEventListener('click',function(){clearTimeout(timer);const n=T[(T.indexOf(h.dataset.theme||'aurora')+1)%T.length],r=b.getBoundingClientRect();g.style.setProperty('--gx',(r.left+r.width/2)+'px');g.style.setProperty('--gy',(r.top+r.height/2)+'px');h.classList.add('theme-fade');h.dataset.theme=n;try{localStorage.setItem('ofa-theme',n)}catch(e){}label();g.classList.remove('go');b.classList.remove('pulse');requestAnimationFrame(()=>{g.classList.add('go');b.classList.add('pulse')});timer=setTimeout(()=>{h.classList.remove('theme-fade');g.classList.remove('go');b.classList.remove('pulse')},750);});})();</script></body></html>
