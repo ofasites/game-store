@@ -12,6 +12,7 @@ if ((int)($_SERVER['CONTENT_LENGTH'] ?? 0) > 2500000) respond(413,['ok'=>false,'
 $input = json_decode(file_get_contents('php://input', false, null, 0, 2500001), true);
 if (!is_array($input)) respond(400,['ok'=>false,'error'=>'Invalid order.']);
 $id = $input['orderId'] ?? '';
+// rwOrder enforces the persisted payment route; client-supplied provider flags are ignored.
 $receipt = $input['receipt'] ?? '';
 if (!is_string($id) || !preg_match('/^[A-Za-z0-9_-]{5,80}$/D', $id) || !is_string($receipt) || strlen($receipt)<80 || strlen($receipt)>25000) respond(400,['ok'=>false,'error'=>'Missing order details.']);
 $slipBytes = null; $slipExt = null;
@@ -93,16 +94,17 @@ try {
         'Subject: New order '.$id.' - payment awaiting verification'."\r\n".
         'Message-ID: <'.bin2hex(random_bytes(16)).'@oneforallgameservice.com>'."\r\n".
         "MIME-Version: 1.0\r\n";
-    $textPart = chunk_split(base64_encode($body),76,"\r\n");
+    require_once __DIR__.'/order-email.php';
+    $alternative=ofaOrderAlternative($body,ofaOrderHtml($saved,$approval,$receipt,$slipBytes!==null));
     if ($slipBytes !== null) {
         $boundary = 'ofa_'.bin2hex(random_bytes(12));
         $mime = ['jpg'=>'image/jpeg','png'=>'image/png','webp'=>'image/webp'][$slipExt];
         $message = $headers."Content-Type: multipart/mixed; boundary=\"".$boundary."\"\r\n\r\n".
-            "--".$boundary."\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: base64\r\n\r\n".$textPart.
+            '--'.$boundary."\r\nContent-Type: ".$alternative['type']."\r\n\r\n".$alternative['body'].
             "--".$boundary."\r\nContent-Type: ".$mime."; name=\"slip-".$id.".".$slipExt."\"\r\nContent-Transfer-Encoding: base64\r\nContent-Disposition: attachment; filename=\"slip-".$id.".".$slipExt."\"\r\n\r\n".chunk_split(base64_encode($slipBytes),76,"\r\n").
             "--".$boundary."--";
     } else {
-        $message = $headers."Content-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: base64\r\n\r\n".rtrim($textPart);
+        $message = $headers."Content-Type: ".$alternative['type']."\r\n\r\n".$alternative['body'];
     }
     smtpWrite($stream,$message."\r\n.",[250]);
     fclose($stream);
