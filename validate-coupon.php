@@ -10,12 +10,13 @@ try {
  if(strlen($raw)>32768)throw new InvalidArgumentException('Invalid request.');
  $in=json_decode($raw,true);
  if(!is_array($in)||!is_string($in['code']??null))throw new InvalidArgumentException('Invalid request.');
- $db=rwDb();$code=strtoupper(trim($in['code']));$ada=strpos($code,'OFA-ADA25-')===0;if($ada){adaValidate($db,$code);}else{c50Validate($db,$code);}
+ $db=rwDb();$code=strtoupper(trim($in['code']));$managed=mcGet($db,$code);$ada=strpos($code,'OFA-ADA25-')===0;if($managed){}elseif($ada){adaValidate($db,$code);}else{c50Validate($db,$code);}
  $catalog=json_decode((string)file_get_contents(__DIR__.'/reward-catalog.json'),true);
  if(!is_array($catalog))throw new RuntimeException('Catalog unavailable');
- if(!$ada)c50CheckMinimum($code,is_array($in['items']??null)?$in['items']:[],$catalog['products']);
+ if($managed)$managed=mcValidate($db,$code,is_array($in['items']??null)?$in['items']:[],$catalog['products']);
+ if(!$managed&&!$ada)c50CheckMinimum($code,is_array($in['items']??null)?$in['items']:[],$catalog['products']);
  $meta=[];$now=new DateTimeImmutable('now',new DateTimeZone('Asia/Bangkok'));$ids=[];
  foreach($catalog['products'] as $id=>$p)if(c50Eligible($id,$p,$meta,$now))$ids[]=$id;
- echo json_encode(['ok'=>true,'percent'=>$ada?25:c50Percent($code),'minQuantity'=>$ada?0:c50Minimum($code),'eligibleProductIds'=>$ids,'date'=>$now->format('Y-m-d'),'timezone'=>'Asia/Bangkok','reservation'=>'on_order_submission']);
+ echo json_encode(['ok'=>true,'percent'=>$managed?(int)$managed['percent']:($ada?25:c50Percent($code)),'minQuantity'=>$managed?(int)$managed['minQuantity']:($ada?0:c50Minimum($code)),'eligibleProductIds'=>$ids,'date'=>$now->format('Y-m-d'),'timezone'=>'Asia/Bangkok','reservation'=>'on_order_submission']);
 }catch(InvalidArgumentException $e){http_response_code(400);echo json_encode(['ok'=>false,'error'=>$e->getMessage()]);}
 catch(Throwable $e){http_response_code(503);echo json_encode(['ok'=>false,'error'=>'Coupon validation temporarily unavailable.']);}
