@@ -60,7 +60,7 @@ function rwOrder(PDO $db,array $in,?int $uid,string $provider='manual'): array {
  if($code!==''){
  if($eligible<=0)throw new InvalidArgumentException('Coupons apply to game listings only. Software and services are excluded.');
  if(strpos($code,'OFA-ADA25-')===0){$storedCode=adaValidate($db,$code);$percent=25;$reward=true;}
- elseif($campaign){c50CheckMinimum($code,$rows,$catalog['products']);$storedCode=c50Validate($db,$code);$percent=50;$reward=true;}
+ elseif($campaign){c50CheckMinimum($code,$rows,$catalog['products']);$storedCode=c50Validate($db,$code);$percent=c50Percent($code);$reward=true;}
  elseif(strpos($code,'OFA-RWD-')===0){if(!$uid)throw new InvalidArgumentException('Log in to use your reward coupon.');$c=rwCoupon($db,$uid,$code);$percent=(int)$c['percent'];$reward=true;}
  elseif(strpos($code,'OFA-OPEN50-')===0){
    $chk=$db->prepare('SELECT code,percent,used FROM ip_promo_claims WHERE code=?');$chk->execute([$code]);$ipC=$chk->fetch(PDO::FETCH_ASSOC);

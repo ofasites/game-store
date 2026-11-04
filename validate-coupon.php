@@ -16,6 +16,6 @@ try {
  if(!$ada)c50CheckMinimum($code,is_array($in['items']??null)?$in['items']:[],$catalog['products']);
  $meta=[];$now=new DateTimeImmutable('now',new DateTimeZone('Asia/Bangkok'));$ids=[];
  foreach($catalog['products'] as $id=>$p)if(c50Eligible($id,$p,$meta,$now))$ids[]=$id;
- echo json_encode(['ok'=>true,'percent'=>$ada?25:50,'minQuantity'=>$ada?0:c50Minimum($code),'eligibleProductIds'=>$ids,'date'=>$now->format('Y-m-d'),'timezone'=>'Asia/Bangkok','reservation'=>'on_order_submission']);
+ echo json_encode(['ok'=>true,'percent'=>$ada?25:c50Percent($code),'minQuantity'=>$ada?0:c50Minimum($code),'eligibleProductIds'=>$ids,'date'=>$now->format('Y-m-d'),'timezone'=>'Asia/Bangkok','reservation'=>'on_order_submission']);
 }catch(InvalidArgumentException $e){http_response_code(400);echo json_encode(['ok'=>false,'error'=>$e->getMessage()]);}
 catch(Throwable $e){http_response_code(503);echo json_encode(['ok'=>false,'error'=>'Coupon validation temporarily unavailable.']);}

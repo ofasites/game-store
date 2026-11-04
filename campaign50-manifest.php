@@ -112,4 +112,5 @@ return [
  'b1e2602e37dab1cd73da6e1a97e8892d4c004ce688c473d1d67555d4e2c6e067'=>['minQuantity'=>4],
  'df9c446321dc32ab04030fa275c3137d8307a3fbd9bfda734bbd3694fd9810e9'=>['minQuantity'=>4],
  '94ca460c3c927bee6cc14d966cf3afefe27eba5f712559444a75b948a69cc174'=>['minQuantity'=>4],
+'48f9febe4a02e5eed68fb5d37eb3c6175194ea1c9b2a90bbe473883cdcbb4acd'=>['percent'=>35,'minQuantity'=>0],
 ];

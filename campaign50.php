@@ -37,3 +37,5 @@ function c50Consume(PDO $db,string $key,string $order): void {
  if($q->rowCount()!==1)throw new RuntimeException('Campaign reservation missing');
 }
 if(realpath($_SERVER['SCRIPT_FILENAME']??'')===__FILE__){http_response_code(404);exit;}
+
+function c50Percent(string $code): int { $m=c50Manifest();$e=$m[hash('sha256',strtoupper(trim($code)))]??null;return is_array($e)?(int)($e['percent']??50):50;}
