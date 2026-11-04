@@ -939,7 +939,7 @@ async function applyPromo(){
  const targetOrder=checkoutOrder;const requestId=(targetOrder.promoRequestId||0)+1;targetOrder.promoRequestId=requestId;let eligibleProductIds=null;
  const code=$('promoCode').value.trim().toUpperCase();let percent=Object.hasOwn(PROMO_CODES,code)?PROMO_CODES[code]:null;
  if(code.startsWith('OFA-SINGLE50-')||code.startsWith('OFA-ADA25-')){
-  try{const res=await fetch('validate-coupon.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code})});const d=await res.json();if(!res.ok||!d.ok)throw Error(d.error||'Code validation unavailable.');percent=d.percent;eligibleProductIds=d.eligibleProductIds;
+  try{const res=await fetch('validate-coupon.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code,items:targetOrder.items.map(i=>({id:i.id,quantity:Number(i.qty||i.quantity||1)}))})});const d=await res.json();if(!res.ok||!d.ok)throw Error(d.error||'Code validation unavailable.');percent=d.percent;eligibleProductIds=d.eligibleProductIds;
   if(checkoutOrder!==targetOrder||targetOrder.promoRequestId!==requestId)return;
   if(promoEligibleSubtotal(targetOrder.items,{eligibleProductIds})<=0)throw Error('No eligible games in this cart. Software and services are excluded.');
   }catch(e){if(checkoutOrder===targetOrder&&targetOrder.promoRequestId===requestId)$('promoMessage').textContent=e.message;return;}

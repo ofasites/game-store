@@ -19,6 +19,18 @@ function c50Validate(PDO $db,string $code): string {
  if($q->fetchColumn())throw new InvalidArgumentException('This code is already reserved or used.');
  return $key;
 }
+function c50Minimum(string $code): int {
+ $manifest=c50Manifest();$entry=$manifest[hash('sha256',strtoupper(trim($code)))]??null;
+ return is_array($entry)?(int)($entry['minQuantity']??0):0;
+}
+function c50CheckMinimum(string $code,array $rows,array $products): void {
+ $min=c50Minimum($code);if(!$min)return;$count=0;$seen=[];
+ foreach($rows as $row){$id=$row['id']??'';$qty=$row['quantity']??0;
+ if(!is_string($id)||isset($seen[$id])||!isset($products[$id])||!is_int($qty)||$qty<1||$qty>99)throw new InvalidArgumentException('Invalid cart items.');
+ $seen[$id]=true;if(!empty($products[$id]['eligible']))$count+=$qty;
+ }
+ if($count<$min)throw new InvalidArgumentException('This coupon requires at least 4 game items in your cart.');
+}
 function c50Consume(PDO $db,string $key,string $order): void {
  if(strpos($key,'C50:')!==0)return;
  $q=$db->prepare('UPDATE order_coupon_reservations SET consumed=1 WHERE code=? AND order_id=?');$q->execute([$key,$order]);
