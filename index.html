@@ -904,6 +904,7 @@ function orderSummary(){
  const items=Object.entries(state.cart).filter(([id])=>game(id)).map(([id,quantity])=>{const g=game(id);return {id:g.id,title:g.title,type:g.productType||g.platform,quantity,unit:priceOf(g),promoEligible:promoEligible(g)}});
  if(!items.length||items.some(i=>!Number.isFinite(i.unit)||i.unit<=0)){toast('Please review your cart prices before checkout');return;}
  checkoutOrder={id:'OFA-'+new Date().toISOString().slice(0,10).replaceAll('-','')+'-'+(crypto.randomUUID?crypto.randomUUID().slice(0,8):Math.random().toString(36).slice(2,10)).toUpperCase(),date:new Date().toLocaleString(),currency:state.currency,items,total:items.reduce((a,i)=>a+i.unit*i.quantity,0)};
+ lockCheckoutFields(false);$('downloadOrder').disabled=true;
  $('emailConfirmation').disabled=false;$('emailConfirmation').textContent='Submit order & payment slip';$('telegramConfirmation').hidden=true;$('receiptDetails').open=false;$('orderSubmissionStatus').textContent='';['transferReference'].forEach(id=>$(id).value='');$('transferDeclared').checked=false;slipData=null;slipName='';$('slipFile').value='';$('slipPreview').textContent='';
  $('promoCode').value='';$('promoMessage').textContent='One code per order. All game listings qualify regardless of release date. Software and services are excluded. Subject to seller verification.';
  checkoutOrder.subtotal=checkoutOrder.total;checkoutOrder.discount=0;checkoutOrder.promo=null;
@@ -940,7 +941,7 @@ async function applyPromo(){
  const code=$('promoCode').value.trim().toUpperCase();let percent=Object.hasOwn(PROMO_CODES,code)?PROMO_CODES[code]:null;
  if(code.startsWith('OFA-SINGLE50-')||code.startsWith('OFA-ADA25-')||(code&&percent===null&&!code.startsWith('OFA-RWD-')&&!code.startsWith('OFA-OPEN50-'))){
   try{const res=await fetch('validate-coupon.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code,items:targetOrder.items.map(i=>({id:i.id,quantity:Number(i.qty||i.quantity||1)}))})});const d=await res.json();if(!res.ok||!d.ok)throw Error(d.error||'Code validation unavailable.');percent=d.percent;eligibleProductIds=d.eligibleProductIds;
-  if(checkoutOrder!==targetOrder||targetOrder.promoRequestId!==requestId)return;
+  if(checkoutOrder!==targetOrder||targetOrder.submitting||targetOrder.submitted||targetOrder.promoRequestId!==requestId)return;
   if(promoEligibleSubtotal(targetOrder.items,{eligibleProductIds})<=0)throw Error('No eligible games in this cart. Software and services are excluded.');
   }catch(e){if(checkoutOrder===targetOrder&&targetOrder.promoRequestId===requestId)$('promoMessage').textContent=e.message;return;}
  }
@@ -955,7 +956,7 @@ async function applyPromo(){
    }catch(_){percent=50;}
  }
 
- if(checkoutOrder!==targetOrder||targetOrder.promoRequestId!==requestId)return;
+ if(checkoutOrder!==targetOrder||targetOrder.submitting||targetOrder.submitted||targetOrder.promoRequestId!==requestId)return;
  if(!percent){$('promoMessage').textContent=code?'Invalid code. Your current total has not changed.':'Enter a discount code first.';return;}
  if(checkoutOrder.promo&&checkoutOrder.promo.code===code){$('promoMessage').textContent='This code is already applied.';return;}
  checkoutOrder.promo={code,percent,eligibleProductIds};$('promoCode').value=code;
@@ -966,9 +967,14 @@ $('applyPromo').onclick=applyPromo;
 $('promoCode').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();applyPromo();}});
 $('removePromo').onclick=()=>{if(!checkoutOrder)return;checkoutOrder.promoRequestId=(checkoutOrder.promoRequestId||0)+1;checkoutOrder.promo=null;$('promoCode').value='';$('promoMessage').textContent='Discount removed. Check the updated total before transferring.';refreshCheckoutPayment();};
 
-function updateReceipt(){if(!checkoutOrder)return;const o=checkoutOrder,declared=$('transferDeclared').checked,status=declared?'TRANSFER REPORTED — AWAITING SELLER VERIFICATION':'AWAITING PAYMENT — NOT A PAID RECEIPT';
+function lockCheckoutFields(locked){
+ ['transferReference','transferDeclared','slipFile','promoCode','applyPromo','removePromo'].forEach(id=>$(id).disabled=locked);
+}
+function updateReceipt(){if(!checkoutOrder)return;const o=checkoutOrder,status=o.submitted?'ORDER SUBMITTED — PAYMENT AWAITING VERIFICATION':'ORDER NOT SUBMITTED — UPLOAD PAYMENT SLIP AND SUBMIT';
+ $('downloadOrder').disabled=!o.submitted;
+ $('downloadOrder').title=o.submitted?'Download submitted order receipt':'Submit your order and payment slip first';
  $('receiptStatus').textContent=status;
- $('orderText').value=['ONE FOR ALL GAME SERVICE','ORDER RECEIPT · '+o.id,'Created: '+o.date,'Status: '+status,'Payment method: '+(o.currency==='MMK'?'KBZPay':'PromptPay'),(o.currency==='MMK'?'KPay account name: ':'Thai banking account name: ')+($('transferReference').value.trim()||'Not supplied'),'','ITEMS',...o.items.map(i=>`${i.title} | ${i.type} | ${i.quantity} × ${receiptMoney(i.unit,o.currency)} = ${receiptMoney(i.unit*i.quantity,o.currency)}`),'','SUBTOTAL: '+receiptMoney(o.subtotal,o.currency),...(o.promo?['PROMO CODE: '+o.promo.code+' ('+o.promo.percent+'% off Steam & PC items only)','DISCOUNT: -'+receiptMoney(o.discount,o.currency)]:[]),'TOTAL: '+receiptMoney(o.total,o.currency),'Currency: '+o.currency,'','Delivery: Telegram @oneforallgamekeys','https://t.me/oneforallgamekeys','Email: oneforallgameservice@gmail.com','','Send this receipt and your payment slip to our Telegram chat or email. We verify funds and availability before delivering your games through Telegram. This receipt records the order total; it is not proof of a verified payment.'].join('\n');
+ $('orderText').value=['ONE FOR ALL GAME SERVICE',(o.submitted?'ORDER RECEIPT · ':'UNSUBMITTED ORDER SUMMARY · ')+o.id,'Created: '+o.date,'Status: '+status,'Payment method: '+(o.currency==='MMK'?'KBZPay':'PromptPay'),(o.currency==='MMK'?'KPay account name: ':'Thai banking account name: ')+($('transferReference').value.trim()||'Not supplied'),'','ITEMS',...o.items.map(i=>`${i.title} | ${i.type} | ${i.quantity} × ${receiptMoney(i.unit,o.currency)} = ${receiptMoney(i.unit*i.quantity,o.currency)}`),'','SUBTOTAL: '+receiptMoney(o.subtotal,o.currency),...(o.promo?['PROMO CODE: '+o.promo.code+' ('+o.promo.percent+'% off Steam & PC items only)','DISCOUNT: -'+receiptMoney(o.discount,o.currency)]:[]),'TOTAL: '+receiptMoney(o.total,o.currency),'Currency: '+o.currency,'','Delivery: Telegram @oneforallgamekeys','https://t.me/oneforallgamekeys','Email: oneforallgameservice@gmail.com','','Send this receipt and your payment slip to our Telegram chat or email. We verify funds and availability before delivering your games through Telegram. This receipt records the order total; it is not proof of a verified payment.'].join('\n');
 }
 ['transferReference','transferDeclared'].forEach(id=>$(id).addEventListener('input',updateReceipt));
 
@@ -991,22 +997,25 @@ $('slipFile').addEventListener('change',async()=>{
  catch(e){$('slipFile').value='';$('slipPreview').textContent='Could not read that image. Try another screenshot.';}
 });
 $('emailConfirmation').onclick=async()=>{
- if(!checkoutOrder)return;
+ if(!checkoutOrder||checkoutOrder.submitted)return;
  const button=$('emailConfirmation');if(button.disabled)return;
  for(const id of ['transferReference']){if(!$(id).value.trim()){toast('Please enter the name on the account used for payment.');$(id).focus();return;}}
  if(!$('transferDeclared').checked){toast('Complete your transfer and tick the transfer checkbox before confirming.');return;}
  if(!slipData){toast('Please upload your transfer completed screenshot first.');$('slipFile').focus();return;}
- updateReceipt();const snapshot=$('orderText').value,orderId=checkoutOrder.id;
+ updateReceipt();const targetOrder=checkoutOrder,snapshot=$('orderText').value,orderId=targetOrder.id;
+ targetOrder.submitting=true;targetOrder.promoRequestId=(targetOrder.promoRequestId||0)+1;lockCheckoutFields(true);
  button.disabled=true;button.textContent='Submitting order…';$('orderSubmissionStatus').textContent='Sending your order notification…';
  const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),90000);
  try{
  const response=await fetch('submit-order.php',{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json','X-CSRF-Token':window.ofaAccountCsrf||''},body:JSON.stringify({orderId,receipt:snapshot,slip:slipData,slipName,currency:checkoutOrder.currency,items:checkoutOrder.items.map(i=>({id:i.id,quantity:i.quantity})),promoCode:checkoutOrder.promo?.code||'',total:checkoutOrder.total}),signal:controller.signal});
- const data=await response.json();if(!response.ok||!data.ok)throw new Error(data.error||'Order submission failed.');
- clearSubmittedCart(checkoutOrder);
+ const data=await response.json();if(!response.ok||!data.ok||data.orderId!==orderId)throw new Error(data.error||'Order submission failed.');
+ targetOrder.submitted=true;clearSubmittedCart(targetOrder);
+ if(checkoutOrder!==targetOrder)return;
+ updateReceipt();
  $('orderSubmissionStatus').textContent='Order '+orderId+' submitted. Payment awaiting verification. Contact @oneforallgamekeys on Telegram for delivery.';
  checkoutOrder.submitted=true;$('telegramConfirmation').hidden=false;$('telegramConfirmation').textContent='Open Telegram for delivery ↗';button.textContent='Order submitted ✓';$('orderSubmissionStatus').textContent='Order '+orderId+' received with your payment slip. Payment is awaiting manual verification. Next: open Telegram and send your order ID for delivery.';toast('Order submitted. Payment awaiting verification.');
- }catch(error){$('orderSubmissionStatus').textContent=error.name==='AbortError'?'Submission timed out. Contact us on Telegram with your order ID before retrying.':(error.message||'Unable to submit. Please contact us on Telegram.');button.disabled=false;button.textContent='Retry submission';$('telegramConfirmation').hidden=false;$('telegramConfirmation').textContent='Contact support on Telegram ↗';}
- finally{clearTimeout(timeout);}
+ }catch(error){if(checkoutOrder!==targetOrder)return;lockCheckoutFields(false);updateReceipt();$('orderSubmissionStatus').textContent=error.name==='AbortError'?'Submission timed out. Contact us on Telegram with your order ID before retrying.':(error.message||'Unable to submit. Please contact us on Telegram.');button.disabled=false;button.textContent='Retry submission';$('telegramConfirmation').hidden=false;$('telegramConfirmation').textContent='Contact support on Telegram ↗';}
+ finally{targetOrder.submitting=false;clearTimeout(timeout);}
 };
 $('telegramConfirmation').onclick=async()=>{
  if(!checkoutOrder)return;
@@ -1040,10 +1049,10 @@ if('IntersectionObserver' in window){
 }
 
 function receiptPdf(){
- if(!checkoutOrder){toast('Open checkout first.');return}
+ if(!checkoutOrder||!checkoutOrder.submitted){toast('Submit your order and payment slip successfully before downloading a receipt.');return}
  updateReceipt();
- const o=checkoutOrder,declared=$('transferDeclared').checked;
- const statusText=declared?'TRANSFER REPORTED · AWAITING VERIFICATION':'AWAITING PAYMENT · NOT PAID';
+ const o=checkoutOrder,declared=true;
+ const statusText='ORDER SUBMITTED · PAYMENT NOT VERIFIED';
  const F='"Montserrat","Noto Sans Myanmar","Noto Sans Thai","Segoe UI",Arial,sans-serif';
  const W=1240,H=1754,M=80,CW=W-2*M,pages=[];let g,y;
  const rr=(x,yy,w,h,r)=>{g.beginPath();g.moveTo(x+r,yy);g.arcTo(x+w,yy,x+w,yy+h,r);g.arcTo(x+w,yy+h,x,yy+h,r);g.arcTo(x,yy+h,x,yy,r);g.arcTo(x,yy,x+w,yy,r);g.closePath()};
