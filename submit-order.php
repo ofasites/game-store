@@ -30,7 +30,7 @@ $configFile = $private . '/mail-config.php';
 if (!is_file($configFile)) respond(503,['ok'=>false,'error'=>'Order email is not configured. Please contact us on Telegram.']);
 function smtpRead($stream, array $allowed): void {
     do { $line = fgets($stream, 4096); if ($line === false) throw new RuntimeException('SMTP connection ended'); } while (isset($line[3]) && $line[3] === '-');
-    if (!in_array((int)substr($line,0,3),$allowed,true)) throw new RuntimeException('SMTP response rejected');
+    if (!in_array((int)substr($line,0,3),$allowed,true)) throw new RuntimeException('SMTP response rejected: '.(int)substr($line,0,3));
 }
 function smtpWrite($stream, string $command, array $allowed): void {
     $data=$command."\r\n"; $offset=0;
@@ -46,10 +46,12 @@ if(!empty($_SESSION['uid']) && isset($_SESSION['last']) && time()-(int)$_SESSION
 }
 session_write_close();
 $lock = null;
+$mailStage = 'configuration';
 try {
     $config = require $configFile;
     if (!is_array($config) || empty($config['smtp_password']) || $config['smtp_password']==='REPLACE_WITH_YOUR_MAILBOX_PASSWORD') throw new RuntimeException('Configuration incomplete');
     // File locks and successful IDs prevent accidental resubmission on this server.
+    $mailStage = 'order_storage';
     $lock = fopen($private.'/order-mail.lock','c+');
     if (!$lock || !flock($lock,LOCK_EX)) throw new RuntimeException('Cannot lock order queue');
     $ledgerFile=$private.'/order-mail-state.json';
@@ -67,6 +69,7 @@ try {
     try{$saved=rwOrder($rewardsDb,$input,$uid);}catch(InvalidArgumentException $e){respond(400,['ok'=>false,'error'=>$e->getMessage()]);}
     if((int)$saved['notified']===1)respond(200,['ok'=>true,'orderId'=>$id,'message'=>'Order already submitted. Payment awaiting verification.']);
     $approval='https://oneforallgameservice.com/approve-order.php?id='.rawurlencode($id).'&token='.$saved['approval_token'];
+    $mailStage = 'smtp_connect';
     $host='smtp.hostinger.com';
     $context=stream_context_create(['ssl'=>['verify_peer'=>true,'verify_peer_name'=>true,'peer_name'=>$host]]);
     $stream=stream_socket_client('ssl://'.$host.':465',$errno,$errstr,15,STREAM_CLIENT_CONNECT,$context);
@@ -74,9 +77,11 @@ try {
     stream_set_timeout($stream,20);
     smtpRead($stream,[220]);
     smtpWrite($stream,'EHLO oneforallgameservice.com',[250]);
+    $mailStage = 'smtp_authentication';
     smtpWrite($stream,'AUTH LOGIN',[334]);
     smtpWrite($stream,base64_encode('ofasupport@oneforallgameservice.com'),[334]);
     smtpWrite($stream,base64_encode((string)$config['smtp_password']),[235]);
+    $mailStage = 'smtp_envelope';
     smtpWrite($stream,'MAIL FROM:<ofasupport@oneforallgameservice.com>',[250]);
     smtpWrite($stream,'RCPT TO:<oneforallgameservice@gmail.com>',[250,251]);
     smtpWrite($stream,'DATA',[354]);
@@ -94,6 +99,7 @@ try {
         'Subject: New order '.$id.' - payment awaiting verification'."\r\n".
         'Message-ID: <'.bin2hex(random_bytes(16)).'@oneforallgameservice.com>'."\r\n".
         "MIME-Version: 1.0\r\n";
+    $mailStage = 'email_render';
     require_once __DIR__.'/order-email.php';
     $alternative=ofaOrderAlternative($body,ofaOrderHtml($saved,$approval,$receipt,$slipBytes!==null));
     if ($slipBytes !== null) {
@@ -106,13 +112,15 @@ try {
     } else {
         $message = $headers."Content-Type: ".$alternative['type']."\r\n\r\n".$alternative['body'];
     }
+    $mailStage = 'smtp_delivery';
     smtpWrite($stream,$message."\r\n.",[250]);
     fclose($stream);
+    $mailStage = 'save_delivery_confirmation';
     $rewardsDb->prepare('UPDATE reward_orders SET notified=1 WHERE id=?')->execute([$id]);
     $ledger[$orderKey]=$now;
     file_put_contents($ledgerFile,json_encode($ledger),LOCK_EX);
     respond(200,['ok'=>true,'orderId'=>$id,'message'=>'Order submitted. Payment awaiting verification. Delivery through Telegram.']);
 } catch (Throwable $e) {
-    error_log('OFA order email failed: '.get_class($e));
-    respond(503,['ok'=>false,'error'=>'We could not confirm email submission. Please contact @oneforallgamekeys with your receipt before retrying.']);
+    error_log('OFA order email failed: order='.$id.' stage='.$mailStage.' exception='.get_class($e).(preg_match('/^SMTP response rejected: [0-9]{3}$/D',$e->getMessage())?' '.$e->getMessage():''));
+    respond(503,['ok'=>false,'error'=>'We could not confirm email submission. Please contact @oneforallgamekeys with order ID '.$id.' before retrying. Do not pay again.']);
 }
