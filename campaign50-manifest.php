@@ -2,7 +2,7 @@
 // SHA-256 only; plaintext delivery is kept outside the repository.
 if(realpath($_SERVER['SCRIPT_FILENAME']??'')===__FILE__){http_response_code(404);exit;}
 return [
- '8f2a23ed9a6b575cf72c1895877b102378f508742cc8554e52510509a426ffaa'=>['percent'=>40,'minQuantity'=>0],
+ '8f2a23ed9a6b575cf72c1895877b102378f508742cc8554e52510509a426ffaa'=>['percent'=>40,'minQuantity'=>6],
  '09732008f9ec1af1e858d8cf51a3a603b8179c0f44fdfa7f55f63f4055c5fbe7'=>true,
  '0abde50d28dc5bd0d0be234dfd9ecbc6f624458da2cbb2adf52f9955fb36acc5'=>true,
  '0ae5ceab09a522550d0a42a84e7b30f48df54096896ca42fcd8f3ef8796053a2'=>true,

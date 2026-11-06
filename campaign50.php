@@ -29,7 +29,7 @@ function c50CheckMinimum(string $code,array $rows,array $products): void {
  if(!is_string($id)||isset($seen[$id])||!isset($products[$id])||!is_int($qty)||$qty<1||$qty>99)throw new InvalidArgumentException('Invalid cart items.');
  $seen[$id]=true;if(!empty($products[$id]['eligible']))$count+=$qty;
  }
- if($count<$min)throw new InvalidArgumentException('This coupon requires at least 4 game items in your cart.');
+ if($count<$min)throw new InvalidArgumentException('This coupon requires at least '.$min.' game items in your cart.');
 }
 function c50Consume(PDO $db,string $key,string $order): void {
  if(strpos($key,'C50:')!==0)return;
